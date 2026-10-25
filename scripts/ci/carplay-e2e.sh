@@ -16,10 +16,6 @@ mkdir -p "$OUT"
 
 log() { echo "==> $*"; }
 
-image_size() {
-  python3 -c 'import struct, sys; d = open(sys.argv[1], "rb").read(24); print(*struct.unpack(">II", d[16:24]))' "$1"
-}
-
 carplay_shot() {
   xcrun simctl io "$UDID" screenshot --display=external "$1" > /dev/null
 }
@@ -62,9 +58,10 @@ log "CarPlay ekranı bağlanıyor"
 osascript "$SCRIPTS/enable-carplay.applescript" 2>&1 | tee "$OUT/enable-carplay.log"
 sleep 12
 
-WINDOW=$(osascript "$SCRIPTS/carplay-window.applescript" 2> "$OUT/carplay-window.log")
+osascript "$SCRIPTS/carplay-window.applescript" > "$OUT/carplay-window.txt" 2> "$OUT/carplay-window.log"
 cat "$OUT/carplay-window.log"
-log "CarPlay penceresi (x y genişlik yükseklik): $WINDOW"
+log "CarPlay penceresi ve öğeleri:"
+head -40 "$OUT/carplay-window.txt"
 sleep 2
 carplay_shot "$OUT/2-carplay-home.png"
 xcrun simctl io "$UDID" screenshot "$OUT/2-iphone-after-carplay.png" > /dev/null
@@ -75,36 +72,37 @@ if ! LABEL=$(swift "$SCRIPTS/find-text.swift" "$OUT/2-carplay-home.png" "CarMirr
   exit 1
 fi
 log "CarMirror etiketi (x y üst yükseklik, piksel): $LABEL"
-
-read -r WX WY WW WH <<< "$WINDOW"
-read -r IW IH <<< "$(image_size "$OUT/2-carplay-home.png")"
 read -r LX LY LTOP LH <<< "$LABEL"
+ICON_Y=$(python3 -c "print($LTOP - 1.8 * $LH)")
 
-# Ekran görüntüsündeki pikseli ekrandaki noktaya çevirir. Pencerenin içeriği
-# görüntüyle aynı en-boy oranında; aradaki fark pencere başlık çubuğudur.
 screen_point() {
-  python3 - "$WX" "$WY" "$WW" "$WH" "$IW" "$IH" "$1" "$2" <<'PY'
-import sys
-wx, wy, ww, wh, iw, ih, px, py = map(float, sys.argv[1:])
-scale = ww / iw
-titlebar = max(0.0, wh - ih * scale)
-print(f"{wx + px * scale:.0f} {wy + titlebar + py * scale:.0f}")
-PY
+  python3 "$SCRIPTS/screen-point.py" "$OUT/carplay-window.txt" "$OUT/2-carplay-home.png" "$1" "$2"
 }
 
 mirrored=false
-# Önce simgenin ortasına, olmazsa etiketin üzerine dokun.
-for target_y in "$(python3 -c "print($LTOP - 1.8 * $LH)")" "$LY"; do
-  read -r CX CY <<< "$(screen_point "$LX" "$target_y")"
-  log "CarPlay'de CarMirror'a dokunuluyor: $CX,$CY"
-  swift "$SCRIPTS/click.swift" "$CX" "$CY"
-  sleep 10
-  carplay_shot "$OUT/3-carplay-mirroring.png"
-  if swift "$SCRIPTS/find-text.swift" "$OUT/3-carplay-mirroring.png" "CARMIRROR DEMO" > /dev/null 2> "$OUT/ocr-mirroring.log"; then
-    mirrored=true
-    break
-  fi
-  cat "$OUT/ocr-mirroring.log"
+attempt=0
+# Önce System Events ile, olmazsa doğrudan fare olayıyla; her birinde önce
+# simgenin ortasına, sonra etiketin üzerine dokun.
+for method in system-events cgevent; do
+  for target_y in "$ICON_Y" "$LY"; do
+    attempt=$((attempt + 1))
+    read -r CX CY <<< "$(screen_point "$LX" "$target_y")"
+    log "Deneme $attempt ($method): CarPlay'de CarMirror'a dokunuluyor: $CX,$CY"
+    if [ "$method" = system-events ]; then
+      osascript "$SCRIPTS/click-at.applescript" "$CX" "$CY" || true
+    else
+      swift "$SCRIPTS/click.swift" "$CX" "$CY" || true
+    fi
+    sleep 1
+    screencapture -x -C "$OUT/click-$attempt-mac.png" 2> /dev/null || true
+    sleep 9
+    carplay_shot "$OUT/3-carplay-mirroring.png"
+    if swift "$SCRIPTS/find-text.swift" "$OUT/3-carplay-mirroring.png" "CARMIRROR DEMO" > /dev/null 2> "$OUT/ocr-mirroring.log"; then
+      mirrored=true
+      break 2
+    fi
+    cat "$OUT/ocr-mirroring.log"
+  done
 done
 
 xcrun simctl io "$UDID" screenshot "$OUT/4-iphone.png" > /dev/null
