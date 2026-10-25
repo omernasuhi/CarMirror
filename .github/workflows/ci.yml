@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Derleme ve testler (Xcode 26.6)
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Xcode 26.6'yı seç
+        run: |
+          sudo xcode-select -s /Applications/Xcode_26.6.app
+          xcodebuild -version
+
+      - name: Simülatör seç
+        id: sim
+        run: echo "udid=$(python3 scripts/ci/pick-simulator.py)" >> "$GITHUB_OUTPUT"
+
+      - name: Derle ve test et
+        run: scripts/ci/run-tests.sh "${{ steps.sim.outputs.udid }}"
+
+      - name: Test çıktısını yükle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: build/test
+          if-no-files-found: ignore
+
+  carplay:
+    name: CarPlay simülatöründe uçtan uca deneme
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Xcode 26.6'yı seç
+        run: |
+          sudo xcode-select -s /Applications/Xcode_26.6.app
+          xcodebuild -version
+
+      - name: Simülatör seç
+        id: sim
+        run: echo "udid=$(python3 scripts/ci/pick-simulator.py)" >> "$GITHUB_OUTPUT"
+
+      - name: CarPlay'de yansıtmayı dene
+        run: scripts/ci/carplay-e2e.sh "${{ steps.sim.outputs.udid }}" build/carplay
+
+      - name: Ekran görüntülerini yükle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: carplay-screenshots
+          path: build/carplay
+          if-no-files-found: ignore

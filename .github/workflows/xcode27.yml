@@ -1,0 +1,32 @@
+name: Xcode 27
+
+# Projenin Xcode 27 ile de derlendiğini ve testlerin geçtiğini denetler.
+# Xcode 27'nin Device Hub'ında simülatör için CarPlay ekranı olmadığından
+# CarPlay denemesi yalnızca ana CI iş akışında (Xcode 26.6) yapılır.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: xcode27-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Derleme ve testler (Xcode 27 önizleme)
+    runs-on: xcode-27
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Xcode sürümü
+        run: xcodebuild -version
+
+      - name: Simülatör seç
+        id: sim
+        run: echo "udid=$(python3 scripts/ci/pick-simulator.py)" >> "$GITHUB_OUTPUT"
+
+      - name: Derle ve test et
+        run: scripts/ci/run-tests.sh "${{ steps.sim.outputs.udid }}"
