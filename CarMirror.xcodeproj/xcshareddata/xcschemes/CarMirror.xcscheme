@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F22D8F34E3B796071E84E222"
+               BlueprintIdentifier = "32FD2B3F16AB6DE1491BBF08"
                BuildableName = "CarMirror.app"
                BlueprintName = "CarMirror"
                ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "644C6407A11462FECAF0C45C"
+               BlueprintIdentifier = "1DF27D0DCA36BF6FA3622E82"
                BuildableName = "CarMirrorTests.xctest"
                BlueprintName = "CarMirrorTests"
                ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F22D8F34E3B796071E84E222"
+            BlueprintIdentifier = "32FD2B3F16AB6DE1491BBF08"
             BuildableName = "CarMirror.app"
             BlueprintName = "CarMirror"
             ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -56,7 +56,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "644C6407A11462FECAF0C45C"
+               BlueprintIdentifier = "1DF27D0DCA36BF6FA3622E82"
                BuildableName = "CarMirrorTests.xctest"
                BlueprintName = "CarMirrorTests"
                ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -74,11 +74,30 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "CarPlay simülatör yaması"
+               shellToInvoke = "/bin/bash"
+               scriptText = "&quot;${SRCROOT}/scripts/carplay-sim-shim/install.sh&quot;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "32FD2B3F16AB6DE1491BBF08"
+                     BuildableName = "CarMirror.app"
+                     BlueprintName = "CarMirror"
+                     ReferencedContainer = "container:CarMirror.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F22D8F34E3B796071E84E222"
+            BlueprintIdentifier = "32FD2B3F16AB6DE1491BBF08"
             BuildableName = "CarMirror.app"
             BlueprintName = "CarMirror"
             ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -95,7 +114,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F22D8F34E3B796071E84E222"
+            BlueprintIdentifier = "32FD2B3F16AB6DE1491BBF08"
             BuildableName = "CarMirror.app"
             BlueprintName = "CarMirror"
             ReferencedContainer = "container:CarMirror.xcodeproj">

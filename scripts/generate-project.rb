@@ -139,6 +139,22 @@ File.write(pbxproj, File.read(pbxproj).gsub(/^\s*preferredProjectObjectVersion =
 scheme = Xcodeproj::XCScheme.new
 scheme.configure_with_targets(app, tests, launch_target: true)
 scheme.test_action.code_coverage_enabled = false
+
+# iOS 26.4/26.5 simülatörlerindeki CarPlay hatası için Run öncesi yama
+# (bkz. scripts/carplay-sim-shim/install.sh). Gerçek cihazda hiçbir şey yapmaz.
+shim_content = Xcodeproj::XCScheme::ShellScriptActionContent.new
+shim_content.title = 'CarPlay simülatör yaması'
+shim_content.shell_to_invoke = '/bin/bash'
+shim_content.script_text = %("${SRCROOT}/scripts/carplay-sim-shim/install.sh")
+shim_content.buildable_reference = Xcodeproj::XCScheme::BuildableReference.new(app)
+shim_action = Xcodeproj::XCScheme::ExecutionAction.new(nil, :shell_script)
+shim_action.action_content = shim_content
+scheme.launch_action.add_pre_action(shim_action)
+# Xcode, ön eylemleri LaunchAction'ın ilk öğesi olarak yazar.
+launch_element = scheme.launch_action.xml_element
+pre_actions = launch_element.elements['PreActions']
+launch_element.delete_element(pre_actions)
+launch_element.insert_before(launch_element.elements[1], pre_actions)
 scheme.save_as(PROJECT_PATH, 'CarMirror', true)
 
 puts "Oluşturuldu: #{PROJECT_PATH}"

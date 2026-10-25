@@ -26,6 +26,9 @@ collect_logs() {
   xcrun simctl spawn "$UDID" log show --last 15m --style compact \
     --predicate '(process == "CarPlayTemplateUIHost" OR process == "CarPlay") AND (messageType == error OR messageType == fault)' \
     > "$OUT/carplay-system.log" 2>&1 || true
+  xcrun simctl spawn "$UDID" log show --last 15m --style compact \
+    --predicate 'eventMessage CONTAINS "carmirror-carplay-shim"' > "$OUT/carplay-shim-runtime.log" 2>&1 || true
+  grep "carmirror-carplay-shim" "$OUT/carplay-shim-runtime.log" | tail -5 || true
   screencapture -x "$OUT/mac-desktop.png" 2>/dev/null || true
   mkdir -p "$OUT/crashes"
   find "$HOME/Library/Logs/DiagnosticReports" -name '*.ips' -newer "$OUT/build.log" 2>/dev/null \
@@ -69,6 +72,10 @@ xcrun simctl install "$UDID" "$APP"
 xcrun simctl launch "$UDID" "$BUNDLE_ID" -CarMirrorTab demo
 sleep 6
 xcrun simctl io "$UDID" screenshot "$OUT/1-iphone.png" > /dev/null
+
+log "CarPlay simülatör yaması yükleniyor (Xcode'da Run öncesi kendiliğinden çalışır)"
+PLATFORM_NAME=iphonesimulator scripts/carplay-sim-shim/install.sh "$UDID"
+cp /tmp/carmirror-carplay-shim.log "$OUT/carplay-shim.log" 2> /dev/null || true
 
 log "CarPlay ekranı bağlanıyor"
 osascript "$SCRIPTS/enable-carplay.applescript" 2>&1 | tee "$OUT/enable-carplay.log"

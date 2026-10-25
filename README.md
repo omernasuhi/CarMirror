@@ -30,6 +30,26 @@ CarPlay penceresinin üst çubuğundaki **Doldur / Sığdır** düğmesi görün
 şekilde büyütür ya da tamamını gösterir. Üst çubuk birkaç saniye sonra kendiliğinden gizlenir;
 görmek için CarPlay ekranına dokunun.
 
+### iOS 26.4 / 26.5 simülatöründeki Apple hatası (otomatik düzeltilir)
+
+Bu simülatör sürümlerinde CarPlay'in sistem süreci (`CarPlayTemplateUIHost`), herhangi bir
+navigasyon uygulaması harita şablonu gösterdiğinde eksik bir yöntem yüzünden çöküyor. Ekranda
+*"CarPlayTemplateUIHost quit unexpectedly"* uyarısı çıkar ve CarPlay ana ekrana döner. Gerçek
+cihazlar etkilenmez
+([ayrıntılar](https://github.com/organicmaps/organicmaps/pull/13507)).
+
+CarMirror şeması bunu kendisi düzeltir: Xcode'da **Run**'a bastığınızda, ön eylem olarak
+`scripts/carplay-sim-shim/install.sh` çalışır. Bu betik eksik yöntemleri ekleyen küçük bir
+kütüphaneyi derleyip simülatöre yükler ve sonucu `/tmp/carmirror-carplay-shim.log` dosyasına yazar.
+Yama yalnızca simülatörü etkiler. Kaldırmak için:
+
+```sh
+xcrun simctl spawn booted launchctl unsetenv DYLD_INSERT_LIBRARIES
+```
+
+Uygulamayı Xcode dışında başlattıysanız yamayı elle de yükleyebilirsiniz:
+`scripts/carplay-sim-shim/install.sh`.
+
 ### Xcode 27 kullanıyorsanız
 
 Xcode 27'nin Device Hub'ında simülatör için CarPlay ekranı açılamıyor. İki seçenek var:
