@@ -1,0 +1,1288 @@
+getpwuid_r did not find a match for uid 501
+Timestamp               Ty Process[PID:TID]
+2026-10-25 12:25:34.001 Df CoreSimulatorBridge[2990:41c1] Request received for installation of file:///Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app/ with options: {
+    PackageType = Developer;
+    SimulatorRootPath = "/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot";
+    SimulatorUserPath = "/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data";
+}
+2026-10-25 12:25:34.103 Df CoreSimulatorBridge[2990:41c1] [com.apple.installcoordination:framework] +[IXAppInstallCoordinator(IXSimpleInstaller) _beginInstallForURL:forPersonaUniqueString:consumeSource:options:progressBlock:completionWithIdentity:]: Beginning install for /Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app consuming source:N options:{
+    IsUserInitiated = 1;
+    PackageType = Developer;
+} installationRequestorAuditToken: NULL
+2026-10-25 12:25:34.289 Df installcoordinationd[3810:551b] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager registerPromise:]: Registered promise <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]> for UUID B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182
+2026-10-25 12:25:34.306 Df installcoordinationd[3810:551b] [com.apple.installcoordination:daemon] -[IXSPlaceholder setAttributes:]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: setting placeholder attributes to <IXPlaceholderAttributes<0x1030b4a00> : {
+    CFBundleShortVersionString = "1.0";
+    CFBundleSupportedPlatforms =     (
+        iPhoneSimulator
+    );
+    CFBundleVersion = 1;
+    DTPlatformName = iphonesimulator;
+    LSRequiresIPhoneOS = 1;
+    MinimumOSVersion = "17.0";
+    UIDeviceFamily =     (
+        1,
+        2
+    );
+    UILaunchScreen =     {
+    };
+    UIRequiredDeviceCapabilities =     {
+        arm64 = 1;
+    };
+}>
+2026-10-25 12:25:34.369 Df installcoordinationd[3810:551b] [com.apple.installcoordination:daemon] -[IXSPlaceholder setEntitlements:]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: setting entitlements promise to <IXSPromisedInMemoryDictionary(0x1030f5080) Name:Entitlements Promise for com.omernasuhi.carmirror Creator:InstallCoordination Simple SPI UUID:427323EB-C17F-4D0A-BE6E-DADECA7D7A56 Location:[system-defined]>
+2026-10-25 12:25:34.372 Df CoreSimulatorBridge[2990:44bc] [com.apple.installcoordination:framework] +[IXPlaceholder _placeholderForBundle:client:withParent:installType:metadata:placeholderType:mayBeDeltaPackage:isFromSerializedPlaceholder:location:error:]: Using full fidelity icons for com.omernasuhi.carmirror at /Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app
+2026-10-25 12:25:34.422 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promiseDidBegin:]: Unowned promise began: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:34.469 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promise:didUpdateProgress:]: Unowned promise update progress to 0.000000 : <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:34.617 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder setIconResourcesPromise:]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: setting icon resources promise to <IXSPromisedTransferToPath(0x1030f5200) Name:Icon resources for com.omernasuhi.carmirror Creator:InstallCoordination Simple SPI UUID:89E763AB-ACFA-41D0-889C-5519D5CBCBFF Location:[system-defined]>
+2026-10-25 12:25:34.624 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder setInfoPlistIconContentPromise:]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: setting Info.plist icon content promise to <IXSPromisedInMemoryDictionary(0x1030f5380) Name:Info.plist icon content for com.omernasuhi.carmirror Creator:InstallCoordination Simple SPI UUID:BBCF3A77-0C77-493E-8CC9-DE75B1EDE398 Location:[system-defined]>
+2026-10-25 12:25:34.658 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promise:didUpdateProgress:]: Unowned promise update progress to 0.000000 : <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:34.658 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promise:didUpdateProgress:]: Unowned promise update progress to 0.000000 : <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:34.741 Df installcoordinationd[3810:551b] [com.apple.installcoordination:daemon] -[IXSPlaceholder setLocalizationDictionaryPromise:]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: setting localization dict promise to <IXSPromisedInMemoryDictionary(0x1030f5500) Name:Localizations for com.omernasuhi.carmirror Creator:InstallCoordination Simple SPI UUID:C3422385-3A57-451B-B856-BAF02DD0DD25 Location:[system-defined]>
+2026-10-25 12:25:34.748 Df installcoordinationd[3810:551b] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promise:didUpdateProgress:]: Unowned promise update progress to 0.000000 : <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:34.763 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager registerPromise:]: Registered promise <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]> for UUID 2839663D-3CE4-4BA0-8C98-41D676DCC579
+2026-10-25 12:25:34.771 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder setAttributes:]: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>: setting placeholder attributes to <IXPlaceholderAttributes<0x1030b4960> : {
+    CFBundleShortVersionString = "1.0";
+    CFBundleSupportedPlatforms =     (
+        iPhoneSimulator
+    );
+    CFBundleVersion = 1;
+    DTPlatformName = iphonesimulator;
+    MinimumOSVersion = "17.0";
+    NSExtension =     {
+        NSExtensionPointIdentifier = "com.apple.broadcast-services-upload";
+        NSExtensionPrincipalClass = "BroadcastExtension.SampleHandler";
+        RPBroadcastProcessMode = RPBroadcastProcessModeSampleBuffer;
+    };
+    UIDeviceFamily =     (
+        1
+    );
+}>
+2026-10-25 12:25:34.972 Df installcoordinationd[3810:70ee] [com.apple.installcoordination:daemon] -[IXSPlaceholder setEntitlements:]: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>: setting entitlements promise to <IXSPromisedInMemoryDictionary(0x1030f5780) Name:Entitlements Promise for com.omernasuhi.carmirror.BroadcastExtension Creator:InstallCoordination Simple SPI UUID:C9211D72-EA42-4A95-99D8-1BAF543D3675 Location:[system-defined]>
+2026-10-25 12:25:34.975 Df CoreSimulatorBridge[2990:44bc] [com.apple.installcoordination:framework] +[IXPlaceholder _placeholderForBundle:client:withParent:installType:metadata:placeholderType:mayBeDeltaPackage:isFromSerializedPlaceholder:location:error:]: Using full fidelity icons for com.omernasuhi.carmirror.BroadcastExtension at /Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app/PlugIns/BroadcastExtension.appex
+2026-10-25 12:25:34.975 Df installcoordinationd[3810:70ee] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promiseDidBegin:]: Unowned promise began: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>
+2026-10-25 12:25:34.990 Df installcoordinationd[3810:70ee] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promise:didUpdateProgress:]: Unowned promise update progress to 0.000000 : <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>
+2026-10-25 12:25:34.996 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSDataPromise cancelForReason:client:error:]: <IXSPromisedTransferToPath(0x1030f5900) Name:Icon resources for com.omernasuhi.carmirror.BroadcastExtension Creator:InstallCoordination Simple SPI UUID:B70E7D54-07B0-4CF5-9424-20C5D3630B59 Location:[system-defined]> : canceled by client 15 for reason Error Domain=IXErrorDomain Code=1 "No icon found for bundle com.omernasuhi.carmirror.BroadcastExtension at /Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app/PlugIns/BroadcastExtension.appex; skipping icon resources promise" UserInfo={NSLocalizedFailureReason=Internal error., FunctionName=+[IXPlaceholder _placeholderForBundle:client:withParent:installType:metadata:placeholderType:mayBeDeltaPackage:isFromSerializedPlaceholder:location:error:], SourceFileLine=926, NSLocalizedDescription=No icon found for bundle com.omernasuhi.carmirror.BroadcastExtension at /Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app/Pl
+2026-10-25 12:25:35.003 Df installcoordinationd[3810:70ee] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promise:didCancelForReason:client:]: Unowned promise <IXSPromisedTransferToPath(0x1030f5900) Name:Icon resources for com.omernasuhi.carmirror.BroadcastExtension Creator:InstallCoordination Simple SPI UUID:B70E7D54-07B0-4CF5-9424-20C5D3630B59 Location:[system-defined]> canceled for reason: Error Domain=IXErrorDomain Code=1 "No icon found for bundle com.omernasuhi.carmirror.BroadcastExtension at /Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app/PlugIns/BroadcastExtension.appex; skipping icon resources promise" UserInfo={NSLocalizedFailureReason=Internal error., FunctionName=+[IXPlaceholder _placeholderForBundle:client:withParent:installType:metadata:placeholderType:mayBeDeltaPackage:isFromSerializedPlaceholder:location:error:], SourceFileLine=926, NSLocalizedDescription=No icon found for bundle com.omernasuhi.carmirror.BroadcastExtension at /Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app/ client: <decode: missing data>
+2026-10-25 12:25:35.014 Df installcoordinationd[3810:70ee] [com.apple.installcoordination:daemon] -[IXSPlaceholder setLocalizationDictionaryPromise:]: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>: setting localization dict promise to <IXSPromisedInMemoryDictionary(0x1030f5b00) Name:Localizations for com.omernasuhi.carmirror.BroadcastExtension Creator:InstallCoordination Simple SPI UUID:EB40835F-E568-4E60-BD51-E8DC38E6B436 Location:[system-defined]>
+2026-10-25 12:25:35.028 Df installcoordinationd[3810:70ee] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promise:didUpdateProgress:]: Unowned promise update progress to 0.000000 : <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>
+2026-10-25 12:25:35.035 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder setConfigurationComplete:]: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>: setting configuration complete to Y
+2026-10-25 12:25:35.037 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>: Materializing placeholder at /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Shared/SystemGroup/systemgroup.com.apple.installcoordinationd/Library/InstallCoordination/PromiseStaging/2839663D-3CE4-4BA0-8C98-41D676DCC579/BroadcastExtension.appex
+2026-10-25 12:25:35.039 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]_block_invoke: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>: Added entitlements
+2026-10-25 12:25:35.039 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>: Including lproj localizations for (
+)
+2026-10-25 12:25:35.041 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promiseDidComplete:]: Unowned promise completed: <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>
+2026-10-25 12:25:35.044 Df installcoordinationd[3810:70ee] [com.apple.installcoordination:daemon] -[IXSPlaceholder setAppExtensionPlaceholders:]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: setting app extension placeholder promises to (
+    "<IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>"
+)
+2026-10-25 12:25:35.046 Df installcoordinationd[3810:70ee] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promise:didUpdateProgress:]: Unowned promise update progress to 0.000000 : <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:35.047 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder setConfigurationComplete:]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: setting configuration complete to Y
+2026-10-25 12:25:35.051 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: Materializing placeholder at /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Shared/SystemGroup/systemgroup.com.apple.installcoordinationd/Library/InstallCoordination/PromiseStaging/B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182/CarMirror.app
+2026-10-25 12:25:35.051 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: Using Info.plist icon content: {
+    CFBundleIcons =     {
+        CFBundlePrimaryIcon =         {
+            CFBundleIconName = AppIcon;
+        };
+    };
+    "CFBundleIcons~ipad" =     {
+        CFBundlePrimaryIcon =         {
+            CFBundleIconName = AppIcon;
+        };
+    };
+    ISIconPlatform = iPhoneOS;
+}
+2026-10-25 12:25:35.054 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]_block_invoke: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: Using icon resource Assets.car
+2026-10-25 12:25:35.055 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]_block_invoke: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: Added entitlements
+2026-10-25 12:25:35.055 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: Including lproj localizations for (
+)
+2026-10-25 12:25:35.056 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSPlaceholder _materialize]_block_invoke: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>: added appex BroadcastExtension.appex
+2026-10-25 12:25:35.059 Df installcoordinationd[3810:70ed] [com.apple.installcoordination:daemon] -[IXSDataPromiseManager promiseDidComplete:]: Unowned promise completed: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:35.248 Df CoreSimulatorBridge[2990:44bc] [com.apple.installcoordination:framework] -[IXPromisedTransferToPath setComplete:]: <IXPromisedTransferToPath<0x101472340> name:"App Asset: com.omernasuhi.carmirror" uuid:08E23C33-D2D2-44DD-A34E-D92E8583404E creator:"InstallCoordination Simple SPI" location:[system-defined]> Copy operation from /Users/runner/work/CarMirror/CarMirror/build/DerivedData/Build/Products/Debug-iphonesimulator/CarMirror.app to /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Shared/SystemGroup/systemgroup.com.apple.installcoordinationd/Library/InstallCoordination/PromiseStaging/08E23C33-D2D2-44DD-A34E-D92E8583404E/CarMirror.app took 0.017390 seconds
+2026-10-25 12:25:35.252 Df installcoordinationd[3810:70f3] [com.apple.installcoordination:daemon] -[IXSCoordinatedAppInstall setPlaceholderPromise:]: <IXSCoordinatedAppInstall<0x10320c000> [P=CoreSimulatorBridge (pid 2990)] identifier:[com.omernasuhi.carmirror/Invalid/[system-defined]] uuid:DC3C867B-6A8C-4034-890D-0235F56425C7 intent:IXCoordinatorIntentInitiating creator/appDRI:InstallCoordination Simple SPI importance:UserWaiting state:IXAppCoordinationStateReadyForPlaceholderInstall promise-state:PA2I4> : Placeholder Promise set: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:35.253 Df installcoordinationd[3810:7114] [com.apple.installcoordination:daemon] -[IXSCoordinatedAppInstall promiseDidComplete:]: <IXSCoordinatedAppInstall<0x10320c000> [P=CoreSimulatorBridge (pid 2990)] identifier:[com.omernasuhi.carmirror/Invalid/[system-defined]] uuid:DC3C867B-6A8C-4034-890D-0235F56425C7 intent:IXCoordinatorIntentInitiating creator/appDRI:InstallCoordination Simple SPI importance:UserWaiting state:IXAppCoordinationStateReadyForPlaceholderInstall promise-state:PA2I4> : Promise completed: <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:25:35.352 Df installd[3737:3e4f] (MobileSystemServices) 0x16f107000 -[MIClientConnection _doInstallationForURL:identity:domain:options:operationType:completion:]: Install of "/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Shared/SystemGroup/systemgroup.com.apple.installcoordinationd/Library/InstallCoordination/PromiseStaging/B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182/CarMirror.app" type Placeholder (LSInstallType = 1, Domain: MIInstallationDomainDefault) requested by installcoordinationd (pid 3810 (501/20))
+2026-10-25 12:25:58.548 E  lsd[3015:728f] [com.apple.launchservices:default] LSStringLocalizer development region en not found in localizations available for bundle file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/
+2026-10-25 12:25:58.550 E  lsd[3015:728f] [com.apple.launchservices:default] LSStringLocalizer development region en not found in localizations available for bundle file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/PlugIns/BroadcastExtension.appex/
+2026-10-25 12:25:58.620 Df lsd[3015:728f] [com.apple.launchservices:progress] Sending applicationInstallsDidStart: for (
+    "<LSApplicationProxy: 0x109f709c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.639 Df pkd[3081:7331] [com.apple.PlugInKit:ls] [u 4A1F3C4D-ECE6-41B3-B7A8-E45E15378CED] [com.omernasuhi.carmirror.BroadcastExtension(1.0)] plugin INSTALLED; bundleID: [com.omernasuhi.carmirror.BroadcastExtension], path: [/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/PlugIns/BroadcastExtension.appex], contained in [com.omernasuhi.carmirror]
+2026-10-25 12:25:58.720 Df locationd[2984:4492] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x107b3c900> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.763 Df runningboardd[2963:70c8] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1019880c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.860 Df nsurlsessiond[3026:704c] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x103e60000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.927 Df liveactivitiesd[3022:595f] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x102295980> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.937 Df clipserviced[3068:5e49] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x10418c000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.945 Df gamed[3759:732a] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1036f0780> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.961 Df homed[3064:734a] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x108e918c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.971 Df healthappd[3739:7347] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101ae0f00> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.987 Df passd[2989:3f4a] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x107fb7180> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:58.998 Df routined[2968:3501] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x105209080> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.035 Df PosterBoard[3121:72d2] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1084103c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.115 Df deviceaccessd[3752:4028] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x106158600> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.144 Df activityawardsd[3776:4843] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101d2cd80> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.145 Df activitysharingd[4303:5d9e] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1039c4e40> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.146 Df SpringBoard[2960:4198] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x10517f300> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.148 Df SpringBoard[2960:4198] [com.apple.frontboard.ApplicationLibrary:default] Added placeholder: <SBApplicationPlaceholderProxy: 0x1187fd100; com.omernasuhi.carmirror (CarMirror); LSInstallType: StoreDownload>
+2026-10-25 12:25:59.151 Df SpringBoard[2960:32c9] [com.apple.frontboard.ApplicationLibrary:sb.placeholder] App placeholder proxies added: (
+    "<SBApplicationPlaceholderProxy: 0x1187fd100; com.omernasuhi.carmirror (CarMirror); LSInstallType: StoreDownload>"
+), currentlyKnownExistingPlaceholders: {
+}
+2026-10-25 12:25:59.259 Df webbookmarksd[3075:368a] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1056a6310> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.259 Df healthd[2970:7346] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x105688840> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.261 Df appstored[3762:5416] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101e394d0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.285 Df donotdisturbd[3036:719f] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x103619680> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.286 Df mobiletimerd[2975:7212] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x105a68780> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.288 Df CoreSimulatorBridge[2990:357b] [com.apple.installcoordination:framework] -[IXAppInstallCoordinator _clientDelegate_placeholderDidInstallForApplicationRecord:]: <IXInitiatingAppInstallCoordinator<0x1014726c0> identity:[com.omernasuhi.carmirror/Invalid/[system-defined]] uuid:DC3C867B-6A8C-4034-890D-0235F56425C7 creator:InstallCoordination Simple SPI>: Got placeholder did install delegate for app record { bundleID: com.omernasuhi.carmirror, URL: file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ }
+2026-10-25 12:25:59.289 Df profiled[3778:7343] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x104804000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.291 Df SpringBoard[2960:32c9] [com.apple.frontboard.ApplicationLibrary:sb.placeholder] Placeholders added: (
+    "<SBApplicationPlaceholder: 0x114ede370; bundleIdentifier: com.omernasuhi.carmirror; displayName: CarMirror>"
+), modified: (
+), removed: (null)
+2026-10-25 12:25:59.306 Df callservicesd[3060:6719] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1062b8c00> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.518 Df sleepd[2987:7216] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101aa8300> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.523 Df nanotimekitcompaniond[3751:4205] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x103e10000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.524 Df dasd[2986:7281] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101b103c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:25:59.805 Df financed[3213:381e] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1023d2100> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.385 Df lsd[3015:7291] [com.apple.launchservices:progress] Sending applicationInstallsDidStart: for (
+    "<LSApplicationProxy: 0x109f709c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.405 Df profiled[3778:7344] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x104804000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.408 Df routined[2968:7357] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x105209080> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.408 Df healthd[2970:7345] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x105688840> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.409 Df liveactivitiesd[3022:732e] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x102295a40> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.410 Df nanotimekitcompaniond[3751:4205] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x103e10000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.410 Df passd[2989:736e] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x107fb7180> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.411 Df locationd[2984:7103] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x107b3c900> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.416 Df deviceaccessd[3752:6958] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x106158600> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.417 Df mobiletimerd[2975:7212] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x105a68780> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.418 Df healthappd[3739:7328] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101ae0f00> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.419 Df runningboardd[2963:7084] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1019880c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.420 Df homed[3064:3f8e] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x108e918c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.421 Df nsurlsessiond[3026:72af] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x103e60000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.421 Df activityawardsd[3776:4843] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101d2cd80> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.421 Df clipserviced[3068:590a] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x10418c000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.421 Df sleepd[2987:7216] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101aa8300> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.422 Df donotdisturbd[3036:719f] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x103619680> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.423 Df webbookmarksd[3075:3689] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x105dd4000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.423 Df gamed[3759:732a] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1036f03c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.424 Df financed[3213:380f] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1023d2100> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.424 Df dasd[2986:7353] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x101b103c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.425 Df callservicesd[3060:6a7e] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1062b8e40> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.430 Df activitysharingd[4303:5d9e] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x1039c4e40> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.490 Df appstored[3762:737b] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x102720000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.605 Df PosterBoard[3121:71d2] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x108410480> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:00.828 Df installd[3737:3e4f] (MobileSystemServices) 0x16f107000 -[MIClientConnection _doInstallationForURL:identity:domain:options:operationType:completion:]: Install of "/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Shared/SystemGroup/systemgroup.com.apple.installcoordinationd/Library/InstallCoordination/PromiseStaging/08E23C33-D2D2-44DD-A34E-D92E8583404E/CarMirror.app" type Developer (LSInstallType = 0, Domain: MIInstallationDomainDefault) requested by installcoordinationd (pid 3810 (501/20))
+2026-10-25 12:26:01.105 Df installd[3737:3e4f] (MobileSystemServices) 0x16f107000 -[MIPlaceholderConstructor _writeIconToPlaceholder:infoPlistIconContent:error:]: Bundle at /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Temp/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/PlugIns/BroadcastExtension.appex has no icon (no Icon Info.plist content)
+2026-10-25 12:26:01.151 Df SpringBoard[2960:738d] [com.apple.launchservices:appinstallation] LaunchServices observer: InstallsStarted (
+    "<LSApplicationProxy: 0x11c4e0000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/3598B9BB-6274-4013-B592-F2DBD088E648/CarMirror.app/ <com.omernasuhi.carmirror <placeholder >:1>"
+)
+2026-10-25 12:26:01.668 Df lsd[3015:58f7] [com.apple.launchservices:progress] Sending applicationsDidInstall: for (
+    "<LSApplicationProxy: 0x109f70a80> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.678 Df profiled[3778:7344] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x104804000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.679 Df routined[2968:350e] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x105209080> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.680 Df healthd[2970:7345] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x105688840> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.680 Df deviceaccessd[3752:5401] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x106158600> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.680 Df liveactivitiesd[3022:732e] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x102295b00> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.682 Df nanotimekitcompaniond[3751:4205] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x103e10000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.682 Df locationd[2984:4492] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x107b3c900> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.683 Df mobiletimerd[2975:7213] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x105a68780> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.687 Df passd[2989:5e40] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x107fb7180> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.688 Df runningboardd[2963:7393] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x1019880c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.689 Df healthappd[3739:7347] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x101ae0f00> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.690 Df nsurlsessiond[3026:72af] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x103e60000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.692 Df sleepd[2987:732b] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x101aa8300> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.693 Df dasd[2986:734d] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x101b103c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.694 Df activitysharingd[4303:5d9e] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x1039c4e40> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.694 Df activityawardsd[3776:5413] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x101d2cd80> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.695 Df donotdisturbd[3036:6c4d] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x103619680> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.695 Df financed[3213:3dde] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x1023d2100> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.718 Df mobiletimerd[2975:7213] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x105a689c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.745 Df healthd[2970:7345] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x105688cc0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.777 Df routined[2968:350e] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x105209140> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.798 Df donotdisturbd[3036:6c4d] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x103619800> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.806 Df passd[2989:5e40] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x107fb70c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.810 Df locationd[2984:4492] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x107b3c840> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.811 Df locationd[2984:4492] [com.apple.locationd.Core:Core] {"msg":"AppMonitor - application (un)installation notification", "notification":Installation, "BundleId":com.omernasuhi.carmirror, "BundlePath":/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app, "ExecutablePath":/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/CarMirror}
+2026-10-25 12:26:01.821 Df financed[3213:3dde] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x1023d2700> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.822 Df sleepd[2987:732b] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x101aa8540> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.823 Df dasd[2986:734d] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x101b10540> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.827 Df liveactivitiesd[3022:732e] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x102295d40> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.840 Df healthappd[3739:7347] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x101ae1380> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.843 Df deviceaccessd[3752:5401] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x106158840> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.843 Df deviceaccessd[3752:5401] [com.apple.DeviceAccess:DADaemonServer] ### applicationsDidInstall [
+    <LSApplicationProxy: 0x106158840> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+]
+2026-10-25 12:26:01.844 Df activitysharingd[4303:5d9e] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x1039c5080> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.845 Df activityawardsd[3776:5413] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x101d2c6c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:01.865 Df callservicesd[3060:6719] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x1062b8e40> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.871 Df gamed[3759:732a] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x1036f03c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.881 Df clipserviced[3068:590a] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x10418c000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.906 Df webbookmarksd[3075:368a] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x105dd4000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.908 Df PosterBoard[3121:72d2] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x108411440> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.922 Df homed[3064:5da2] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x108e918c0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:01.955 Df appstored[3762:737b] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x102720000> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:02.012 Df pkd[3081:7332] [com.apple.PlugInKit:ls] [u 8B0931A4-1E16-4E97-B3C8-BFFF0ABE62FD] [com.omernasuhi.carmirror.BroadcastExtension(1.0)] plugin INSTALLED; bundleID: [com.omernasuhi.carmirror.BroadcastExtension], path: [/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/PlugIns/BroadcastExtension.appex], contained in [com.omernasuhi.carmirror]
+2026-10-25 12:26:02.014 Df nsurlsessiond[3026:72af] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x103e60300> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.033 Df webbookmarksd[3075:368a] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x105dd4240> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.041 Df runningboardd[2963:7393] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x101988300> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.044 Df callservicesd[3060:6719] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x1062b8fc0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.044 Df nanotimekitcompaniond[3751:4205] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x103e10240> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.053 Df gamed[3759:732a] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x1036f0840> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.081 Df profiled[3778:7344] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x104804240> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.081 Df clipserviced[3068:590a] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x10418c240> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.159 Df appstored[3762:737b] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x102720240> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.357 Df installcoordinationd[3810:7115] [com.apple.installcoordination:daemon] -[IXSDataPromise decommission]: Decommissioning <IXSPlaceholder(0x103168640) Name:PlugInKit Placeholder: CarMirror (com.omernasuhi.carmirror.BroadcastExtension) Creator:InstallCoordination Simple SPI UUID:2839663D-3CE4-4BA0-8C98-41D676DCC579 Location:[system-defined]>
+2026-10-25 12:26:02.360 Df installcoordinationd[3810:7115] [com.apple.installcoordination:daemon] -[IXSDataPromise decommission]: Decommissioning <IXSPlaceholder(0x1031683c0) Name:App Placeholder: CarMirror (com.omernasuhi.carmirror) Creator:InstallCoordination Simple SPI UUID:B1BFE16D-6C10-4BEC-ADDB-F4C35CE1D182 Location:[system-defined]>
+2026-10-25 12:26:02.383 Df CoreSimulatorBridge[2990:44bc] [com.apple.installcoordination:framework] -[IXAppInstallCoordinator _clientDelegate_didCompleteForApplicationRecord:]: <IXInitiatingAppInstallCoordinator<0x1014726c0> identity:[com.omernasuhi.carmirror/Invalid/[system-defined]] uuid:DC3C867B-6A8C-4034-890D-0235F56425C7 creator:InstallCoordination Simple SPI>: Got completion delegate for app record { bundleID: com.omernasuhi.carmirror, URL: file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ }
+2026-10-25 12:26:02.450 Df homed[3064:3f8e] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x108e91440> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:02.778 Df SpringBoard[2960:7391] [com.apple.launchservices:appinstallation] Received applicationsDidInstall:(
+    "<LSApplicationProxy: 0x114c93cc0> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>"
+)
+2026-10-25 12:26:02.790 Df PosterBoard[3121:72d2] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x108410c00> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:03.155 Df SpringBoard[2960:7391] [com.apple.appinstallation:TransactionLog] com.omernasuhi.carmirror/Unknown Persona:5:8:3:1:applicationsDidInstall <LSApplicationProxy: 0x114c90600> com.omernasuhi.carmirror file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/ <com.omernasuhi.carmirror <installed >:0>
+2026-10-25 12:26:03.156 Df SpringBoard[2960:7391] [com.apple.frontboard.ApplicationLibrary:default] Removed placeholder: <SBApplicationPlaceholderProxy: 0x1187fd100; com.omernasuhi.carmirror (CarMirror); LSInstallType: StoreDownload>
+2026-10-25 12:26:03.305 Df SpringBoard[2960:7391] [com.apple.frontboard.ApplicationLibrary:default] Added application: <SBApplicationInfo: 0x119ce8f00; com.omernasuhi.carmirror (CarMirror)>
+2026-10-25 12:26:03.305 Df SpringBoard[2960:32c9] [com.apple.frontboard.ApplicationLibrary:sb.placeholder] App placeholder proxies installed: (
+    "<SBApplicationPlaceholderProxy: 0x1187fd100; com.omernasuhi.carmirror (CarMirror); LSInstallType: StoreDownload>"
+)
+2026-10-25 12:26:03.338 Df SpringBoard[2960:32c9] [com.apple.SpringBoard:Widgets] handleRemovedDataSource:<SBApplicationPlaceholder: 0x114ede370; bundleIdentifier: com.omernasuhi.carmirror; displayName: CarMirror; progress: 100%; state: Finished> ofIcon:<SBApplicationIcon: 0x10517e700; nodeID: com.omernasuhi.carmirror; bundleID: com.omernasuhi.carmirror>
+2026-10-25 12:26:03.343 Df SpringBoard[2960:32c9] [com.apple.frontboard.ApplicationLibrary:sb.placeholder] Placeholders added: (null), modified: (null), removed: (
+    "<SBApplicationPlaceholder: 0x114ede370; bundleIdentifier: com.omernasuhi.carmirror; displayName: CarMirror; progress: 100%; state: Finished>"
+)
+2026-10-25 12:27:12.124 Df CoreSimulatorBridge[2990:3466] Requesting launch of com.omernasuhi.carmirror with options: {
+    arguments =     (
+        "-CarMirrorTab",
+        demo
+    );
+    environment =     {
+    };
+}
+2026-10-25 12:27:12.298 Df runningboardd[2963:7084] [com.apple.runningboard:job_oversize] 'app<com.omernasuhi.carmirror((null))>' Constructed job description:
+<dictionary: 0x104e90f60> { count = 20, transaction: 0, voucher = 0x0, contents =
+	"ProcessType" => <string: 0x104ed6280> { string cache = 0x0, length = 3, contents = "App" }
+	"EnableTransactions" => <bool: 0x1e6e64560>: false
+	"_ManagedBy" => <string: 0x104ed5fe0> { string cache = 0x0, length = 22, contents = "com.apple.runningboard" }
+	"RootedSimulatorPath" => <bool: 0x1e6e64540>: true
+	"CFBundleIdentifier" => <string: 0x104ed6370> { string cache = 0x0, length = 24, contents = "com.omernasuhi.carmirror" }
+	"_ResourceCoalition" => <string: 0x104ed4120> { string cache = 0x0, length = 37, contents = "app<com.omernasuhi.carmirror((null))>" }
+	"_POSIXSpawnTelemetryPageIn" => <bool: 0x1e6e64540>: true
+	"ThrottleInterval" => <int64: 0xa188bc293d294caf>: 2147483647
+	"MachServices" => <dictionary: 0x104e93d20> { count = 0, transaction: 0, voucher = 0x0, contents =
+	}
+	"EnablePressuredExit" => <bool: 0x1e6e64560>: false
+	"InitialTaskRole" => <int64: 0xa188bc2ac2d6b35f>: 1
+	"UserName" => <string: 0x104ed6400> { string cache = 0x0, length = 6, contents = "mobile" }
+	"EnvironmentVariables" => <dictionary: 0x104e93f60> { count = 3, transaction: 0, voucher = 0x0, contents =
+		"TMPDIR" => <string: 0x104ed5ce0> { string cache = 0x0, length = 164, contents = "/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/E9115D2C-7F36-4E0E-8FCC-47E88BA3971E/tmp" }
+		"HOME" => <string: 0x104ed7900> { string cache = 0x0, length = 160, contents = "/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/E9115D2C-7F36-4E0E-8FCC-47E88BA3971E" }
+		"CFFIXED_USER_HOME" => <string: 0x104ed6340> { string cache = 0x0, length = 160, contents = "/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/E9115D2C-7F36-4E0E-8FCC-47E88BA3971E" }
+	}
+	"_AdditionalProperties" => <dictionary: 0x104e914a0> { count = 1, transaction: 0, voucher = 0x0, contents =
+		"RunningBoard" => <dictionary: 0x104e93c00> { count = 3, transaction: 0, voucher = 0x0, contents =
+			"Managed" => <bool: 0x1e6e64540>: true
+			"RunningBoardLaunchedIdentity" => <dictionary: 0x104e932a0> { count = 2, transaction: 0, voucher = 0x0, contents =
+				"TYPE" => <int64: 0xa188bc2ac2d6b347>: 2
+				"EAI" => <string: 0x104ed65e0> { string cache = 0x0, length = 24, contents = "com.omernasuhi.carmirror" }
+			}
+			"RunningBoardLaunched" => <bool: 0x1e6e64540>: true
+		}
+	}
+	"ExitTimeOut" => <int64: 0xa188bc2ac2d6b35f>: 1
+	"Label" => <string: 0x104ed6700> { string cache = 0x0, length = 58, contents = "UIKitApplication:com.omernasuhi.carmirror[7906][rb-legacy]" }
+	"MaterializeDatalessFiles" => <bool: 0x1e6e64540>: true
+	"_LaunchType" => <int64: 0xa188bc2ac2d6b34f>: 3
+	"ProgramArguments" => <array: 0x104ed4420> { count = 3, capacity = 8, contents =
+		0: <string: 0x104ed6760> { string cache = 0x0, length = 186, contents = "/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/CarMirror" }
+		1: <string: 0x104ed58c0> { string cache = 0x0, length = 13, contents = "-CarMirrorTab" }
+		2: <string: 0x104ed7030> { string cache = 0x0, length = 4, contents = "demo" }
+	}
+	"Program" => <string: 0x104ed54d0> { string cache = 0x0, length = 186, contents = "/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Bundle/Application/8C47B10E-5248-4AC9-AAE3-F7487469A9E2/CarMirror.app/CarMirror" }
+}
+2026-10-25 12:27:15.141 Df launchd_sim[2828:7849] [user/501/UIKitApplication:com.omernasuhi.carmirror[7906][rb-legacy] [9295]:] Successfully spawned CarMirror[9295] because launch job demand
+2026-10-25 12:27:15.148 Df CoreSimulatorBridge[2990:357b] [com.apple.FrontBoard:Common] [FBSSystemService][0xa22b] Request successful: <BSProcessHandle: 0x101780cf0; CarMirror:9295; valid: YES>
+2026-10-25 12:27:15.359 Df CarMirror[9295:80a6] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-10-25 12:27:15.360 Df CarMirror[9295:80b9] [com.apple.xpc:connection] [0x100e2f790] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-10-25 12:27:15.361 Df CarMirror[9295:80bb] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-10-25 12:27:15.363 Df backboardd[2981:725a] [com.apple.iohid:default] Connection added: IOHIDEventSystemConnection uuid:684B32C5-392D-4F49-AFC9-F1F3BEF1451F pid:9295 process:CarMirror type:Passive entitlements:0x0 caller:BackBoardServices: ___getHIDEventSystemClient_block_invoke + 296 attributes:{
+    HighFrequency = 0;
+    bundleID = "com.omernasuhi.carmirror";
+    pid = 9295;
+} state:0x0 events:0 mask:0x0 dropped:0 dropStatus:0 droppedMask:0x0 lastDroppedTime:NONE
+2026-10-25 12:27:15.363 Df backboardd[2981:725a] [com.apple.BackBoard:HID] Adding client connection: <BKHIDClientConnection: 0x109240d00; IOHIDEventSystemConnectionRef: 0x101764200; vpid: 9295(v4B73); taskPort: 0x20D7B; bundleID: com.omernasuhi.carmirror> for client: IOHIDEventSystemConnection uuid:684B32C5-392D-4F49-AFC9-F1F3BEF1451F pid:9295 process:CarMirror type:Passive entitlements:0x0 caller:BackBoardServices: ___getHIDEventSystemClient_block_invoke + 296 attributes:{
+    HighFrequency = 0;
+    bundleID = "com.omernasuhi.carmirror";
+    pid = 9295;
+} state:0x0 events:0 mask:0x0 dropped:0 dropStatus:0 droppedMask:0x0 lastDroppedTime:NONE
+2026-10-25 12:27:15.363 Df CarMirror[9295:80bb] [com.apple.xpc:connection] [0x101550140] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-10-25 12:27:15.366 A  CarMirror[9295:80ba] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-10-25 12:27:15.371 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Deactivation reason added: 10; deactivation reasons: 0 -> 1024; animating application lifecycle event: 0
+2026-10-25 12:27:15.372 Df CarMirror[9295:80a6] [com.apple.runningboard:connection] Initializing connection
+2026-10-25 12:27:15.372 Df CarMirror[9295:80a6] [com.apple.runningboard:process] Removing all cached process handles
+2026-10-25 12:27:15.372 Df CarMirror[9295:80bb] [com.apple.runningboard:connection] Sending handshake request attempt #1 to server
+2026-10-25 12:27:15.372 Df CarMirror[9295:80a6] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.open
+2026-10-25 12:27:15.372 Df CarMirror[9295:80bb] [com.apple.runningboard:connection] Creating connection to com.apple.runningboard
+2026-10-25 12:27:15.372 Df CarMirror[9295:80bb] [com.apple.xpc:connection] [0x101550280] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-10-25 12:27:15.372 Df CarMirror[9295:80a6] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.workspace-service
+2026-10-25 12:27:15.372 Df CarMirror[9295:80a6] [com.apple.FrontBoard:Common] FBSWorkspace registering source: com.apple.frontboard.systemappservices
+2026-10-25 12:27:15.373 A  CarMirror[9295:80c0] (RunningBoardServices) didChangeInheritances
+2026-10-25 12:27:15.373 Df CarMirror[9295:80a6] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x1015148a0; target: com.apple.frontboard.systemappservices; service: com.apple.frontboard.workspace-service>
+2026-10-25 12:27:15.373 Df CarMirror[9295:80a6] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x1014f4c80 com.apple.frontboard.systemappservices> attempting immediate handshake from activate
+2026-10-25 12:27:15.373 Df CarMirror[9295:80a6] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x1014f4c80 com.apple.frontboard.systemappservices> sent handshake
+2026-10-25 12:27:15.374 Df CarMirror[9295:80bb] [com.apple.runningboard:connection] Handshake succeeded
+2026-10-25 12:27:15.374 Df CarMirror[9295:80a6] [com.apple.runningboard:general] Added observer for process assertions expiration warning: <_RBSExpirationWarningClient: 0x101514cc0>
+2026-10-25 12:27:15.374 Df CarMirror[9295:80bb] [com.apple.runningboard:connection] Identity resolved as app<com.omernasuhi.carmirror((null))>
+2026-10-25 12:27:15.402 Df CarMirror[9295:80b9] [com.apple.UIKit:BackgroundTask] Creating new assertion because there is no existing background assertion.
+2026-10-25 12:27:15.402 Df CarMirror[9295:80b9] [com.apple.UIKit:BackgroundTask] Creating new background assertion
+2026-10-25 12:27:15.402 Df CarMirror[9295:80b9] [com.apple.UIKit:BackgroundTask] Created new background assertion <BKSProcessAssertion: 0x1015980a0>
+2026-10-25 12:27:15.403 Df CarMirror[9295:80b9] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x1015980a0>
+2026-10-25 12:27:15.403 Df CarMirror[9295:80b9] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x101481100>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 518 (elapsed = 0).
+2026-10-25 12:27:15.403 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UIApplicationSceneKeyboardSettings on FBSSceneSettings
+2026-10-25 12:27:15.404 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneOcclusionSettings> on FBSSceneSettings
+2026-10-25 12:27:15.404 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneInterfaceProtectionSettings> on FBSSceneSettings
+2026-10-25 12:27:15.405 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferencesHostSettingsExtension on FBSSceneSettings
+2026-10-25 12:27:15.405 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneSafeAreaSettingsExtension on FBSSceneSettings
+2026-10-25 12:27:15.405 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferenceClientSettingsExtension on FBSSceneClientSettings
+2026-10-25 12:27:15.406 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UIHomeAffordanceHostSceneSettings> on FBSSceneSettings
+2026-10-25 12:27:15.406 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISystemShellSceneHostingEnvironmentSettings on FBSSceneSettings
+2026-10-25 12:27:15.406 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneRenderingEnvironmentSettings on FBSSceneSettings
+2026-10-25 12:27:15.406 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneRenderingEnvironmentClientSettings> on FBSSceneClientSettings
+2026-10-25 12:27:15.407 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneTransitioningHostSettings> on FBSSceneSettings
+2026-10-25 12:27:15.407 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneFocusSystemSettings> on FBSSceneSettings
+2026-10-25 12:27:15.407 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationSettingsExtension on FBSSceneSettings
+2026-10-25 12:27:15.407 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationClientSettingsExtension on FBSSceneClientSettings
+2026-10-25 12:27:15.407 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneWindowingControlClientSettings on FBSSceneClientSettings
+2026-10-25 12:27:15.408 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingContentSizePreferenceClientSettings> on FBSSceneClientSettings
+2026-10-25 12:27:15.408 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneHostingTraitCollectionPropagationSettings on FBSSceneSettings
+2026-10-25 12:27:15.408 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationSettings> on FBSSceneSettings
+2026-10-25 12:27:15.409 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationClientSettings> on FBSSceneClientSettings
+2026-10-25 12:27:15.409 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingEventDeferringSettings> on FBSSceneSettings
+2026-10-25 12:27:15.409 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneSettings
+2026-10-25 12:27:15.409 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneClientSettings
+2026-10-25 12:27:15.409 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingViewControllerPreferencePropagationClientSettings> on FBSSceneClientSettings
+2026-10-25 12:27:15.409 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneZoomTransitionSettings> on FBSSceneSettings
+2026-10-25 12:27:15.515 Df CarMirror[9295:80a6] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x101550500> for initial
+2026-10-25 12:27:15.515 Df CarMirror[9295:80a6] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x101550500> for CADisplay KVO
+2026-10-25 12:27:15.548 Df CarMirror[9295:80a6] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 1, category name = (null)
+2026-10-25 12:27:15.549 Df CarMirror[9295:80a6] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 0, category name = (null)
+2026-10-25 12:27:15.559 Df CarMirror[9295:80a6] [com.apple.dt.xctest:Default] Registering for test daemon availability notify post.
+2026-10-25 12:27:15.559 Df CarMirror[9295:80a6] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-10-25 12:27:15.560 Df CarMirror[9295:80a6] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-10-25 12:27:15.560 Df CarMirror[9295:80a6] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-10-25 12:27:15.560 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1024 -> 3072; animating application lifecycle event: 0
+2026-10-25 12:27:15.566 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3072 -> 2048; animating application lifecycle event: 0
+2026-10-25 12:27:15.567 Df CarMirror[9295:80a6] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-10-25 12:27:15.568 Df CarMirror[9295:80a6] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-10-25 12:27:15.569 Df CarMirror[9295:80a6] [com.apple.UIKit:UpdateScheduler] Selected display: name=LCD (PurpleMain), id=1
+2026-10-25 12:27:15.577 Df CarMirror[9295:80a6] [com.apple.xpc:connection] [0x101550a00] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-10-25 12:27:15.589 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneSettingsCore on FBSSceneSettings
+2026-10-25 12:27:15.591 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneClientSettingsCore on FBSSceneClientSettings
+2026-10-25 12:27:15.591 A  CarMirror[9295:80d4] (RunningBoardServices) didChangeInheritances
+2026-10-25 12:27:15.595 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneSettings setting counterpart class: UIApplicationSceneSettings
+2026-10-25 12:27:15.596 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneClientSettings setting counterpart class: UIApplicationSceneClientSettings
+2026-10-25 12:27:15.596 Df CarMirror[9295:80b9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneTransitionContextCore on FBSSceneTransitionContext
+2026-10-25 12:27:15.600 Df CarMirror[9295:80a6] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-10-25 12:27:15.600 Df CarMirror[9295:80a6] [com.apple.xpc:connection] [0x101550c80] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-10-25 12:27:15.604 Df CarMirror[9295:80a6] [com.apple.app_launch_measurement:ApplicationLaunch] alm_acquire_pageins_recording_assertion: acquired pageins recording assertion!
+2026-10-25 12:27:15.607 Df CarMirror[9295:80a6] [com.apple.UIKit:BackgroundTask] Will add backgroundTask with taskName: Persistent SceneSession Map Update, expirationHandler: <__NSGlobalBlock__: 0x1e78c84e8>
+2026-10-25 12:27:15.607 Df CarMirror[9295:80a6] [com.apple.UIKit:BackgroundTask] Reusing background assertion <BKSProcessAssertion: 0x1015980a0>
+2026-10-25 12:27:15.607 Df CarMirror[9295:80a6] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x1015980a0>
+2026-10-25 12:27:15.608 Df CarMirror[9295:80a6] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x101483080>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 519 (elapsed = 0).
+2026-10-25 12:27:15.609 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Deactivation reason added: 5; deactivation reasons: 2048 -> 2080; animating application lifecycle event: 1
+2026-10-25 12:27:15.609 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:15.611 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:15.612 Df CarMirror[9295:80a6] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x1015f8690>; with scene: <UIWindowScene: 0x100e34400>
+2026-10-25 12:27:15.613 Df CarMirror[9295:80a6] [com.apple.BacklightServices:scenes] 0x101758870 setDelegate:<0x1017587e0 _UIBacklightEnvironment> hasDelegate:YES for environment:sceneID:com.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:27:15.614 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:15.615 Df CarMirror[9295:80a6] [com.apple.UIKit:EventDeferring] [0x1015f8540] Initialized with scene: <UIWindowScene: 0x100e34400>; behavior: <_UIEventDeferringBehavior_iOS: 0x101517e20>; availableForProcess: 1, systemShellManagesKeyboardFocus: 1
+2026-10-25 12:27:15.617 Df CarMirror[9295:80b9] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-10-25 12:27:15.617 Df CarMirror[9295:80a6] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x101461800; process scope; status: none> was:none
+2026-10-25 12:27:15.618 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to LastOneWins
+2026-10-25 12:27:15.618 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:15.620 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:15.621 Df CarMirror[9295:80d4] [com.apple.BackBoard:EventDelivery] BKSHIDEventObserver - connection activation
+2026-10-25 12:27:15.623 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:15.679 Df CarMirror[9295:80a6] [com.apple.UIKit:Orientation] <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4) Scene updated orientation preferences: none -> ( Pu )
+2026-10-25 12:27:15.692 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-10-25 12:27:15.692 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x100e34400: Window became key in scene: UIWindow: 0x10159c000; contextId: 0x966F78A6: reason: UIWindowScene: 0x100e34400: Window requested to become key in scene: 0x10159c000
+2026-10-25 12:27:15.692 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x100e34400; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x10159c000; reason: UIWindowScene: 0x100e34400: Window requested to become key in scene: 0x10159c000
+2026-10-25 12:27:15.692 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x10159c000; contextId: 0x966F78A6; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:27:15.692 Df CarMirror[9295:80a6] [com.apple.UIKit:EventDeferring] [0x1015f8540] Begin local event deferring requested for token: 0x1014602a0; environments: 1; reason: UIWindowScene: 0x100e34400: Begin event deferring in keyboardFocus for window: 0x10159c000
+2026-10-25 12:27:15.697 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:15.698 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4  persistentID: 61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:27:15.698 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Ignoring already applied deactivation reason: 5; deactivation reasons: 2080
+2026-10-25 12:27:15.699 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-10-25 12:27:15.699 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-10-25 12:27:15.700 Df CarMirror[9295:80a6] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-10-25 12:27:15.704 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:15.704 Df CarMirror[9295:80b9] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-10-25 12:27:15.706 Df CarMirror[9295:80b9] [com.apple.xpc:session] [0x101598960] Session created.
+2026-10-25 12:27:15.706 Df CarMirror[9295:80b9] [com.apple.xpc:session] [0x101598960] Session created from connection [0x1017f8780]
+2026-10-25 12:27:15.706 Df CarMirror[9295:80b9] [com.apple.xpc:connection] [0x1017f8780] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-10-25 12:27:15.706 Df CarMirror[9295:80b9] [com.apple.xpc:session] [0x101598960] Session activated
+2026-10-25 12:27:15.715 A  CarMirror[9295:80a6] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-10-25 12:27:15.856 Df CarMirror[9295:80b9] [com.apple.xpc:connection] [0x1017f9040] activating connection: mach=true listener=false peer=false name=com.apple.fontservicesd
+2026-10-25 12:27:15.859 Df CarMirror[9295:80a6] [PrototypeTools:domain] Not observing PTDefaults on customer install.
+2026-10-25 12:27:15.861 Df CarMirror[9295:80a6] (ReplayKit)  [INFO] -[RPSystemBroadcastPickerView screenCaptureChanged]:69
+2026-10-25 12:27:15.868 Df CarMirror[9295:80b9] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x101461800; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4; status: ancestor> was:none
+2026-10-25 12:27:16.106 Df CarMirror[9295:80a6] [com.apple.FrontBoard:SceneClient] [(FBSceneManager):sceneID:com.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4] Sending action(s): BLSInvalidateFrameSpecifiersAction
+2026-10-25 12:27:16.126 Df CarMirror[9295:80d0] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 2
+2026-10-25 12:27:16.126 Df CarMirror[9295:80d0] [com.apple.UIKit:BackgroundTask] Ending task with identifier 2 and description: <_UIBackgroundTaskInfo: 0x101483080>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 519 (elapsed = 0), _expireHandler: <__NSGlobalBlock__: 0x1e78c84e8>
+2026-10-25 12:27:16.126 Df CarMirror[9295:80d0] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x1015980a0> (used by background task with identifier 2: <_UIBackgroundTaskInfo: 0x101483080>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 519 (elapsed = 0))
+2026-10-25 12:27:16.164 Df CarMirror[9295:80a6] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [E0391EC4-3916-4570-AB84-A4D74861C295] (reporting strategy default)>
+2026-10-25 12:27:16.164 Df CarMirror[9295:80a6] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [51C64CB8-1ADE-41D0-A11C-6BBEFE12B9A4] (reporting strategy default)>
+2026-10-25 12:27:16.164 Df CarMirror[9295:80a6] [com.apple.network:activity] Set activity <nw_activity 50:1 [E0391EC4-3916-4570-AB84-A4D74861C295] (reporting strategy default)> as the global parent
+2026-10-25 12:27:16.164 Df CarMirror[9295:80a6] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 1
+2026-10-25 12:27:16.164 Df CarMirror[9295:80a6] [com.apple.UIKit:BackgroundTask] Ending task with identifier 1 and description: <_UIBackgroundTaskInfo: 0x101481100>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 518 (elapsed = 1), _expireHandler: (null)
+2026-10-25 12:27:16.164 Df CarMirror[9295:80a6] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x1015980a0> (used by background task with identifier 1: <_UIBackgroundTaskInfo: 0x101481100>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 518 (elapsed = 1))
+2026-10-25 12:27:16.164 Df CarMirror[9295:80a6] [com.apple.UIKit:BackgroundTask] Will invalidate assertion: <BKSProcessAssertion: 0x1015980a0> for task identifier: 1
+2026-10-25 12:27:16.165 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] Scene target of keyboard event deferring environment did change: 1; scene: UIWindowScene: 0x100e34400; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:27:16.165 Df CarMirror[9295:80a6] [com.apple.UIKit:EventDeferring] [0x1015f8540] Scene target of event deferring environments did update: scene: 0x100e34400; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-10-25 12:27:16.165 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x100e34400; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:27:16.165 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] Stack[KeyWindow] 0x101758390: Migrate scenes from LastOneWins -> SystemShellManaged
+2026-10-25 12:27:16.165 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to SystemShellManaged
+2026-10-25 12:27:16.166 Df CarMirror[9295:80a6] [com.apple.Accessibility:AXCommon] Read Per-App on Init: Smart invert = (null)
+2026-10-25 12:27:16.166 Df CarMirror[9295:80a6] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-10-25 12:27:16.166 Df CarMirror[9295:80a6] [com.apple.KeyboardArbiter:Client] startConnection
+2026-10-25 12:27:16.166 Df CarMirror[9295:80a6] [com.apple.xpc:connection] [0x104654640] activating connection: mach=true listener=false peer=false name=com.apple.UIKit.KeyboardManagement.hosted
+2026-10-25 12:27:16.167 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4  persistentID: 61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:27:16.168 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:16.168 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:27:16.169 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4  persistentID: 61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:27:16.169 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-10-25 12:27:16.169 Df CarMirror[9295:80a6] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-10-25 12:27:16.170 Df CarMirror[9295:80a6] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-10-25 12:27:16.170 A  CarMirror[9295:80d5] (RunningBoardServices) didChangeInheritances
+2026-10-25 12:27:16.177 Df CarMirror[9295:80a6] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-10-25 12:27:16.184 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyboardSceneDelegate] forceReloadInputViews
+2026-10-25 12:27:16.184 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyboardSceneDelegate] Reloading input views for key-window scene responder: <(null): 0x0; > force:Y
+2026-10-25 12:27:16.187 A  CarMirror[9295:80b9] (RunningBoardServices) didChangeInheritances
+2026-10-25 12:27:16.189 Df CarMirror[9295:80a6] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-10-25 12:27:16.190 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4  persistentID: 61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:27:16.235 Df CarMirror[9295:80a6] [com.apple.network:activity] <nw_activity 50:1 [E0391EC4-3916-4570-AB84-A4D74861C295] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 3951ms
+2026-10-25 12:27:16.235 Df CarMirror[9295:80a6] [com.apple.network:activity] <nw_activity 50:2 [51C64CB8-1ADE-41D0-A11C-6BBEFE12B9A4] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 3951ms
+2026-10-25 12:27:16.235 Df CarMirror[9295:80a6] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [E0391EC4-3916-4570-AB84-A4D74861C295] (global parent) (reporting strategy default) complete (reason success)>
+2026-10-25 12:27:16.235 Df CarMirror[9295:80a6] [com.apple.network:activity] Unset the global parent activity
+2026-10-25 12:27:16.235 Df CarMirror[9295:80a6] [com.apple.app_launch_measurement:ApplicationLaunch] alm_release_pageins_recording_assertion: releasing pageins recording assertion
+2026-10-25 12:27:16.430 A  CarMirror[9295:80ca] (RunningBoardServices) didChangeInheritances
+2026-10-25 12:29:06.789 Df CarPlay[12777:a176] [com.apple.frontboard.ApplicationLibrary:default] Added application: <DBApplicationInfo: 0x103e11680; com.omernasuhi.carmirror (CarMirror)>
+2026-10-25 12:29:07.248 Df CarMirror[9295:80a6] [com.apple.KeyboardArbiter:Client] RX sceneBecameFocused:(null)
+2026-10-25 12:29:10.204 A  CarMirror[9295:80cf] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-10-25 12:29:17.670 Df CarMirror[9295:80a6] [com.apple.BackBoard:Display] [FBSDisplaySource 1-1] silently connecting raw configuration: <FBSDisplayConfiguration: 0x101511b00; Main; mode: "402x874@3x 60Hz p3 SDR">
+2026-10-25 12:29:17.672 Df CarMirror[9295:80a6] [com.apple.BackBoard:Display] [FBSDisplaySource 2-2] connecting <FBSDisplayConfiguration: 0x101511c00; Car[2-3]; mode: "400x240@2x 60Hz sRGB SDR">
+2026-10-25 12:29:32.758 A  CarMirror[9295:80cf] (RunningBoardServices) didChangeInheritances
+2026-10-25 12:29:32.759 Df CarMirror[9295:a307] [com.apple.BoardServices:XPCErrors] [C:3] Alloc 13099:FBWorkspace-com.apple.CarPlayTemplateUIHost
+2026-10-25 12:29:32.760 Df CarMirror[9295:a307] [com.apple.xpc:connection] [0x1015521c0] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-10-25 12:29:32.760 Df CarMirror[9295:a307] [com.apple.FrontBoard:Common] FBSWorkspace registering source: 13099:FBWorkspace-com.apple.CarPlayTemplateUIHost
+2026-10-25 12:29:32.760 Df CarMirror[9295:a307] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x10fa096a0; target: 13099:FBWorkspace-com.apple.CarPlayTemplateUIHost; service: com.apple.frontboard.workspace-service>
+2026-10-25 12:29:32.760 Df CarMirror[9295:a307] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x104724be0 13099:FBWorkspace-com.apple.CarPlayTemplateUIHost> attempting immediate handshake from activate
+2026-10-25 12:29:32.760 Df CarMirror[9295:a307] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x104724be0 13099:FBWorkspace-com.apple.CarPlayTemplateUIHost> sent handshake
+2026-10-25 12:29:32.765 Df CarMirror[9295:a307] (libxpc.dylib) Could not get attrs using bssendp for connection com.apple.xpc.anonymous.0x1015521c0, pid -1: 135: Process is not managed
+2026-10-25 12:29:32.767 E  CarMirror[9295:0] [com.apple.os_debug_log:] assertion failed: 25G83 23F77: libxpc.dylib + 56208 [FF603B08-461E-35C4-82E6-3AD8E5D12848]: 0x87
+2026-10-25 12:29:33.081 Df CarMirror[9295:80cf] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneCarPlaySessionSettings on FBSSceneSettings
+2026-10-25 12:29:33.083 Df CarMirror[9295:80cf] [com.apple.FrontBoard:SceneExtension] CPUIMutableTemplateApplicationSceneSettings setting counterpart class: CPUITemplateApplicationSceneSettings
+2026-10-25 12:29:33.087 Df CarMirror[9295:80a6] [com.apple.app_launch_measurement:ApplicationLaunch] alm_acquire_pageins_recording_assertion: acquired pageins recording assertion!
+2026-10-25 12:29:33.087 Df CarMirror[9295:80a6] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x1046548c0> for initial
+2026-10-25 12:29:33.087 Df CarMirror[9295:80a6] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x1046548c0> for CADisplay KVO
+2026-10-25 12:29:33.099 E  CarMirror[9295:80cf] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:33.114 Df CarMirror[9295:80cf] [com.apple.CarPlayDisplayUtils:DisplayScaling] Physical size is zero, applying default size Result((0.0, 0.0)) = PointSize((0.0, 0.0))/CROptimalPointsPerMM(0.376648)
+2026-10-25 12:29:33.159 Df CarMirror[9295:80cf] [com.apple.carkit:General] connected session <CARSession: 0x101761e00> configuration: [<CARSessionConfiguration: 0x10f821880> session: (null), name: (null), modelName: (null), manufacturer: (null), serialNumber: (null), transport: USB, ETC supported: NO, right hand drive: NO, limitableUserInterfaces: (), manufacturerIconLabel: OEM, manufacturerIconVisible: YES, night mode supported: NO, supports AC_BACK: YES, screens: (
+    "<CARScreenInfo: 0x101785d40>, identifier: PurpleTVOut, availableInteractionModels: Touch, Knob, primaryInteractionModel: Knob, isLimited: NO, isNightMode: NO, supportsHiFi: NO, maxFPS: 0, physicalSize: {w: 0.000000, h: 0.000000}, pixelSize: {w: 0.000000, h: 0.000000}, wantsCornerMasks: NO, initialFocusOwner: YES, viewAreas: (\134n    \134"<CARScreenViewArea: 0x1047250e0> {visibleFrame: {x: 0.000000, y: 0.000000, w: 800.000000, h: 480.000000} safeFrame: {x: 0.000000, y: 0.000000, w: 800.000000, h: 480.000000} displaysTransitionControl: 0 statusBarEdge: 0 supportsFocusTransfer: no}\134"\134n), displayScaleInformation: DisplayScaleInfo: p
+2026-10-25 12:29:33.160 Df CarMirror[9295:80a6] [com.apple.carkit:General] disconnected session <CARSession: 0x101761e00>
+2026-10-25 12:29:33.160 E  CarMirror[9295:80a6] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:33.160 Df CarMirror[9295:80a6] [com.apple.CarPlayDisplayUtils:DisplayScaling] Physical size is zero, applying default size Result((0.0, 0.0)) = PointSize((0.0, 0.0))/CROptimalPointsPerMM(0.376648)
+2026-10-25 12:29:33.160 Df CarMirror[9295:80a6] [com.apple.carkit:General] connected session <CARSession: 0x101761080> configuration: [<CARSessionConfiguration: 0x10f822a00> session: (null), name: (null), modelName: (null), manufacturer: (null), serialNumber: (null), transport: USB, ETC supported: NO, right hand drive: NO, limitableUserInterfaces: (), manufacturerIconLabel: OEM, manufacturerIconVisible: YES, night mode supported: NO, supports AC_BACK: YES, screens: (
+    "<CARScreenInfo: 0x101785c80>, identifier: PurpleTVOut, availableInteractionModels: Touch, Knob, primaryInteractionModel: Knob, isLimited: NO, isNightMode: NO, supportsHiFi: NO, maxFPS: 0, physicalSize: {w: 0.000000, h: 0.000000}, pixelSize: {w: 0.000000, h: 0.000000}, wantsCornerMasks: NO, initialFocusOwner: YES, viewAreas: (\134n    \134"<CARScreenViewArea: 0x104724d20> {visibleFrame: {x: 0.000000, y: 0.000000, w: 800.000000, h: 480.000000} safeFrame: {x: 0.000000, y: 0.000000, w: 800.000000, h: 480.000000} displaysTransitionControl: 0 statusBarEdge: 0 supportsFocusTransfer: no}\134"\134n), displayScaleInformation: DisplayScaleInfo: p
+2026-10-25 12:29:33.167 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Template scene content style updated to dark
+2026-10-25 12:29:33.168 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Template app scene updated to unrestricted frame rate
+2026-10-25 12:29:33.176 Df CarMirror[9295:80a6] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x10f9f3720>; with scene: <CPTemplateApplicationScene: 0x104601980>
+2026-10-25 12:29:33.177 Df CarMirror[9295:80a6] [com.apple.BacklightServices:scenes] 0x1045eee50 setDelegate:<0x1045eee20 _UIBacklightEnvironment> hasDelegate:YES for environment:Car[2-3]:com.omernasuhi.carmirror
+2026-10-25 12:29:33.177 Df CarMirror[9295:80a6] [com.apple.UIKit:EventDeferring] [0x10f9f3790] Initialized with scene: <CPTemplateApplicationScene: 0x104601980>; behavior: <_UIEventDeferringBehavior_CarPlay: 0x10fa0ada0>; availableForProcess: 1, systemShellManagesKeyboardFocus: 0
+2026-10-25 12:29:33.178 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Application declares maps entitlement.
+2026-10-25 12:29:33.190 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Application declares maps entitlement.
+2026-10-25 12:29:33.190 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Connecting to listener endpoint for scene identifier: Car[2-3]:com.omernasuhi.carmirror
+2026-10-25 12:29:33.194 Df CarMirror[9295:80a6] [com.apple.xpc:connection] [0x104655a40] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-10-25 12:29:33.195 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Scene will connect observer fired
+2026-10-25 12:29:33.195 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Attempting to deliver interface controller...
+2026-10-25 12:29:33.195 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] App ready to receive interface controller
+2026-10-25 12:29:33.195 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] App supports CPTemplateApplicationScene method with window
+2026-10-25 12:29:33.217 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< AVReadWriteDispatchQueue >>>> usesSerialQueue_block_invoke: Using read/write queue
+2026-10-25 12:29:33.217 Df CarMirror[9295:80a6] [com.apple.runningboard:connection] Creating side-channel connection to com.apple.runningboard
+2026-10-25 12:29:33.217 Df CarMirror[9295:80a6] [com.apple.xpc:connection] [0x104657700] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-10-25 12:29:33.218 Df CarMirror[9295:80a6] [com.apple.runningboard:process] Hit the server for a process handle c99026a0000244f that resolved to: [app<com.omernasuhi.carmirror((null))>:9295]
+2026-10-25 12:29:33.222 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueCreateLocalWithOptions: 0x10450d800 (pid 0)
+2026-10-25 12:29:33.226 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigPlayerResourceArbiter >>>> FigPlayerResourceArbiterCreate: 0x10fa7f720: [DeviceBudget: 18446744073709551615] [Budget: 18446744073709551615] [StepCost: 0] {
+ Groups: 
+}
+2026-10-25 12:29:33.227 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigPlayerResourceArbiter >>>> FigPlayerResourceArbiterRegisterConsumer: 0x10fa7f720: Registered new consumer: 1, group (null) consumer name com.apple.coremedia.videoqueue.resourcearbiter.consumername..9295-1 (VR/VYF)
+2026-10-25 12:29:33.227 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueCreateLocalWithOptions: created (0x10450d800) VR/VYF (pid 9295)
+2026-10-25 12:29:33.228 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigVideoQueue >>>> vq_SetProperty: (0x10450d800) controlTimebase 0x10fa75380 (pid 9295)
+2026-10-25 12:29:33.229 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigVideoQueue >>>> vq_updateForCurrentTimebaseRate: (0x10450d800) Effective Timebase Rate of videoqueue changed to: 1.000 (pid 9295)
+2026-10-25 12:29:33.231 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< AVSampleBufferVideoRenderer >>>> -[AVSampleBufferVideoRenderer init]: <VR/VYF|0x104602700> [0x10450d800]
+2026-10-25 12:29:33.234 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigVideoQueue >>>> vq_setupVideoLayer: [0x10450d800] videoLayer:[0x10fae8780:0x10f9f2a70] associated with iq: 0x10451e100
+2026-10-25 12:29:33.235 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigVideoQueue >>>> vq_updateClientVideoLayer: (0x10450d800) VR/VYF clientVideoLayer <AVSampleBufferDisplayLayerContentLayer: 0x1046a6d60> associated with videoLayer [0x10fae8780:0x10f9f2a70] (pid 9295)
+2026-10-25 12:29:33.237 A  CarMirror[9295:80a6] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2026-10-25 12:29:33.237 Df CarMirror[9295:80a6] [com.apple.containermanager:xpc] Requesting app group container lookup; identifier = group.com.omernasuhi.carmirror, euid = 501, uid = 501, platform = 7
+2026-10-25 12:29:33.298 Df CarMirror[9295:80a6] [com.apple.containermanager:sandbox] Consumed sandbox extension; path = [/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Shared/AppGroup/F9337842-3A3B-4B76-A150-74D9849E50BB], handle = 0
+2026-10-25 12:29:33.298 Df CarMirror[9295:80a6] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2026-10-25 12:29:33.313 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] <CPMapTemplate: 0x10178b560> <identifier: C68B9F85-DAD7-44BC-B67E-C2526F13BC19, userInfo: (null), tabTitle: (null), tabImage: (null), showsTabBadge: 0>: Set automatically hides navigation bar: 1
+2026-10-25 12:29:33.313 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] <CPMapTemplate: 0x10178b560> <identifier: C68B9F85-DAD7-44BC-B67E-C2526F13BC19, userInfo: (null), tabTitle: (null), tabImage: (null), showsTabBadge: 0>: Set hides buttons with navigation bar: 1
+2026-10-25 12:29:33.313 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] <CPMapTemplate: 0x10178b560> <identifier: C68B9F85-DAD7-44BC-B67E-C2526F13BC19, userInfo: (null), tabTitle: (null), tabImage: (null), showsTabBadge: 0>: New trailing bar buttons: (
+    "<CPBarButton: 0x10fad8550> {UUID: 7DB71DAA-EC60-46A6-8660-EE94CB61ED4F, enabled: YES}"
+)
+2026-10-25 12:29:33.313 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Setting root template <CPMapTemplate: 0x10178b560> <identifier: C68B9F85-DAD7-44BC-B67E-C2526F13BC19, userInfo: (null), tabTitle: (null), tabImage: (null), showsTabBadge: 0> animated 0
+2026-10-25 12:29:33.313 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Application declares maps entitlement.
+2026-10-25 12:29:33.313 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Creating template: <CPMapTemplate: 0x10178b560> <identifier: C68B9F85-DAD7-44BC-B67E-C2526F13BC19, userInfo: (null), tabTitle: (null), tabImage: (null), showsTabBadge: 0>; presentation style: 1; animated: NO
+2026-10-25 12:29:33.314 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Template did push, stack count: 1
+2026-10-25 12:29:33.316 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4  persistentID: 61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:29:33.317 Df CarMirror[9295:80a6] [com.apple.FrontBoard:SceneExtension] Ingesting properties from CPUITemplateApplicationSceneSettings...
+2026-10-25 12:29:33.317 Df CarMirror[9295:80a6] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <CPUITemplateApplicationSceneSettings[derived]> on FBSSceneSettings
+2026-10-25 12:29:33.317 Df CarMirror[9295:80a6] [com.apple.FrontBoard:SceneExtension] Ingesting properties from UIApplicationSceneSettings...
+2026-10-25 12:29:33.318 Df CarMirror[9295:80a6] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIApplicationSceneSettings[derived]> on FBSSceneSettings
+2026-10-25 12:29:33.319 Df CarMirror[9295:80a6] [com.apple.carplayframework:General] Fetched interface controller image sizes.
+2026-10-25 12:29:33.319 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigDeferredTransaction >>>> fdt_commitTransactionOnMainQueue: Warning: deferred transaction <FigDeferredTransaction 0x10fabb520, wants CATransaction, is committed
+Changes:
+<FigDeferredTransactionChange 0x10f9c1860
+unknown caller requesting to
+
+0x192f9baf4>
+
+Post commit changes:
+> was delayed by 0.083s before it began running
+2026-10-25 12:29:33.324 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.omernasuhi.carmirror-61D61C03-24F6-4C7A-89A3-C51816B4FCF4  persistentID: 61D61C03-24F6-4C7A-89A3-C51816B4FCF4
+2026-10-25 12:29:33.376 Df CarMirror[9295:80a6] (CoreVideo) Pixel format registry initialized. Constant classes enabled.
+2026-10-25 12:29:33.376 Df CarMirror[9295:80a6] [com.apple.xpc:connection] [0x1045f2940] activating connection: mach=true listener=false peer=false name=com.apple.IOSurface.Remote
+2026-10-25 12:29:33.544 E  CarMirror[9295:a307] [com.apple.coremedia:] (Fig) signalled err=0 at <>:85
+2026-10-25 12:29:33.673 Df launchd_sim[2828:96b2] [user/501:] failed lookup: name = com.apple.metal.simulator.CarMirror, flags = 0x1, requestor = CarMirror[9295], error = 3: No such process
+2026-10-25 12:29:33.673 Df CarMirror[9295:a307] [com.apple.xpc:connection] [0x1045f08c0] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-10-25 12:29:33.675 Df CarMirror[9295:a307] [com.apple.xpc:connection] [0x1045f0b40] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-10-25 12:29:33.675 Df CarMirror[9295:a307] [com.apple.xpc:connection] [0x1045f0dc0] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-10-25 12:29:34.553 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< AVSampleBufferVideoRenderer >>>> -[AVSampleBufferVideoRenderer _setStatus:error:]_block_invoke: <VR/VYF|0x104602700> Change status from Unknown to Rendering with success
+2026-10-25 12:29:34.556 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< FigVideoQueue >>>> vq_createVideoRenderPipeline: 0x10450d800 SampleBuffer 0x10fa75980 isStereo: NO with Tags: (
+    "CMMutableTagCollection{\134n{category:'eyes' value:0x0 <flags>}\134n{category:'mdia' value:'vide' <OSType>}\134n{category:'pack' value:'none' <OSType>}\134n{category:'proj' value:'rect' <OSType>}\134n}"
+)
+2026-10-25 12:29:34.567 Df CarMirror[9295:80cf] [com.apple.coremedia:playback-memory] <<< FigOSTransactionsUtilities >>> FigOSTransactionCreateWithProcessName: [Fig Transaction] Added transaction weak reference holder <0x10faed5c0>: 1792931374 FigImageQueueForCoreAnimation  0:(null)
+2026-10-25 12:29:34.573 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< IQ-CA >>>> FigImageQueueCreateForCoreAnimationWithOptions: Created IQ (0x10fb22a00[0x10451e100]) VR/VYF:IQ/JRD on behalf of client pid 9295 (CarMirror)
+2026-10-25 12:29:34.575 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_setImageQueueTiming: (0x10fb22a00) Forward; Set IQTiming beginTime:0.000000, (0.000000 - (0.000000 / 1.000000) )
+2026-10-25 12:29:34.582 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_setImageQueueTiming: (0x10fb22a00) Forward; Set IQTiming beginTime:0.000000, (656.752957 - (656.752957 / 1.000000) )
+2026-10-25 12:29:34.585 Df CarMirror[9295:a6de] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_setImageQueueTiming: (0x10fb22a00) Forward; Set IQTiming beginTime:0.000000, (658.115303 - (658.115302 / 1.000000) )
+2026-10-25 12:29:34.595 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< VMC >>>> VMC2CreateWithCallbacks: Created [0x104513700:VR/VYF:0x0] on behalf of client pid 9295
+2026-10-25 12:29:34.599 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< VRP >>>> FigVideoRenderPipelineCreateWithFigImageQueueArray: Created video render pipeline (0x10f963a00) VR/VYF associated with VMC VMC2 0x104513700 VR/VYF retainCount: 1 allocator: 0x1e6e940c0 and image queues [[FigImageQueue 0x10fb22a00]]
+2026-10-25 12:29:34.599 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< FigVideoQueue >>>> vq_updateForCurrentTimebaseRate: (0x10450d800) Effective Timebase Rate of videoqueue changed to: 1.000 (pid 9295)
+2026-10-25 12:29:34.599 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< LayerSync >>>> FigLayerSynchronizerSetCompensateForDisplayLatency: (0x10f8f6580) called. Will compensate for display latency.
+2026-10-25 12:29:34.600 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< LayerSync >>>> FigLayerSynchronizerSetLayerArrays: (0x10f8f6580) set layersSubjectToImageQueueMediaTiming ((
+    "<CALayer: 0x10fae8780>"
+)); layersNotSubjectToImageQueueMediaTiming ((null))
+2026-10-25 12:29:34.600 Df CarMirror[9295:a307] [com.apple.coremedia:] <<<< LayerSync >>>> figlayersync_getLayerDisplayLatency: layer 0x10fae8780, context 0x1015ead60, displayID 0: latency 0.000
+2026-10-25 12:29:34.600 Df CarMirror[9295:a307] [com.apple.coremedia:] <<<< LayerSync >>>> figlayersync_setLayerTiming: (layer 0x10fae8780) only set layer timeOffset: 0.000000 at hostTime 658.134298 and layer speed 1.000000
+2026-10-25 12:29:34.601 Df CarMirror[9295:a715] [com.apple.coremedia:playback-memory] <<< FigOSTransactionsUtilities >>> FigOSTransactionCreateWithProcessName: [Fig Transaction] Added transaction weak reference holder <0x10faece20>: 1792931374 VTDecompressionSession NULL 0:(null)
+2026-10-25 12:29:34.650 Df CarMirror[9295:80a6] [com.apple.coremedia:] <<<< FigDeferredTransaction >>>> fdt_commitTransactionOnMainQueue: Warning: deferred transaction <FigDeferredTransaction 0x10fabb020, wants CATransaction, is committed
+Changes:
+<FigDeferredTransactionChange 0x10f9179c0
+unknown caller requesting to
+
+0x192df1a58>
+
+Post commit changes:
+> was delayed by 0.050s before it began running
+2026-10-25 12:29:34.657 E  CarMirror[9295:a715] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-25 12:29:34.657 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2BuildDecompressionSession: [0x104513700:VR/VYF] decompression session 0x10f91b540 (error 0)
+2026-10-25 12:29:34.669 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_enqueueImageWithRotation: (0x10fb22a00) VR/VYF:IQ/JRD Did enqueue first frame.
+2026-10-25 12:29:34.669 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< AVSampleBufferVideoRenderer >>>> -[AVSampleBufferVideoRenderer setReadyForDisplayWithoutKVO:]: <VR/VYF|0x104602700> setting readyForDisplay to YES
+2026-10-25 12:29:34.670 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< AVSampleBufferVideoRenderer >>>> _figVideoQueueFirstVideoFrameEnqueued: <VR/VYF|0x104602700> [0x10450d800] Received first video frame enqueued notification
+2026-10-25 12:29:34.670 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 658.204 s rate: 1.00. recent stats: cfq empty: 2 times; frames decoded: 1, dropped: 0; decode: mean 0.065 s, max: 0.065 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:29:34.671 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 64.636 ms},
+]
+2026-10-25 12:29:39.223 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 40 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 662.757, rate 1.00. (pid 9295)
+2026-10-25 12:29:40.593 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 664.127 s, host: 664.127 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:29:40.593 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 52, displayed: 0, dropped: 0, flushed: 0, evicted: 51, >16ms late: 0, skipped: 0
+2026-10-25 12:29:40.593 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 663.776 s (media 663.776 s)},
+{PTS: nan s, enqueued at: host 663.904 s (media 663.904 s)},
+{PTS: nan s, enqueued at: host 663.997 s (media 663.997 s)},
+{PTS: nan s, enqueued at: host 664.110 s (media 664.110 s)},
+]
+2026-10-25 12:29:40.593 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:29:40.672 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 664.206 s rate: 1.00. recent stats: cfq empty: 154 times; frames decoded: 52, dropped: 0; decode: mean 0.003 s, max: 0.010 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:29:40.672 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 1.741 ms},
+{PTS: nan s, decode: 3.223 ms},
+{PTS: nan s, decode: 2.254 ms},
+{PTS: nan s, decode: 2.554 ms},
+]
+2026-10-25 12:29:45.224 Df CarMirror[9295:a307] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 54 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 668.758, rate 1.00. (pid 9295)
+2026-10-25 12:29:46.634 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 670.168 s, host: 670.168 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:29:46.634 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 55, displayed: 0, dropped: 0, flushed: 0, evicted: 55, >16ms late: 0, skipped: 0
+2026-10-25 12:29:46.634 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 669.767 s (media 669.767 s)},
+{PTS: nan s, enqueued at: host 669.858 s (media 669.858 s)},
+{PTS: nan s, enqueued at: host 669.959 s (media 669.959 s)},
+{PTS: nan s, enqueued at: host 670.083 s (media 670.083 s)},
+]
+2026-10-25 12:29:46.634 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:29:46.705 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 670.239 s rate: 1.00. recent stats: cfq empty: 165 times; frames decoded: 55, dropped: 0; decode: mean 0.003 s, max: 0.036 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:29:46.705 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 3.317 ms},
+{PTS: nan s, decode: 2.248 ms},
+{PTS: nan s, decode: 2.681 ms},
+{PTS: nan s, decode: 2.818 ms},
+]
+2026-10-25 12:29:51.224 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 56 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 674.758, rate 1.00. (pid 9295)
+2026-10-25 12:29:52.652 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 676.186 s, host: 676.186 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:29:52.652 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 54, displayed: 0, dropped: 0, flushed: 0, evicted: 54, >16ms late: 0, skipped: 0
+2026-10-25 12:29:52.652 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 675.734 s (media 675.734 s)},
+{PTS: nan s, enqueued at: host 675.865 s (media 675.865 s)},
+{PTS: nan s, enqueued at: host 675.988 s (media 675.988 s)},
+{PTS: nan s, enqueued at: host 676.104 s (media 676.104 s)},
+]
+2026-10-25 12:29:52.652 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:29:52.816 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 676.350 s rate: 1.00. recent stats: cfq empty: 165 times; frames decoded: 55, dropped: 0; decode: mean 0.003 s, max: 0.023 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:29:52.816 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 3.870 ms},
+{PTS: nan s, decode: 2.899 ms},
+{PTS: nan s, decode: 3.342 ms},
+{PTS: nan s, decode: 1.491 ms},
+]
+2026-10-25 12:29:57.230 Df CarMirror[9295:a6da] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 46 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 680.764, rate 1.00. (pid 9295)
+2026-10-25 12:29:58.669 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 682.203 s, host: 682.203 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:29:58.669 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 47, displayed: 0, dropped: 0, flushed: 0, evicted: 47, >16ms late: 0, skipped: 0
+2026-10-25 12:29:58.669 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 681.831 s (media 681.831 s)},
+{PTS: nan s, enqueued at: host 681.934 s (media 681.934 s)},
+{PTS: nan s, enqueued at: host 682.049 s (media 682.049 s)},
+{PTS: nan s, enqueued at: host 682.158 s (media 682.158 s)},
+]
+2026-10-25 12:29:58.669 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:29:58.732 Df CarPlay[12777:a258] [com.apple.PosterLegibilityKit:Caching] -[PLKCachedImageGenerator(SpringBoardHome Label Content Generator0x103fac000) removeImagesForCacheKeys:CarMirror@@en_US_3468560640918185422_0__sz75.0x20.0B23CV11@@]
+2026-10-25 12:29:58.831 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 682.365 s rate: 1.00. recent stats: cfq empty: 141 times; frames decoded: 47, dropped: 0; decode: mean 0.004 s, max: 0.039 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:29:58.831 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 2.375 ms},
+{PTS: nan s, decode: 2.085 ms},
+{PTS: nan s, decode: 2.379 ms},
+{PTS: nan s, decode: 2.658 ms},
+]
+2026-10-25 12:30:03.224 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 47 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 686.759, rate 1.00. (pid 9295)
+2026-10-25 12:30:04.672 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 688.206 s, host: 688.206 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:30:04.673 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 50, displayed: 0, dropped: 0, flushed: 0, evicted: 50, >16ms late: 0, skipped: 0
+2026-10-25 12:30:04.673 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 687.878 s (media 687.878 s)},
+{PTS: nan s, enqueued at: host 687.963 s (media 687.963 s)},
+{PTS: nan s, enqueued at: host 688.041 s (media 688.041 s)},
+{PTS: nan s, enqueued at: host 688.194 s (media 688.194 s)},
+]
+2026-10-25 12:30:04.673 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:30:04.840 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 688.374 s rate: 1.00. recent stats: cfq empty: 150 times; frames decoded: 50, dropped: 0; decode: mean 0.003 s, max: 0.005 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:04.840 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 2.097 ms},
+{PTS: nan s, decode: 1.930 ms},
+{PTS: nan s, decode: 1.843 ms},
+{PTS: nan s, decode: 1.806 ms},
+]
+2026-10-25 12:30:09.234 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 45 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 692.768, rate 1.00. (pid 9295)
+2026-10-25 12:30:10.684 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 694.218 s, host: 694.218 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:30:10.684 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 42, displayed: 0, dropped: 0, flushed: 0, evicted: 42, >16ms late: 0, skipped: 0
+2026-10-25 12:30:10.684 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 693.737 s (media 693.737 s)},
+{PTS: nan s, enqueued at: host 693.872 s (media 693.872 s)},
+{PTS: nan s, enqueued at: host 693.998 s (media 693.998 s)},
+{PTS: nan s, enqueued at: host 694.152 s (media 694.152 s)},
+]
+2026-10-25 12:30:10.684 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:30:10.902 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 694.437 s rate: 1.00. recent stats: cfq empty: 126 times; frames decoded: 42, dropped: 0; decode: mean 0.008 s, max: 0.169 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:10.902 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 3.027 ms},
+{PTS: nan s, decode: 2.779 ms},
+{PTS: nan s, decode: 2.094 ms},
+{PTS: nan s, decode: 3.195 ms},
+]
+2026-10-25 12:30:15.230 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 50 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 698.764, rate 1.00. (pid 9295)
+2026-10-25 12:30:16.686 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 700.221 s, host: 700.221 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:30:16.687 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 51, displayed: 0, dropped: 0, flushed: 0, evicted: 51, >16ms late: 0, skipped: 0
+2026-10-25 12:30:16.687 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 699.858 s (media 699.858 s)},
+{PTS: nan s, enqueued at: host 699.994 s (media 699.994 s)},
+{PTS: nan s, enqueued at: host 700.089 s (media 700.089 s)},
+{PTS: nan s, enqueued at: host 700.209 s (media 700.209 s)},
+]
+2026-10-25 12:30:16.687 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:30:16.937 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 700.471 s rate: 1.00. recent stats: cfq empty: 153 times; frames decoded: 51, dropped: 0; decode: mean 0.004 s, max: 0.048 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:16.937 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 1.993 ms},
+{PTS: nan s, decode: 2.155 ms},
+{PTS: nan s, decode: 3.547 ms},
+{PTS: nan s, decode: 2.415 ms},
+]
+2026-10-25 12:30:21.223 Df CarMirror[9295:a2f9] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 53 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 704.758, rate 1.00. (pid 9295)
+2026-10-25 12:30:22.693 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 706.227 s, host: 706.227 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:30:22.694 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 53, displayed: 0, dropped: 0, flushed: 0, evicted: 53, >16ms late: 0, skipped: 0
+2026-10-25 12:30:22.694 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 705.777 s (media 705.777 s)},
+{PTS: nan s, enqueued at: host 705.924 s (media 705.924 s)},
+{PTS: nan s, enqueued at: host 706.051 s (media 706.051 s)},
+{PTS: nan s, enqueued at: host 706.168 s (media 706.168 s)},
+]
+2026-10-25 12:30:22.694 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:30:23.026 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 706.560 s rate: 1.00. recent stats: cfq empty: 165 times; frames decoded: 55, dropped: 0; decode: mean 0.003 s, max: 0.016 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:23.026 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 1.586 ms},
+{PTS: nan s, decode: 2.065 ms},
+{PTS: nan s, decode: 1.543 ms},
+{PTS: nan s, decode: 2.154 ms},
+]
+2026-10-25 12:30:27.225 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 52 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 710.759, rate 1.00. (pid 9295)
+2026-10-25 12:30:28.700 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 712.234 s, host: 712.234 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:30:28.700 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 50, displayed: 0, dropped: 0, flushed: 0, evicted: 50, >16ms late: 0, skipped: 0
+2026-10-25 12:30:28.700 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 711.553 s (media 711.553 s)},
+{PTS: nan s, enqueued at: host 711.690 s (media 711.690 s)},
+{PTS: nan s, enqueued at: host 712.002 s (media 712.002 s)},
+{PTS: nan s, enqueued at: host 712.133 s (media 712.133 s)},
+]
+2026-10-25 12:30:28.700 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:30:29.131 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 712.666 s rate: 1.00. recent stats: cfq empty: 150 times; frames decoded: 50, dropped: 0; decode: mean 0.003 s, max: 0.005 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:29.131 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 2.643 ms},
+{PTS: nan s, decode: 3.865 ms},
+{PTS: nan s, decode: 1.839 ms},
+{PTS: nan s, decode: 2.622 ms},
+]
+2026-10-25 12:30:33.224 Df CarMirror[9295:a307] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 46 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 716.758, rate 1.00. (pid 9295)
+2026-10-25 12:30:34.702 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 718.236 s, host: 718.236 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:30:34.703 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 47, displayed: 0, dropped: 0, flushed: 0, evicted: 47, >16ms late: 0, skipped: 0
+2026-10-25 12:30:34.703 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 717.750 s (media 717.750 s)},
+{PTS: nan s, enqueued at: host 717.929 s (media 717.929 s)},
+{PTS: nan s, enqueued at: host 718.035 s (media 718.035 s)},
+{PTS: nan s, enqueued at: host 718.183 s (media 718.183 s)},
+]
+2026-10-25 12:30:34.703 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:30:35.221 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 718.755 s rate: 1.00. recent stats: cfq empty: 141 times; frames decoded: 47, dropped: 0; decode: mean 0.004 s, max: 0.021 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:35.221 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 8.005 ms},
+{PTS: nan s, decode: 2.711 ms},
+{PTS: nan s, decode: 2.865 ms},
+{PTS: nan s, decode: 3.601 ms},
+]
+2026-10-25 12:30:39.229 Df CarMirror[9295:a307] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 52 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 722.764, rate 1.00. (pid 9295)
+2026-10-25 12:30:40.707 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 724.241 s, host: 724.241 s, diff: 0.000 s; iq unconsumed: 1, min: -10000000000.000, max: -10000000000.000; preventsDisplaySleep: YES
+2026-10-25 12:30:40.708 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 53, displayed: 0, dropped: 0, flushed: 0, evicted: 53, >16ms late: 0, skipped: 0
+2026-10-25 12:30:40.708 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 723.816 s (media 723.816 s)},
+{PTS: nan s, enqueued at: host 723.974 s (media 723.974 s)},
+{PTS: nan s, enqueued at: host 724.092 s (media 724.092 s)},
+{PTS: nan s, enqueued at: host 724.227 s (media 724.227 s)},
+]
+2026-10-25 12:30:40.708 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 0.000000 x 0.000000 [
+]
+2026-10-25 12:30:41.260 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 724.794 s rate: 1.00. recent stats: cfq empty: 162 times; frames decoded: 54, dropped: 0; decode: mean 0.003 s, max: 0.005 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:41.261 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 2.300 ms},
+{PTS: nan s, decode: 2.687 ms},
+{PTS: nan s, decode: 2.822 ms},
+{PTS: nan s, decode: 3.981 ms},
+]
+2026-10-25 12:30:43.741 A  CarMirror[9295:a307] (RunningBoardServices) didChangeInheritances
+2026-10-25 12:30:43.787 A  CarMirror[9295:80d8] (RunningBoardServices) didChangeInheritances
+2026-10-25 12:30:43.798 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: Car[2-3]:com.omernasuhi.carmirror  persistentID: Car[2-3]:com.omernasuhi.carmirror
+2026-10-25 12:30:43.804 Df CarMirror[9295:80a6] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:TVOut PurpleTVOut>, <CADisplay:LCD PurpleMain>
+2026-10-25 12:30:44.738 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: Car[2-3]:com.omernasuhi.carmirror  persistentID: Car[2-3]:com.omernasuhi.carmirror
+2026-10-25 12:30:45.223 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 40 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 728.757, rate 1.00. (pid 9295)
+2026-10-25 12:30:46.208 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: Car[2-3]:com.omernasuhi.carmirror  persistentID: Car[2-3]:com.omernasuhi.carmirror
+2026-10-25 12:30:46.210 Df CarMirror[9295:80a6] [com.apple.UIKit:UIScreen] CarPlay session settings updated for scene: 13099:FBWorkspace-com.apple.CarPlayTemplateUIHost/FBSceneManager:Car%5B2-3%5D%3Acom.omernasuhi.carmirror, availableInteractionModels: touch|knob, primaryInteractionModel: knob, touchLevel: lowFidelity
+2026-10-25 12:30:46.214 Df CarMirror[9295:80a6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x100e34400> (61D61C03-24F6-4C7A-89A3-C51816B4FCF4)
+2026-10-25 12:30:46.722 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 730.256 s, host: 730.256 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:30:46.722 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 32, displayed: 3, dropped: 0, flushed: 0, evicted: 28, >16ms late: 3, skipped: 0
+2026-10-25 12:30:46.722 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 729.785 s (media 729.785 s)},
+{PTS: nan s, enqueued at: host 729.943 s (media 729.943 s)},
+{PTS: nan s, enqueued at: host 730.093 s (media 730.093 s)},
+{PTS: nan s, enqueued at: host 730.223 s (media 730.223 s)},
+]
+2026-10-25 12:30:46.722 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 728.283 s, sampled at: host 728.453 s (media 728.453 s), displayed at: 728.470 s, on glass for: 183.333 ms},
+{PTS: nan s, enqueued at : 729.785 s, sampled at: host 729.803 s (media 729.803 s), displayed at: 729.819 s, on glass for: 150.000 ms},
+{PTS: nan s, enqueued at : 729.943 s, sampled at: host 729.962 s (media 729.962 s), displayed at: 729.979 s, on glass for: 133.333 ms},
+]
+2026-10-25 12:30:47.295 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 730.829 s rate: 1.00. recent stats: cfq empty: 103 times; frames decoded: 32, dropped: 0; decode: mean 0.004 s, max: 0.020 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:47.295 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 19.582 ms},
+{PTS: nan s, decode: 1.526 ms},
+{PTS: nan s, decode: 2.490 ms},
+{PTS: nan s, decode: 2.018 ms},
+]
+2026-10-25 12:30:50.000 Df CarMirror[9295:80a6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: Car[2-3]:com.omernasuhi.carmirror  persistentID: Car[2-3]:com.omernasuhi.carmirror
+2026-10-25 12:30:51.223 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 39 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 734.757, rate 1.00. (pid 9295)
+2026-10-25 12:30:52.737 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 736.271 s, host: 736.271 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:30:52.737 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 48, displayed: 48, dropped: 0, flushed: 0, evicted: 0, >16ms late: 48, skipped: 0
+2026-10-25 12:30:52.737 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 735.885 s (media 735.885 s)},
+{PTS: nan s, enqueued at: host 735.963 s (media 735.963 s)},
+{PTS: nan s, enqueued at: host 736.082 s (media 736.082 s)},
+{PTS: nan s, enqueued at: host 736.229 s (media 736.229 s)},
+]
+2026-10-25 12:30:52.737 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 735.707 s, sampled at: host 735.714 s (media 735.714 s), displayed at: 735.731 s, on glass for: 83.333 ms},
+{PTS: nan s, enqueued at : 735.788 s, sampled at: host 735.798 s (media 735.798 s), displayed at: 735.814 s, on glass for: 83.333 ms},
+{PTS: nan s, enqueued at : 735.885 s, sampled at: host 735.887 s (media 735.887 s), displayed at: 735.904 s, on glass for: 83.333 ms},
+{PTS: nan s, enqueued at : 735.963 s, sampled at: host 735.971 s (media 735.971 s), displayed at: 735.988 s, on glass for: 116.667 ms},
+]
+2026-10-25 12:30:53.364 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 736.898 s rate: 1.00. recent stats: cfq empty: 178 times; frames decoded: 50, dropped: 0; decode: mean 0.003 s, max: 0.019 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:53.364 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 1.837 ms},
+{PTS: nan s, decode: 1.358 ms},
+{PTS: nan s, decode: 2.754 ms},
+{PTS: nan s, decode: 1.617 ms},
+]
+2026-10-25 12:30:57.224 Df CarMirror[9295:a2f9] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 62 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 740.758, rate 1.00. (pid 9295)
+2026-10-25 12:30:58.745 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 742.279 s, host: 742.279 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:30:58.745 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 63, displayed: 63, dropped: 0, flushed: 0, evicted: 0, >16ms late: 63, skipped: 0
+2026-10-25 12:30:58.745 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 741.884 s (media 741.884 s)},
+{PTS: nan s, enqueued at: host 742.008 s (media 742.008 s)},
+{PTS: nan s, enqueued at: host 742.126 s (media 742.126 s)},
+{PTS: nan s, enqueued at: host 742.242 s (media 742.242 s)},
+]
+2026-10-25 12:30:58.745 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 741.688 s, sampled at: host 741.702 s (media 741.702 s), displayed at: 741.719 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 741.804 s, sampled at: host 741.819 s (media 741.819 s), displayed at: 741.836 s, on glass for: 66.667 ms},
+{PTS: nan s, enqueued at : 741.884 s, sampled at: host 741.886 s (media 741.886 s), displayed at: 741.903 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 742.008 s, sampled at: host 742.016 s (media 742.016 s), displayed at: 742.033 s, on glass for: 116.667 ms},
+]
+2026-10-25 12:30:59.547 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 743.081 s rate: 1.00. recent stats: cfq empty: 222 times; frames decoded: 62, dropped: 0; decode: mean 0.002 s, max: 0.006 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:30:59.547 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 2.981 ms},
+{PTS: nan s, decode: 2.051 ms},
+{PTS: nan s, decode: 2.064 ms},
+{PTS: nan s, decode: 2.785 ms},
+]
+2026-10-25 12:31:03.224 Df CarMirror[9295:a307] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 51 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 746.758, rate 1.00. (pid 9295)
+2026-10-25 12:31:04.761 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 748.295 s, host: 748.295 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:31:04.761 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 50, displayed: 50, dropped: 0, flushed: 0, evicted: 0, >16ms late: 50, skipped: 0
+2026-10-25 12:31:04.761 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 747.951 s (media 747.951 s)},
+{PTS: nan s, enqueued at: host 748.066 s (media 748.066 s)},
+{PTS: nan s, enqueued at: host 748.140 s (media 748.140 s)},
+{PTS: nan s, enqueued at: host 748.241 s (media 748.241 s)},
+]
+2026-10-25 12:31:04.761 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 747.709 s, sampled at: host 747.716 s (media 747.716 s), displayed at: 747.733 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 747.825 s, sampled at: host 747.840 s (media 747.840 s), displayed at: 747.857 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 747.950 s, sampled at: host 747.967 s (media 747.967 s), displayed at: 747.983 s, on glass for: 100.000 ms},
+{PTS: nan s, enqueued at : 748.066 s, sampled at: host 748.071 s (media 748.071 s), displayed at: 748.087 s, on glass for: 83.333 ms},
+]
+2026-10-25 12:31:05.554 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 749.088 s rate: 1.00. recent stats: cfq empty: 185 times; frames decoded: 52, dropped: 0; decode: mean 0.003 s, max: 0.022 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:31:05.554 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 2.879 ms},
+{PTS: nan s, decode: 2.576 ms},
+{PTS: nan s, decode: 2.375 ms},
+{PTS: nan s, decode: 2.442 ms},
+]
+2026-10-25 12:31:09.224 Df CarMirror[9295:a2f9] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 55 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 752.758, rate 1.00. (pid 9295)
+2026-10-25 12:31:10.772 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 754.306 s, host: 754.306 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:31:10.772 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 55, displayed: 55, dropped: 0, flushed: 0, evicted: 0, >16ms late: 55, skipped: 0
+2026-10-25 12:31:10.772 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 753.913 s (media 753.913 s)},
+{PTS: nan s, enqueued at: host 754.051 s (media 754.051 s)},
+{PTS: nan s, enqueued at: host 754.168 s (media 754.168 s)},
+{PTS: nan s, enqueued at: host 754.267 s (media 754.267 s)},
+]
+2026-10-25 12:31:10.772 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 753.694 s, sampled at: host 753.705 s (media 753.705 s), displayed at: 753.722 s, on glass for: 100.000 ms},
+{PTS: nan s, enqueued at : 753.807 s, sampled at: host 753.811 s (media 753.811 s), displayed at: 753.828 s, on glass for: 100.000 ms},
+{PTS: nan s, enqueued at : 753.913 s, sampled at: host 753.924 s (media 753.924 s), displayed at: 753.940 s, on glass for: 133.333 ms},
+{PTS: nan s, enqueued at : 754.051 s, sampled at: host 754.064 s (media 754.064 s), displayed at: 754.081 s, on glass for: 116.667 ms},
+]
+2026-10-25 12:31:11.609 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 755.143 s rate: 1.00. recent stats: cfq empty: 194 times; frames decoded: 54, dropped: 0; decode: mean 0.003 s, max: 0.016 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:31:11.609 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 1.453 ms},
+{PTS: nan s, decode: 1.887 ms},
+{PTS: nan s, decode: 2.107 ms},
+{PTS: nan s, decode: 3.009 ms},
+]
+2026-10-25 12:31:15.250 Df CarMirror[9295:a2f9] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 45 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 758.784, rate 1.00. (pid 9295)
+2026-10-25 12:31:16.781 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 760.315 s, host: 760.315 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:31:16.781 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 44, displayed: 44, dropped: 0, flushed: 0, evicted: 0, >16ms late: 44, skipped: 0
+2026-10-25 12:31:16.781 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 759.937 s (media 759.937 s)},
+{PTS: nan s, enqueued at: host 760.057 s (media 760.057 s)},
+{PTS: nan s, enqueued at: host 760.156 s (media 760.156 s)},
+{PTS: nan s, enqueued at: host 760.282 s (media 760.282 s)},
+]
+2026-10-25 12:31:16.781 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 759.580 s, sampled at: host 759.587 s (media 759.587 s), displayed at: 759.604 s, on glass for: 133.333 ms},
+{PTS: nan s, enqueued at : 759.719 s, sampled at: host 759.725 s (media 759.725 s), displayed at: 759.741 s, on glass for: 216.667 ms},
+{PTS: nan s, enqueued at : 759.937 s, sampled at: host 759.953 s (media 759.953 s), displayed at: 759.970 s, on glass for: 100.000 ms},
+{PTS: nan s, enqueued at : 760.056 s, sampled at: host 760.061 s (media 760.061 s), displayed at: 760.078 s, on glass for: 100.000 ms},
+]
+2026-10-25 12:31:17.701 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 761.235 s rate: 1.00. recent stats: cfq empty: 156 times; frames decoded: 44, dropped: 0; decode: mean 0.003 s, max: 0.014 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:31:17.701 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 6.152 ms},
+{PTS: nan s, decode: 3.860 ms},
+{PTS: nan s, decode: 1.505 ms},
+{PTS: nan s, decode: 1.813 ms},
+]
+2026-10-25 12:31:21.223 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 49 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 764.757, rate 1.00. (pid 9295)
+2026-10-25 12:31:22.796 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 766.331 s, host: 766.331 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:31:22.797 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 50, displayed: 50, dropped: 0, flushed: 0, evicted: 0, >16ms late: 50, skipped: 0
+2026-10-25 12:31:22.797 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 765.875 s (media 765.875 s)},
+{PTS: nan s, enqueued at: host 765.993 s (media 765.993 s)},
+{PTS: nan s, enqueued at: host 766.158 s (media 766.158 s)},
+{PTS: nan s, enqueued at: host 766.318 s (media 766.318 s)},
+]
+2026-10-25 12:31:22.797 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 765.612 s, sampled at: host 765.616 s (media 765.616 s), displayed at: 765.633 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 765.725 s, sampled at: host 765.759 s (media 765.759 s), displayed at: 765.775 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 765.875 s, sampled at: host 765.884 s (media 765.884 s), displayed at: 765.901 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 765.993 s, sampled at: host 766.016 s (media 766.016 s), displayed at: 766.032 s, on glass for: 116.667 ms},
+]
+2026-10-25 12:31:23.733 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 767.267 s rate: 1.00. recent stats: cfq empty: 176 times; frames decoded: 50, dropped: 0; decode: mean 0.003 s, max: 0.015 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:31:23.734 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 2.466 ms},
+{PTS: nan s, decode: 1.987 ms},
+{PTS: nan s, decode: 1.243 ms},
+{PTS: nan s, decode: 1.798 ms},
+]
+2026-10-25 12:31:27.227 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 51 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 770.761, rate 1.00. (pid 9295)
+2026-10-25 12:31:28.810 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 772.344 s, host: 772.344 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:31:28.810 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 54, displayed: 54, dropped: 0, flushed: 0, evicted: 0, >16ms late: 54, skipped: 0
+2026-10-25 12:31:28.810 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 772.010 s (media 772.010 s)},
+{PTS: nan s, enqueued at: host 772.131 s (media 772.131 s)},
+{PTS: nan s, enqueued at: host 772.231 s (media 772.231 s)},
+{PTS: nan s, enqueued at: host 772.327 s (media 772.327 s)},
+]
+2026-10-25 12:31:28.810 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 771.809 s, sampled at: host 771.820 s (media 771.820 s), displayed at: 771.837 s, on glass for: 100.000 ms},
+{PTS: nan s, enqueued at : 771.912 s, sampled at: host 771.921 s (media 771.921 s), displayed at: 771.937 s, on glass for: 100.000 ms},
+{PTS: nan s, enqueued at : 772.010 s, sampled at: host 772.031 s (media 772.031 s), displayed at: 772.047 s, on glass for: 100.000 ms},
+{PTS: nan s, enqueued at : 772.131 s, sampled at: host 772.137 s (media 772.137 s), displayed at: 772.153 s, on glass for: 83.333 ms},
+]
+2026-10-25 12:31:29.763 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 773.297 s rate: 1.00. recent stats: cfq empty: 199 times; frames decoded: 56, dropped: 0; decode: mean 0.002 s, max: 0.005 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:31:29.763 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 2.203 ms},
+{PTS: nan s, decode: 1.421 ms},
+{PTS: nan s, decode: 1.502 ms},
+{PTS: nan s, decode: 3.302 ms},
+]
+2026-10-25 12:31:33.224 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 52 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 776.758, rate 1.00. (pid 9295)
+2026-10-25 12:31:34.824 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 778.358 s, host: 778.358 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:31:34.824 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 46, displayed: 47, dropped: 0, flushed: 0, evicted: 0, >16ms late: 47, skipped: 0
+2026-10-25 12:31:34.825 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 777.514 s (media 777.514 s)},
+{PTS: nan s, enqueued at: host 777.722 s (media 777.722 s)},
+{PTS: nan s, enqueued at: host 777.888 s (media 777.888 s)},
+{PTS: nan s, enqueued at: host 778.269 s (media 778.269 s)},
+]
+2026-10-25 12:31:34.825 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 777.373 s, sampled at: host 777.389 s (media 777.389 s), displayed at: 777.406 s, on glass for: 133.333 ms},
+{PTS: nan s, enqueued at : 777.514 s, sampled at: host 777.545 s (media 777.545 s), displayed at: 777.562 s, on glass for: 183.333 ms},
+{PTS: nan s, enqueued at : 777.722 s, sampled at: host 777.755 s (media 777.755 s), displayed at: 777.771 s, on glass for: 133.333 ms},
+{PTS: nan s, enqueued at : 777.888 s, sampled at: host 777.912 s (media 777.912 s), displayed at: 777.929 s, on glass for: 150.000 ms},
+]
+2026-10-25 12:31:35.842 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 779.376 s rate: 1.00. recent stats: cfq empty: 169 times; frames decoded: 46, dropped: 0; decode: mean 0.002 s, max: 0.005 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:31:35.842 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 1.598 ms},
+{PTS: nan s, decode: 3.432 ms},
+{PTS: nan s, decode: 1.729 ms},
+{PTS: nan s, decode: 4.587 ms},
+]
+2026-10-25 12:31:39.224 Df CarMirror[9295:80cf] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 42 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 782.759, rate 1.00. (pid 9295)
+2026-10-25 12:31:40.839 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 784.373 s, host: 784.373 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:31:40.840 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 43, displayed: 42, dropped: 0, flushed: 0, evicted: 0, >16ms late: 42, skipped: 0
+2026-10-25 12:31:40.840 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 783.964 s (media 783.964 s)},
+{PTS: nan s, enqueued at: host 784.080 s (media 784.080 s)},
+{PTS: nan s, enqueued at: host 784.201 s (media 784.201 s)},
+{PTS: nan s, enqueued at: host 784.319 s (media 784.319 s)},
+]
+2026-10-25 12:31:40.840 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 783.650 s, sampled at: host 783.681 s (media 783.681 s), displayed at: 783.698 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 783.782 s, sampled at: host 783.802 s (media 783.802 s), displayed at: 783.819 s, on glass for: 166.667 ms},
+{PTS: nan s, enqueued at : 783.964 s, sampled at: host 783.977 s (media 783.977 s), displayed at: 783.994 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 784.079 s, sampled at: host 784.107 s (media 784.107 s), displayed at: 784.124 s, on glass for: 100.000 ms},
+]
+2026-10-25 12:31:41.941 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 785.475 s rate: 1.00. recent stats: cfq empty: 166 times; frames decoded: 43, dropped: 0; decode: mean 0.004 s, max: 0.064 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:31:41.942 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 3.096 ms},
+{PTS: nan s, decode: 3.919 ms},
+{PTS: nan s, decode: 1.831 ms},
+{PTS: nan s, decode: 4.104 ms},
+]
+2026-10-25 12:31:45.227 Df CarMirror[9295:a307] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 43 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 788.761, rate 1.00. (pid 9295)
+2026-10-25 12:31:46.842 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD client pid 9295 (CarMirror), timebase rate: 1.00, layer time: 790.375 s, host: 790.375 s, diff: 0.000 s; iq unconsumed: 0, min: 0.000, max: 0.000; preventsDisplaySleep: YES
+2026-10-25 12:31:46.842 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD recent frames: enqueued: 42, displayed: 43, dropped: 0, flushed: 0, evicted: 0, >16ms late: 43, skipped: 0
+2026-10-25 12:31:46.842 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently enqueued:
+Enqueued Pixel Buffer:420v, 588 x 1280 [
+{PTS: nan s, enqueued at: host 789.773 s (media 789.773 s)},
+{PTS: nan s, enqueued at: host 789.895 s (media 789.895 s)},
+{PTS: nan s, enqueued at: host 790.002 s (media 790.002 s)},
+{PTS: nan s, enqueued at: host 790.245 s (media 790.245 s)},
+]
+2026-10-25 12:31:46.843 Df CarMirror[9295:a714] [com.apple.coremedia:] <<<< IQ-CA >>>> piqca_gmstats_dump: FIQCA(0x10fb22a00) VR/VYF:IQ/JRD most recently displayed:
+DisplaySize: 221.479080 x 482.131317 [
+{PTS: nan s, enqueued at : 789.612 s, sampled at: host 789.615 s (media 789.615 s), displayed at: 789.631 s, on glass for: 166.667 ms},
+{PTS: nan s, enqueued at : 789.773 s, sampled at: host 789.785 s (media 789.785 s), displayed at: 789.802 s, on glass for: 116.667 ms},
+{PTS: nan s, enqueued at : 789.895 s, sampled at: host 789.903 s (media 789.903 s), displayed at: 789.920 s, on glass for: 100.000 ms},
+{PTS: nan s, enqueued at : 790.002 s, sampled at: host 790.005 s (media 790.005 s), displayed at: 790.021 s, on glass for: 233.333 ms},
+]
+2026-10-25 12:31:48.018 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]: client pid 9295; timebase time: 791.552 s rate: 1.00. recent stats: cfq empty: 149 times; frames decoded: 42, dropped: 0; decode: mean 0.005 s, max: 0.077 s; codec service tier: 0; number of black frames for empty media: 0, number of frames replaced by black frames: 0; number of frames output late: 0
+2026-10-25 12:31:48.018 Df CarMirror[9295:a715] [com.apple.coremedia:] <<<< VMC >>>> vmc2GMFigLogDumpStats: VMC [0x104513700:VR/VYF]:Snapshots:
+CodecType: avc1, DecodedPixelBuffer: 420v, 588 x 1280
+Last Decoded Frames [
+{PTS: nan s, decode: 1.719 ms},
+{PTS: nan s, decode: 2.357 ms},
+{PTS: nan s, decode: 1.541 ms},
+{PTS: nan s, decode: 3.719 ms},
+]
+2026-10-25 12:31:51.223 Df CarMirror[9295:80d8] [com.apple.coremedia:] <<<< FigVideoQueue >>>> FigVideoQueueGMStats: (0x10450d800) 43 frames enqueued in the last 6 seconds; 0 were suspended. sbuf queue contains 0 frames (0.000 sec), max PTS: nan; LWM: 1.000 HWM: 2.000. Timebase time 794.757, rate 1.00. (pid 9295)
+2026-10-25 12:31:52.186 Df log[16844:0] [com.apple.log:] log run noninteractively, parent: 2828 (launchd_sim), args: 'log' 'show' '--last' '15m' '--style' 'compact' '--predicate' 'process == "CarMirror" OR eventMessage CONTAINS "CarMirror"'

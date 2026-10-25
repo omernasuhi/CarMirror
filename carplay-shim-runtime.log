@@ -1,0 +1,6 @@
+getpwuid_r did not find a match for uid 501
+Timestamp               Ty Process[PID:TID]
+2026-10-25 12:28:41.990 Df launchctl[12091:9a91] [com.apple.xpc.launchctl:All] launchctl setenv: launchctl setenv DYLD_INSERT_LIBRARIES /tmp/carmirror-carplay-shim.dylib
+2026-10-25 12:29:06.227 Df CarPlay[12777:a176] (carmirror-carplay-shim.dylib) carmirror-carplay-shim: CPSTemplateInstance yamalandı, 2 yöntem eklendi
+2026-10-25 12:29:29.393 Df CarPlayTemplateUIHost[13099:a62b] (carmirror-carplay-shim.dylib) carmirror-carplay-shim: CPSTemplateInstance yamalandı, 2 yöntem eklendi
+2026-10-25 12:32:38.589 Df log[17956:0] [com.apple.log:] log run noninteractively, parent: 2828 (launchd_sim), args: 'log' 'show' '--last' '15m' '--style' 'compact' '--predicate' 'eventMessage CONTAINS "carmirror-carplay-shim"'

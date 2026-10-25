@@ -1,0 +1,401 @@
+getpwuid_r did not find a match for uid 501
+Timestamp               Ty Process[PID:TID]
+2026-10-25 12:29:06.477 E  CarPlay[12777:a262] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:06.806 E  CarPlay[12777:a176] [com.apple.carkit:General] App with unknown category: com.apple.siri
+2026-10-25 12:29:06.832 E  CarPlay[12777:a262] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:06.836 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:06.846 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.025 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.031 E  CarPlay[12777:a176] [com.apple.carkit:General] App with unknown category: com.apple.MusicUIService
+2026-10-25 12:29:07.032 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.033 E  CarPlay[12777:a176] [com.apple.carkit:General] App with unknown category: com.apple.MediaRemoteUIService
+2026-10-25 12:29:07.034 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.036 E  CarPlay[12777:a176] [com.apple.carkit:General] App with unknown category: com.apple.CarPlaySettings
+2026-10-25 12:29:07.037 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.040 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.045 E  CarPlay[12777:a176] [com.apple.carkit:General] App with unknown category: com.apple.CarPlayWallpaper
+2026-10-25 12:29:07.046 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.049 E  CarPlay[12777:a176] [com.apple.carkit:General] App with unknown category: com.apple.CarPlayTemplateUIHost
+2026-10-25 12:29:07.050 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.052 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.055 E  CarPlay[12777:a176] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.062 E  CarPlay[12777:a25f] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:07.680 E  CarPlay[12777:a176] [com.apple.UIKit:Assert] Accessing the focus system through UIScreen is no longer supported. This will crash in a future update.
+2026-10-25 12:29:07.680 E  CarPlay[12777:a176] [com.apple.UIKit:Assert] Accessing the focus system through UIScreen is no longer supported. This will crash in a future update.
+2026-10-25 12:29:07.908 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:07.943 E  CarPlay[12777:a258] [com.apple.CarPlayApp:Widgets] Unable to save view areas: Error Domain=com.apple.carkit Code=9 "(null)"
+2026-10-25 12:29:07.950 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Dashboard] Target dashboard identifier is nil, keeping identifer as (null)
+2026-10-25 12:29:08.369 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.370 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.371 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.372 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.373 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.373 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.374 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.374 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.375 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.375 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.390 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.391 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.392 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.393 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.393 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.395 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.396 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.398 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:08.398 E  CarPlay[12777:a176] [com.apple.SpringBoard:Common] could not make icon from representation: (
+    "com.apple.mobilephone",
+    "com.apple.Music",
+    "com.apple.Maps",
+    "com.apple.MobileSMS",
+    "com.apple.cardisplay.nowplaying",
+    "com.apple.cardisplay.OEM",
+    "com.apple.AutoSettings",
+    "com.apple.CarRadio",
+    "com.apple.CarClimate",
+    "com.apple.podcasts",
+    "com.apple.iBooks",
+    "com.apple.news",
+    "com.apple.mobilecal",
+    "com.apple.CarPlaySettings"
+)
+2026-10-25 12:29:09.718 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Dashboard] Target dashboard identifier is nil, keeping identifer as (null)
+2026-10-25 12:29:10.145 E  CarPlay[12777:a262] [com.apple.siri:Client] -[SiriDirectActionSource activeChangedTo:] #activation SiriDirectActionSourceDelegate ((null)) does not respond to activeChangedTo:
+2026-10-25 12:29:10.147 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:10.148 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:10.148 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get map appearance preference but no vehicle available
+2026-10-25 12:29:10.164 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Workspace] [CarPlayUI Assertion] Unable to get handle for scene
+2026-10-25 12:29:10.386 E  CarPlay[12777:a274] [com.apple.siri:Utility] AFIsDeviceGreymatterEligible Missing entitlements for os_eligibility lookup
+2026-10-25 12:29:10.512 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:10.518 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:10.520 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:10.591 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGContextTranslateCTM: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.592 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGContextScaleCTM: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.592 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGContextSetFillColorWithColor: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.592 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGContextFillRects: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.592 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGContextSetBlendMode: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.592 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGContextSetFillColorWithColor: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.592 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGContextAddPath: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.593 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGContextDrawPath: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.593 E  CarPlay[12777:a176] [com.apple.coregraphics:Unknown process name] CGBitmapContextCreateImage: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+2026-10-25 12:29:10.593 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:10.601 E  CarPlay[12777:a304] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:11.341 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:11.527 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Dashboard] Target dashboard identifier is nil, keeping identifer as (null)
+2026-10-25 12:29:11.582 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:11.780 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:11.784 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Dashboard] Target dashboard identifier is nil, keeping identifer as (null)
+2026-10-25 12:29:11.845 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.419 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.426 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.428 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.432 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.437 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.438 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.439 E  CarPlay[12777:a176] [com.apple.UIKit:Assert] Accessing the focus system through UIScreen is no longer supported. This will crash in a future update.
+2026-10-25 12:29:12.442 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.450 F  CarPlay[12777:a176] [com.apple.BoardServices:Bootstrap] domain=com.apple.CarPlay service=<BSServiceSpecification: 0x103d88820; (com.apple.uis.applicationStateService)> : no listener at extended automatic bootstrap deadline
+2026-10-25 12:29:12.450 F  CarPlay[12777:a176] [com.apple.BoardServices:Bootstrap] domain=com.apple.CarPlay service=<BSServiceSpecification: 0x103d884a0; com.apple.bannerkit.banner-context-service> : no listener at extended automatic bootstrap deadline
+2026-10-25 12:29:12.450 F  CarPlay[12777:a176] [com.apple.BoardServices:Bootstrap] domain=com.apple.CarPlay service=<BSServiceSpecification: 0x103d88840; (com.apple.uis.applicationSupportService)> : no listener at extended automatic bootstrap deadline
+2026-10-25 12:29:12.453 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.453 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.458 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.464 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.465 E  CarPlay[12777:a305] [com.apple.coregraphics:Unknown process name] verify_image_parameters: invalid image colorspace: NULL.
+2026-10-25 12:29:12.466 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Default] Error looking up now playing application record: (null)
+2026-10-25 12:29:12.466 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Default] Error looking up now playing application record: (null)
+2026-10-25 12:29:12.466 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Default] Error looking up now playing application record: (null)
+2026-10-25 12:29:12.466 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Default] Error looking up now playing application record: (null)
+2026-10-25 12:29:12.472 E  CarPlay[12777:a287] [com.apple.CarPlayApp:Default] Failed to save vehicle to mark welcome completed for standard CarPlay: (null)
+2026-10-25 12:29:18.489 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:18.490 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:29:18.490 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get map appearance preference but no vehicle available
+2026-10-25 12:29:21.445 E  CarPlay[12777:a305] [com.apple.coreduet:context] error in setObject 0 for keyPath /device/siri/isActive : Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.coreduetd.context was invalidated: Connection init failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.coreduetd.context was invalidated: Connection init failed at lookup with error 3 - No such process.}
+2026-10-25 12:29:29.665 E  CarPlayTemplateUIHost[13099:a680] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:29.785 E  CarPlayTemplateUIHost[13099:a62b] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:32.206 E  CarPlayTemplateUIHost[13099:a67d] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:32.464 E  CarPlayTemplateUIHost[13099:a62b] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:32.674 E  CarPlayTemplateUIHost[13099:a67f] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:29:32.680 E  CarPlayTemplateUIHost[13099:a62b] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:30:43.329 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:30:43.332 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get style but no vehicle available
+2026-10-25 12:30:43.333 E  CarPlay[12777:a176] [com.apple.CarPlayApp:Appearance] Attempting to get map appearance preference but no vehicle available
+2026-10-25 12:30:43.829 E  CarPlay[12777:a176] [com.apple.UIKit:UIFocus] DBIconView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-10-25 12:30:44.028 E  CarPlay[12777:a176] [com.apple.UIKit:UIFocus] DBIconView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-10-25 12:30:44.098 E  CarPlay[12777:bbe8] [com.apple.carkit:General] Provided status bar edge is invalid, assigning default
+2026-10-25 12:30:44.137 E  CarPlay[12777:bbe2] (libCoreFSCache.dylib) fopen failed for data file: errno = 2 (No such file or directory)
+2026-10-25 12:30:44.939 E  CarPlayTemplateUIHost[13099:a62b] [com.apple.BannerKit:Hosting-service] Error encountered attempting to revoke presentable with requestID (null) and requesterID com.apple.CarPlayTemplateUIHost:com.omernasuhi.carmirror for reason 'FlushQueue': Error Domain=BNBannerSourceErrorDomain Code=3 "No pending or presented presentables with identification <BNPresentableIdentification: 0x110e32420; requesterIdentifier: com.apple.CarPlayTemplateUIHost:com.omernasuhi.carmirror; requestIdentifier: (null); uniqueIdentifier: (null)>" UserInfo={NSLocalizedDescription=No pending or presented presentables with identification <BNPresentableIdentification: 0x110e32420; requesterIdentifier: com.apple.CarPlayTemplateUIHost:com.omernasuhi.carmirror; requestIdentifier: (null); uniqueIdentifier: (null)>}
+2026-10-25 12:30:44.940 E  CarPlayTemplateUIHost[13099:a62b] [com.apple.carplaysupport:General] Error flushing #banner source: Error Domain=BNBannerSourceErrorDomain Code=3 "No pending or presented presentables with identification <BNPresentableIdentification: 0x110e32420; requesterIdentifier: com.apple.CarPlayTemplateUIHost:com.omernasuhi.carmirror; requestIdentifier: (null); uniqueIdentifier: (null)>" UserInfo={NSLocalizedDescription=No pending or presented presentables with identification <BNPresentableIdentification: 0x110e32420; requesterIdentifier: com.apple.CarPlayTemplateUIHost:com.omernasuhi.carmirror; requestIdentifier: (null); uniqueIdentifier: (null)>}
+2026-10-25 12:30:44.986 E  CarPlayTemplateUIHost[13099:a62b] [com.apple.UIKit:Assert] Accessing the focus system through UIScreen is no longer supported. This will crash in a future update.
+2026-10-25 12:30:50.030 E  CarPlay[12777:bbe2] (libCoreFSCache.dylib) fopen failed for data file: errno = 2 (No such file or directory)
+2026-10-25 12:30:50.116 F  CarPlay[12777:bbe2] [com.apple.renderbox:error] building pipeline plane_color-ca16feba4 took 5.979948 seconds
