@@ -26,6 +26,11 @@ iPhone ekranını gerçek zamanlı olarak Apple CarPlay ekranına yansıtan iOS 
 5. iPhone simülatörünün ekranı CarPlay penceresinde görünür. Telefonda **Demo** sekmesine geçip
    hareketli test ekranını, **Tarayıcı** sekmesinden de web sitelerini araç ekranında izleyebilirsiniz.
 
+![CarPlay simülatöründe CarMirror](docs/carplay-simulator.png)
+
+*GitHub Actions'taki uçtan uca testten (Xcode 26.6, iPhone 17 Pro, iOS 26.5): solda CarPlay
+ekranı, sağda iPhone simülatörü. CarPlay ekranındaki saat telefondakiyle birlikte ilerler.*
+
 CarPlay penceresinin üst çubuğundaki **Doldur / Sığdır** düğmesi görüntüyü ekranı dolduracak
 şekilde büyütür ya da tamamını gösterir. Üst çubuk birkaç saniye sonra kendiliğinden gizlenir;
 görmek için CarPlay ekranına dokunun.

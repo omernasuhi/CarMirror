@@ -19,41 +19,59 @@ SOURCE="$(cd "$(dirname "$0")" && pwd)/carplay_sim_shim.m"
 SHIM=/tmp/carmirror-carplay-shim.dylib
 LOG=/tmp/carmirror-carplay-shim.log
 
+build_shim() {
+  if [ -f "$SHIM" ] && [ ! "$SOURCE" -nt "$SHIM" ]; then
+    return 0
+  fi
+  local flags=(-sdk iphonesimulator clang -dynamiclib -mios-simulator-version-min=16.0 -framework Foundation)
+  xcrun "${flags[@]}" -arch arm64 -arch x86_64 -o "$SHIM" "$SOURCE" \
+    || xcrun "${flags[@]}" -arch arm64 -o "$SHIM" "$SOURCE"
+}
+
+apply_shim() {
+  local device="$1" current
+  current=$(xcrun simctl spawn "$device" launchctl getenv DYLD_INSERT_LIBRARIES 2> /dev/null)
+  case ":$current:" in
+    *":$SHIM:"*)
+      echo "Yama zaten yüklü"
+      ;;
+    *)
+      if xcrun simctl spawn "$device" launchctl setenv DYLD_INSERT_LIBRARIES "$SHIM${current:+:$current}"; then
+        echo "Yama yüklendi"
+        # Çalışan CarPlay süreci yamayı alsın diye yeniden başlatılır.
+        pkill -f "CarPlayTemplateUIHost.app/CarPlayTemplateUIHost" 2> /dev/null || true
+      else
+        echo "Yama yüklenemedi"
+      fi
+      ;;
+  esac
+}
+
 install_shim() {
   echo "---- $(date) cihaz: $DEVICE platform: ${PLATFORM_NAME:-?}"
   if [ -n "${PLATFORM_NAME:-}" ] && [ "$PLATFORM_NAME" != "iphonesimulator" ]; then
     echo "Simülatör değil; atlandı"
     return
   fi
-
-  if [ ! -f "$SHIM" ] || [ "$SOURCE" -nt "$SHIM" ]; then
-    local flags=(-sdk iphonesimulator clang -dynamiclib -mios-simulator-version-min=16.0 -framework Foundation)
-    xcrun "${flags[@]}" -arch arm64 -arch x86_64 -o "$SHIM" "$SOURCE" \
-      || xcrun "${flags[@]}" -arch arm64 -o "$SHIM" "$SOURCE" \
-      || { echo "Yama derlenemedi"; return; }
-  fi
+  build_shim || { echo "Yama derlenemedi"; return; }
 
   if [ "$DEVICE" != "booted" ]; then
     xcrun simctl boot "$DEVICE" 2> /dev/null || true
     xcrun simctl bootstatus "$DEVICE" -b > /dev/null 2>&1 || true
+    apply_shim "$DEVICE"
+  elif xcrun simctl list devices booted 2> /dev/null | grep -q "(Booted)"; then
+    apply_shim booted
+  else
+    # Xcode simülatörü bu betikten sonra açabilir; açıldığında yamayı uygula.
+    echo "Açık simülatör yok; açılınca yüklenecek"
+    nohup bash -c 'for _ in $(seq 1 150); do
+        if xcrun simctl list devices booted 2> /dev/null | grep -q "(Booted)"; then
+          sleep 5
+          exec "$0" booted
+        fi
+        sleep 2
+      done' "$0" > /dev/null 2>&1 &
   fi
-
-  local current
-  current=$(xcrun simctl spawn "$DEVICE" launchctl getenv DYLD_INSERT_LIBRARIES 2> /dev/null)
-  case ":$current:" in
-    *":$SHIM:"*)
-      echo "Yama zaten yüklü"
-      ;;
-    *)
-      if xcrun simctl spawn "$DEVICE" launchctl setenv DYLD_INSERT_LIBRARIES "$SHIM${current:+:$current}"; then
-        echo "Yama yüklendi"
-        # Çalışan CarPlay süreci yamayı alsın diye yeniden başlatılır.
-        pkill -f "CarPlayTemplateUIHost.app/CarPlayTemplateUIHost" 2> /dev/null || true
-      else
-        echo "Yama yüklenemedi (simülatör açık mı?)"
-      fi
-      ;;
-  esac
 }
 
 install_shim >> "$LOG" 2>&1
