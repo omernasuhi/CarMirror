@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5ABE8012537C7F47F005F59E"
+               BlueprintIdentifier = "F22D8F34E3B796071E84E222"
                BuildableName = "CarMirror.app"
                BlueprintName = "CarMirror"
                ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20E63DC9E032150150862D92"
+               BlueprintIdentifier = "644C6407A11462FECAF0C45C"
                BuildableName = "CarMirrorTests.xctest"
                BlueprintName = "CarMirrorTests"
                ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5ABE8012537C7F47F005F59E"
+            BlueprintIdentifier = "F22D8F34E3B796071E84E222"
             BuildableName = "CarMirror.app"
             BlueprintName = "CarMirror"
             ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -56,7 +56,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20E63DC9E032150150862D92"
+               BlueprintIdentifier = "644C6407A11462FECAF0C45C"
                BuildableName = "CarMirrorTests.xctest"
                BlueprintName = "CarMirrorTests"
                ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -78,7 +78,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5ABE8012537C7F47F005F59E"
+            BlueprintIdentifier = "F22D8F34E3B796071E84E222"
             BuildableName = "CarMirror.app"
             BlueprintName = "CarMirror"
             ReferencedContainer = "container:CarMirror.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5ABE8012537C7F47F005F59E"
+            BlueprintIdentifier = "F22D8F34E3B796071E84E222"
             BuildableName = "CarMirror.app"
             BlueprintName = "CarMirror"
             ReferencedContainer = "container:CarMirror.xcodeproj">

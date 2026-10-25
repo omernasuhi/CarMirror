@@ -21,11 +21,27 @@ carplay_shot() {
 }
 
 collect_logs() {
-  xcrun simctl spawn "$UDID" log show --last 5m --style compact \
+  xcrun simctl spawn "$UDID" log show --last 15m --style compact \
     --predicate 'process == "CarMirror" OR eventMessage CONTAINS "CarMirror"' > "$OUT/app.log" 2>&1 || true
+  xcrun simctl spawn "$UDID" log show --last 15m --style compact \
+    --predicate '(process == "CarPlayTemplateUIHost" OR process == "CarPlay") AND (messageType == error OR messageType == fault)' \
+    > "$OUT/carplay-system.log" 2>&1 || true
   screencapture -x "$OUT/mac-desktop.png" 2>/dev/null || true
+  mkdir -p "$OUT/crashes"
+  find "$HOME/Library/Logs/DiagnosticReports" -name '*.ips' -newer "$OUT/build.log" 2>/dev/null \
+    | grep -E "CarPlay|CarMirror" | while read -r report; do cp "$report" "$OUT/crashes/"; done || true
+  if ls "$OUT"/crashes/*.ips > /dev/null 2>&1; then
+    log "Çökme raporları:"
+    python3 "$SCRIPTS/summarize-crashes.py" "$OUT"/crashes/*.ips | tee "$OUT/crashes/summary.txt" || true
+  fi
 }
 trap collect_logs EXIT
+
+log "Yardımcı araçlar derleniyor"
+TOOLS=build/tools
+mkdir -p "$TOOLS"
+xcrun swiftc -O -o "$TOOLS/find-text" "$SCRIPTS/find-text.swift"
+xcrun swiftc -O -o "$TOOLS/click" "$SCRIPTS/click.swift"
 
 log "Derleniyor"
 if ! xcodebuild build -project CarMirror.xcodeproj -scheme CarMirror -configuration Debug \
@@ -66,7 +82,7 @@ sleep 2
 carplay_shot "$OUT/2-carplay-home.png"
 xcrun simctl io "$UDID" screenshot "$OUT/2-iphone-after-carplay.png" > /dev/null
 
-if ! LABEL=$(swift "$SCRIPTS/find-text.swift" "$OUT/2-carplay-home.png" "CarMirror" 2> "$OUT/ocr-home.log"); then
+if ! LABEL=$("$TOOLS/find-text" "$OUT/2-carplay-home.png" "CarMirror" 2> "$OUT/ocr-home.log"); then
   cat "$OUT/ocr-home.log"
   log "HATA: CarPlay ana ekranında CarMirror simgesi bulunamadı"
   exit 1
@@ -91,13 +107,13 @@ for method in system-events cgevent; do
     if [ "$method" = system-events ]; then
       osascript "$SCRIPTS/click-at.applescript" "$CX" "$CY" || true
     else
-      swift "$SCRIPTS/click.swift" "$CX" "$CY" || true
+      "$TOOLS/click" "$CX" "$CY" || true
     fi
     sleep 1
     screencapture -x -C "$OUT/click-$attempt-mac.png" 2> /dev/null || true
     sleep 9
     carplay_shot "$OUT/3-carplay-mirroring.png"
-    if swift "$SCRIPTS/find-text.swift" "$OUT/3-carplay-mirroring.png" "CARMIRROR DEMO" > /dev/null 2> "$OUT/ocr-mirroring.log"; then
+    if "$TOOLS/find-text" "$OUT/3-carplay-mirroring.png" "CARMIRROR DEMO" > /dev/null 2> "$OUT/ocr-mirroring.log"; then
       mirrored=true
       break 2
     fi

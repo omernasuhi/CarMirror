@@ -30,3 +30,6 @@ jobs:
 
       - name: Derle ve test et
         run: scripts/ci/run-tests.sh "${{ steps.sim.outputs.udid }}"
+
+      - name: Gerçek iPhone için derle (imzasız)
+        run: scripts/ci/build-device.sh

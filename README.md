@@ -44,17 +44,23 @@ Xcode 27'nin Device Hub'ında simülatör için CarPlay ekranı açılamıyor. �
 ## Gerçek iPhone ve araçta kullanma
 
 1. Proje ayarlarında (**CarMirror** projesi → **Build Settings** → *User-Defined*):
-   - `BUNDLE_ID_PREFIX`: kendi ters alan adınız (ör. `com.adiniz`)
-   - `DEVELOPMENT_TEAM`: Team ID'niz (ya da her hedefte **Signing & Capabilities** → *Team*)
+   - `DEVELOPMENT_TEAM`: Team ID'niz (ya da her hedefte **Signing & Capabilities** → *Team*).
+     App Group kullanıldığı için ücretli Apple Developer Program üyeliği gerekir.
+   - `BUNDLE_ID_PREFIX`: varsayılanı `com.omernasuhi`; başka bir hesapla imzalıyorsanız kendi
+     ters alan adınızla değiştirin.
 
    App Group (`group.<BUNDLE_ID_PREFIX>.carmirror`) ve yayın eklentisinin kimliği bu
    değerlerden otomatik türetilir.
 2. **CarPlay yetkisi:** CarPlay'de kendi görüntüsünü çizebilen tek uygulama türü navigasyon
    uygulamalarıdır. Bu yüzden CarMirror kendini navigasyon uygulaması olarak tanıtır
    (`com.apple.developer.carplay-maps`). Bu yetkiyi Apple
-   <https://developer.apple.com/contact/carplay/> üzerinden onaylar. Yetki hesabınıza tanımlanmadan
-   gerçek cihaz için imzalama *"Provisioning profile doesn't include the
-   com.apple.developer.carplay-maps entitlement"* hatası verir. Simülatörde bu yetki gerekmez.
+   <https://developer.apple.com/contact/carplay/> üzerinden onaylar.
+   - Onay gelene kadar gerçek cihaz derlemesi bu yetki olmadan imzalanır
+     (`CARMIRROR_DEVICE_ENTITLEMENTS = App/CarMirror-NoCarPlay.entitlements`). Böylece Xcode
+     imzalama hatası vermez; uygulama ve ekran yayını telefonda çalışır, ama araç ekranında
+     CarMirror görünmez.
+   - Apple onaylayınca aynı ayarı `App/CarMirror.entitlements` yapın.
+   - Simülatör her zaman yetkili dosyayı kullanır; onay gerekmez.
 3. Uygulamayı iPhone'a yükleyin, iPhone'u araca (CarPlay) bağlayın ve araç ekranında CarMirror'ı
    açın.
 4. Telefonda **Ekran Yayınını Başlat**'a, açılan pencerede **Start Broadcast**'e dokunun.
@@ -99,10 +105,12 @@ Xcode'da **Product → Test** (⌘U) ile çalıştırılır. Testler şunları d
   telefonda görüntüyü döndürmesi
 - Uygulama içi yansıtmanın ekranı yakalayıp iletmesi ve ekran yayını başlayınca durması
 
-GitHub Actions her gönderimde testleri Xcode 26.6 ve Xcode 27 ile çalıştırır. Ayrıca iPhone
-simülatöründe CarPlay ekranını açıp CarMirror'a dokunur ve telefonun Demo ekranının CarPlay
-ekranında göründüğünü ekran görüntüsündeki yazıdan doğrular. Ekran görüntüleri ve kısa bir video,
-iş akışı çalıştırmasının *Artifacts* bölümünde (`carplay-screenshots`) bulunur.
+GitHub Actions her gönderimde testleri Xcode 26.6 ve Xcode 27 ile çalıştırır ve uygulamayı
+gerçek iPhone için de derler. Ayrıca iPhone simülatöründe CarPlay ekranını açıp CarMirror'a
+dokunur ve telefonun Demo ekranının CarPlay ekranında göründüğünü ekran görüntüsündeki yazıdan
+doğrular. Son çalıştırmanın ekran görüntüleri
+[`ci-ekran-goruntuleri`](https://github.com/omernasuhi/CarMirror/tree/ci-ekran-goruntuleri)
+dalındadır.
 
 ## Bilinen sınırlamalar
 

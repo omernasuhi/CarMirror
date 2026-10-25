@@ -25,6 +25,10 @@ project.build_configurations.each do |config|
   # Kendi cihazınızda çalıştırmak için bunu kendi ters alan adınızla değiştirin.
   s['BUNDLE_ID_PREFIX'] = 'com.omernasuhi'
   s['APP_GROUP_ID'] = 'group.$(BUNDLE_ID_PREFIX).carmirror'
+  # Gerçek cihazda CarPlay yetkisi (com.apple.developer.carplay-maps) Apple onayı
+  # gerektirir; onay yokken imzalama hata vermesin diye cihaz derlemesi bu yetki
+  # olmadan imzalanır. Apple onaylayınca 'App/CarMirror.entitlements' yapın.
+  s['CARMIRROR_DEVICE_ENTITLEMENTS'] = 'App/CarMirror-NoCarPlay.entitlements'
   s['DEVELOPMENT_TEAM'] = ''
   s['CODE_SIGN_STYLE'] = 'Automatic'
   s['IPHONEOS_DEPLOYMENT_TARGET'] = DEPLOYMENT_TARGET
@@ -91,6 +95,7 @@ app.build_configurations.each do |config|
   s['INFOPLIST_FILE'] = 'App/Info.plist'
   s['GENERATE_INFOPLIST_FILE'] = 'NO'
   s['CODE_SIGN_ENTITLEMENTS'] = 'App/CarMirror.entitlements'
+  s['CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]'] = '$(CARMIRROR_DEVICE_ENTITLEMENTS)'
   s['ASSETCATALOG_COMPILER_APPICON_NAME'] = 'AppIcon'
   s['LD_RUNPATH_SEARCH_PATHS'] = ['$(inherited)', '@executable_path/Frameworks']
   s.delete('ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME')
