@@ -103,8 +103,8 @@ struct AssistantView: View {
     private func header(unit: CGFloat) -> some View {
         VStack(alignment: isCar ? .leading : .center, spacing: 3 * unit) {
             Text(settings.effectiveAssistantName.uppercased(with: Locale(identifier: "tr")))
-                .font(.system(size: 15 * unit, weight: .semibold, design: .rounded))
-                .tracking(5 * unit)
+                .font(.system(size: 17 * unit, weight: .semibold, design: .rounded))
+                .tracking(4 * unit)
                 .foregroundStyle(.white)
             HStack(spacing: 5 * unit) {
                 Circle()
@@ -112,14 +112,14 @@ struct AssistantView: View {
                     .frame(width: 5 * unit, height: 5 * unit)
                     .shadow(color: tint, radius: 3 * unit)
                 Text(statusLabel)
-                    .font(.system(size: 8.5 * unit, weight: .semibold, design: .rounded))
-                    .tracking(2.5 * unit)
+                    .font(.system(size: 9.5 * unit, weight: .semibold, design: .rounded))
+                    .tracking(2 * unit)
                     .foregroundStyle(tint)
                 Text("·")
                     .foregroundStyle(.white.opacity(0.3))
                 TimelineView(.periodic(from: .now, by: 30)) { context in
                     Text(context.date, format: .dateTime.hour().minute())
-                        .font(.system(size: 8.5 * unit, weight: .medium, design: .monospaced))
+                        .font(.system(size: 9.5 * unit, weight: .medium, design: .monospaced))
                         .foregroundStyle(.white.opacity(0.55))
                 }
             }
@@ -130,13 +130,13 @@ struct AssistantView: View {
         VStack(alignment: .leading, spacing: 6 * unit) {
             if let user = lastUserLine {
                 Text(user)
-                    .font(.system(size: 9.5 * unit, weight: .regular, design: .rounded))
+                    .font(.system(size: 10.5 * unit, weight: .regular, design: .rounded))
                     .foregroundStyle(.white.opacity(0.55))
                     .lineLimit(2)
             }
             if !assistantLine.isEmpty {
                 Text(assistantLine)
-                    .font(.system(size: 11.5 * unit, weight: .medium, design: .rounded))
+                    .font(.system(size: 12.5 * unit, weight: .medium, design: .rounded))
                     .foregroundStyle(.white.opacity(0.95))
                     .lineLimit(maxLines)
                     .animation(.easeOut(duration: 0.2), value: assistantLine)

@@ -59,9 +59,7 @@ final class SpeechListener: NSObject, SpeechInput {
             SFSpeechRecognizer.requestAuthorization { continuation.resume(returning: $0) }
         }
         guard speechStatus == .authorized else { return false }
-        return await withCheckedContinuation { continuation in
-            AVAudioApplication.requestRecordPermission { continuation.resume(returning: $0) }
-        }
+        return await AVAudioApplication.requestRecordPermission()
     }
 
     func listen(silenceTimeout: TimeInterval, maxDuration: TimeInterval) async throws -> String {

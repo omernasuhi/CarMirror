@@ -239,6 +239,7 @@ final class AssistantEngine: ObservableObject {
     @MainActor
     private func listenLoop() async throws {
         while true {
+            try Task.checkCancellation()
             let text = try await listenOnce()
             try Task.checkCancellation()
             guard !text.isEmpty else { return }
@@ -250,6 +251,7 @@ final class AssistantEngine: ObservableObject {
 
     @MainActor
     private func listenOnce() async throws -> String {
+        try Task.checkCancellation()
         if isAuthorized != true {
             let granted = await listener.requestAuthorization()
             try Task.checkCancellation()
@@ -277,6 +279,7 @@ final class AssistantEngine: ObservableObject {
 
     @MainActor
     private func respond(to userText: String) async throws {
+        try Task.checkCancellation()
         transcript = userText
         entries.append(Entry(role: .user, text: userText))
         reply = ""
@@ -362,6 +365,7 @@ final class AssistantEngine: ObservableObject {
     /// Karşılama gibi hazır metni okur (geçmişe eklemez; arayüz zaten güncellendi).
     @MainActor
     private func speak(_ text: String) async throws {
+        try Task.checkCancellation()
         prepareVoice()
         speechQueue.enqueue(text)
         await speechQueue.waitUntilIdle()
@@ -370,6 +374,7 @@ final class AssistantEngine: ObservableObject {
 
     @MainActor
     private func speakStatement(_ text: String) async throws {
+        try Task.checkCancellation()
         reply = text
         entries.append(Entry(role: .assistant, text: text))
         state = .speaking

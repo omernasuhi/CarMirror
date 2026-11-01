@@ -44,6 +44,7 @@ final class AppleVoice: NSObject, VoiceOutput, AVSpeechSynthesizerDelegate {
     private let voice: AVSpeechSynthesisVoice?
     private let lock = NSLock()
     private var continuation: CheckedContinuation<Void, Error>?
+    private var currentUtterance: AVSpeechUtterance?
 
     init(language: String = "tr-TR") {
         voice = Self.bestVoice(for: language)
@@ -65,39 +66,47 @@ final class AppleVoice: NSObject, VoiceOutput, AVSpeechSynthesizerDelegate {
     func speak(_ text: String) async throws {
         stop()
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
-            lock.lock()
-            self.continuation = continuation
-            lock.unlock()
             let utterance = AVSpeechUtterance(string: text)
             utterance.voice = voice
             utterance.rate = AVSpeechUtteranceDefaultSpeechRate
             utterance.pitchMultiplier = 0.95
             utterance.postUtteranceDelay = 0.05
+            lock.lock()
+            self.continuation = continuation
+            currentUtterance = utterance
+            lock.unlock()
             synthesizer.speak(utterance)
         }
     }
 
     func stop() {
+        finish(for: nil)
         if synthesizer.isSpeaking {
             synthesizer.stopSpeaking(at: .immediate)
         }
-        finish()
     }
 
-    private func finish() {
+    /// `utterance` verilmişse yalnızca o anki cümleyse bitirir; eski cümlenin
+    /// gecikmiş iptal bildirimi yeni cümleyi kesmesin.
+    private func finish(for utterance: AVSpeechUtterance?) {
         lock.lock()
+        if let utterance, utterance !== currentUtterance {
+            lock.unlock()
+            return
+        }
         let pending = continuation
         continuation = nil
+        currentUtterance = nil
         lock.unlock()
         pending?.resume()
     }
 
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        finish()
+        finish(for: utterance)
     }
 
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        finish()
+        finish(for: utterance)
     }
 }
 
