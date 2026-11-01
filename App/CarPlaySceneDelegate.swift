@@ -124,7 +124,8 @@ extension CarPlaySceneDelegate: NavigationPresenter {
         navigationSession = mapTemplate.startNavigationSession(for: trip)
         mapTemplate.update(
             CPTravelEstimates(distanceRemaining: Measurement(value: plan.distance, unit: UnitLength.meters), timeRemaining: plan.expectedTravelTime),
-            for: trip
+            for: trip,
+            with: .default
         )
         showManeuver(after: 0, distance: plan.steps.first?.distance ?? 0, time: 0, plan: plan)
     }
@@ -133,7 +134,8 @@ extension CarPlaySceneDelegate: NavigationPresenter {
         guard let mapTemplate, let trip, navigationSession != nil else { return }
         mapTemplate.update(
             CPTravelEstimates(distanceRemaining: Measurement(value: progress.remainingDistance, unit: UnitLength.meters), timeRemaining: progress.remainingTime),
-            for: trip
+            for: trip,
+            with: .default
         )
         let ratio = plan.distance > 0 ? progress.distanceToManeuver / plan.distance : 0
         showManeuver(after: progress.stepIndex, distance: progress.distanceToManeuver, time: plan.expectedTravelTime * ratio, plan: plan)
