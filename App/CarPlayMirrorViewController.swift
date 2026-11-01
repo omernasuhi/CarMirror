@@ -1,12 +1,15 @@
 import AVFoundation
 import ImageIO
+import SwiftUI
 import UIKit
 
-/// CarPlay penceresinin kök görünümü: telefon ekranının görüntüsünü çizer.
+/// CarPlay penceresinin kök görünümü: yansıtma varken telefon ekranının
+/// görüntüsünü, yokken asistan ekranını gösterir.
 final class CarPlayMirrorViewController: UIViewController {
     let sink: DisplayLayerSink
     let displayView: MirrorDisplayView
-    let placeholderLabel = UILabel()
+    let assistantHost: UIHostingController<AssistantView>
+    private(set) var isShowingStream = false
     private(set) var orientation: CGImagePropertyOrientation = .up
 
     var fillsScreen: Bool {
@@ -20,11 +23,12 @@ final class CarPlayMirrorViewController: UIViewController {
         let display = MirrorDisplayView()
         displayView = display
         sink = DisplayLayerSink(renderer: display.displayLayer.sampleBufferRenderer)
+        assistantHost = UIHostingController(rootView: AssistantView(surface: .car, engine: .shared, settings: .shared))
         fillsScreen = MirrorSettings.fillsCarScreen
         super.init(nibName: nil, bundle: nil)
 
         sink.onStreamActiveChange = { [weak self] isActive in
-            self?.placeholderLabel.isHidden = isActive
+            self?.setStreamVisible(isActive)
         }
         sink.onOrientationChange = { [weak self] orientation in
             self?.apply(orientation: orientation)
@@ -45,19 +49,14 @@ final class CarPlayMirrorViewController: UIViewController {
         displayView.displayLayer.videoGravity = fillsScreen ? .resizeAspectFill : .resizeAspect
         view.addSubview(displayView)
 
-        placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-        placeholderLabel.text = "iPhone'da CarMirror'ı açıp\nyansıtmayı başlatın"
-        placeholderLabel.textColor = UIColor(white: 1, alpha: 0.75)
-        placeholderLabel.font = .preferredFont(forTextStyle: .title3)
-        placeholderLabel.textAlignment = .center
-        placeholderLabel.numberOfLines = 0
-        view.addSubview(placeholderLabel)
-        NSLayoutConstraint.activate([
-            placeholderLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            placeholderLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            placeholderLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 24),
-            placeholderLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -24),
-        ])
+        displayView.isHidden = true
+
+        addChild(assistantHost)
+        assistantHost.view.frame = view.bounds
+        assistantHost.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        assistantHost.view.backgroundColor = .black
+        view.addSubview(assistantHost.view)
+        assistantHost.didMove(toParent: self)
 
         NotificationCenter.default.addObserver(
             self,
@@ -82,6 +81,17 @@ final class CarPlayMirrorViewController: UIViewController {
         displayView.transform = CGAffineTransform(
             rotationAngle: Self.rotationAngle(for: orientation, flipLandscape: MirrorSettings.flipLandscape)
         )
+    }
+
+    private func setStreamVisible(_ visible: Bool) {
+        isShowingStream = visible
+        displayView.isHidden = !visible
+        assistantHost.view.isHidden = visible
+        if visible {
+            AssistantEngine.shared.surfaceDidDisappear(.car)
+        } else {
+            AssistantEngine.shared.surfaceDidAppear(.car)
+        }
     }
 
     func apply(orientation: CGImagePropertyOrientation) {

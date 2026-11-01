@@ -2,8 +2,12 @@
 
 [![CI](https://github.com/omernasuhi/CarMirror/actions/workflows/ci.yml/badge.svg)](https://github.com/omernasuhi/CarMirror/actions/workflows/ci.yml)
 
-iPhone ekranını gerçek zamanlı olarak Apple CarPlay ekranına yansıtan iOS uygulaması.
+iPhone ekranını gerçek zamanlı olarak Apple CarPlay ekranına yansıtan ve araçta sesli bir yapay
+zekâ asistanı (Alfred) sunan iOS uygulaması.
 
+- **Asistan:** Uygulama açılır açılmaz (ve CarPlay'de CarMirror açılınca) Alfred sizi karşılar:
+  *"İyi akşamlar efendim. Nereye gidiyoruz?"* Konuşursunuz, Claude cevaplar, cümle cümle
+  seslendirilir. "Kadıköy'e gidelim" deyince Apple Haritalar'da rotayı başlatır.
 - **Gerçek cihazda:** Uygulamada **Ekran Yayınını Başlat**'a dokunup iOS'un *Screen Broadcast*
   penceresinde **Start Broadcast**'e basınca, telefonda ne açarsanız araç ekranında görünür.
 - **Simülatörde:** iOS simülatörü ekran yayınını (ReplayKit) desteklemez. Bu yüzden uygulama kendi
@@ -93,6 +97,57 @@ Xcode 27'nin Device Hub'ında simülatör için CarPlay ekranı açılamıyor. �
 Apple ekran yansıtma amaçlı uygulamalara bu yetkiyi vermediği için uygulama bu haliyle App Store
 incelemesinden geçmez; kişisel kullanım ve geliştirme içindir.
 
+## Sesli asistan (Alfred)
+
+Batman'in uşağı Alfred'in zarafeti ile usta bir barmenin rahatlığını birleştiren araç içi asistan.
+Telefonda **Asistan** sekmesinde, CarPlay'de ise pencerenin kendisi olarak görünür; iki ekran aynı
+sohbeti gösterir. Ortadaki çekirdek konuşmaya ve sese tepki verir (dinlerken mavi, düşünürken mor,
+konuşurken altın).
+
+### Kurulum
+
+1. Telefonda **Asistan** sekmesinde dişli simgesine dokunun.
+2. **Anthropic API anahtarı**nı girin (<https://console.anthropic.com>). Anahtar yalnızca cihazın
+   anahtar zincirinde saklanır ve doğrudan Anthropic'e gönderilir. Varsayılan model Claude Opus 5.5;
+   daha hızlı cevap için Sonnet 5.5 ya da Haiku 5.5 seçilebilir.
+3. **Ses:** Apple'ın cihaz içi sesi ücretsizdir ve anahtar gerektirmez. Daha doğal bir ses için
+   **ElevenLabs** seçip API anahtarınızı girin ve **Hesabımdaki sesleri getir** ile bir ses seçin
+   (Türkçe için `eleven_flash_v2_5` modeli kullanılır).
+4. İlk konuşmada iOS mikrofon ve konuşma tanıma izni ister.
+
+Geliştirirken anahtarları Xcode şemasının ortam değişkenleriyle de verebilirsiniz:
+`CARMIRROR_ANTHROPIC_API_KEY`, `CARMIRROR_ELEVENLABS_API_KEY`, `CARMIRROR_ELEVENLABS_VOICE_ID`.
+Anahtarları asla depoya yazmayın.
+
+### Kullanım
+
+- Asistan karşılamayı bitirince dinlemeye başlar; susunca cevap verir, cevaptan sonra yine dinler.
+  Sessizlikte bekleme moduna geçer; konuşmak için çekirdeğe ya da mikrofon düğmesine dokunun.
+- Konuşurken sözünü kesmek için çekirdeğe dokunun.
+- Simülatörde mikrofon yoksa klavye simgesiyle yazarak sorabilirsiniz.
+- Navigasyon: "Kadıköy'e gidelim", "yakında benzinlik var mı" gibi isteklerde Apple Haritalar açılır
+  (CarPlay bağlıyken araç ekranında).
+- Ayarlardan asistanın adı, hitabı ("efendim", "patron"…) ve adınız değiştirilebilir.
+
+### Nasıl çalışır?
+
+```
+Mikrofon → SFSpeechRecognizer (cihaz içi, Türkçe) → metin
+       → Claude Messages API (akışlı, araç çağrıları: start_navigation, search_places)
+       → cümle cümle → Apple TTS veya ElevenLabs → araç hoparlörü
+```
+
+Cevaplar akış halinde gelir; ilk cümle tamamlanır tamamlanmaz okunmaya başlar. Konuşma geçmişi
+(thinking blokları dahil) bir sonraki isteğe değiştirilmeden gönderilir; Claude Opus/Sonnet'te
+güvenlik sınıflandırıcısı bir isteği reddederse sunucu taraflı yedek model (`fallbacks: "default"`)
+devreye girer.
+
+**Maliyet:** Her cevap kısa tutulur (1–2 cümle). Opus 5.5 ile tipik bir soru-cevap birkaç bin giriş
+tokeni ve ~50 çıkış tokenidir; ElevenLabs karakter başına ücretlendirir.
+
+**Güvenlik:** Asistan sürüş sırasında dikkati dağıtmayacak şekilde kısa konuşur ve tehlikeli sürüş
+isteklerini geri çevirir. Yine de telefon ekranıyla ilgilenmeyin; konuşarak kullanın.
+
 ## Nasıl çalışır?
 
 ```
@@ -129,6 +184,8 @@ Xcode'da **Product → Test** (⌘U) ile çalıştırılır. Testler şunları d
 - CarPlay görünümünün kareleri `AVSampleBufferDisplayLayer` ile göstermesi ve yan çevrilmiş
   telefonda görüntüyü döndürmesi
 - Uygulama içi yansıtmanın ekranı yakalayıp iletmesi ve ekran yayını başlayınca durması
+- Asistan: cümle bölme, Claude akış ayrıştırma (thinking imzası, araç çağrısı), istek biçimi
+  (sahte sunucuyla), motorun karşılama → dinleme → cevap → navigasyon akışı (sahte beyin ve sesle)
 
 GitHub Actions her gönderimde testleri Xcode 26.6 ve Xcode 27 ile çalıştırır ve uygulamayı
 gerçek iPhone için de derler. Ayrıca iPhone simülatöründe CarPlay ekranını açıp CarMirror'a

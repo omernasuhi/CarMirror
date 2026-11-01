@@ -18,7 +18,7 @@ final class PhoneSceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidBecomeActive(_ scene: UIScene) {
         if InAppMirror.shared.autoStartWhenPossible {
-            InAppMirror.shared.startOnPhoneWindow()
+            InAppMirror.shared.startOnPhoneWindow(automatic: true)
         }
     }
 

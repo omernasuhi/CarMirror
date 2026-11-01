@@ -36,7 +36,7 @@ final class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegat
         // Simülatörde iOS ekran yayını çalışmadığından CarPlay ekranı açılınca
         // uygulamanın kendi ekranı yansıtılmaya başlar.
         InAppMirror.shared.autoStartWhenPossible = true
-        InAppMirror.shared.startOnPhoneWindow()
+        InAppMirror.shared.startOnPhoneWindow(automatic: true)
         #endif
     }
 

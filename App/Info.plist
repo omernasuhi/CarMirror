@@ -24,6 +24,10 @@
 	<string>$(APP_GROUP_ID)</string>
 	<key>CarMirrorBroadcastExtension</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER).BroadcastExtension</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Asistanla sesli konuşmak için mikrofon gerekir.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Söylediklerinizi yazıya çevirmek için konuşma tanıma kullanılır.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>

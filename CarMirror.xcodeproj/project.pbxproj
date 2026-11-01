@@ -7,64 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0E9774FC41C90B756DB731 /* PhoneSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9FE1793610D966008BB27 /* PhoneSceneDelegate.swift */; };
-		1354436A9F1AD913263716F4 /* UnixSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FB3CE247E75A9EE1F0563 /* UnixSocket.swift */; };
-		17AA67503E9EA51078AE7A05 /* MirrorReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9008C94CBB827652BA4EE5 /* MirrorReceiver.swift */; };
-		1EFB43AF3DB0F29060EA2701 /* InAppMirrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA1AAF6A8E52A5C5879CD3 /* InAppMirrorTests.swift */; };
-		20F9038497A8BD39192A487B /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E0DEF38747CE29A25B176 /* BrowserView.swift */; };
-		2A3B50BC1C56D2954B3F2BE5 /* CarPlayMirrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FA4DCCE1D619A7ABC9E37 /* CarPlayMirrorViewController.swift */; };
-		2E5ECC2FE3E69184548CDDAA /* MirrorControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE3227E364939640B7CECA /* MirrorControlView.swift */; };
-		33AF352F9F7D0EEC839E55F6 /* BroadcastExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DEAA26DAA14AA87C88E203BB /* BroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3AD29C7B0D4A83D4901D4150 /* VideoPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A681AB15BF8A4C4D8C9F5F /* VideoPacketTests.swift */; };
-		44E0AEEC849D106634C84BDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAEECBD635E6A053B9F4803 /* AppDelegate.swift */; };
-		4792AB836981B2714EB3F12F /* UnixSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FB3CE247E75A9EE1F0563 /* UnixSocket.swift */; };
-		4D771AB08CEF6D23A7F781AF /* DisplayLayerSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23C09A613DAA3F7A445F0E1 /* DisplayLayerSink.swift */; };
-		510F11B038059D44CF5D8391 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB8B437A2E4BC7113C23EB /* TestSupport.swift */; };
-		5A4EAABA7FA15542AA9312F7 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A306196DB11B9C1A7CC45A42 /* SampleHandler.swift */; };
-		66E5241BBC871595255041D0 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A694E13BA126E33D76957963 /* DemoView.swift */; };
-		7ED746AD80EDBF675316C698 /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F09FC23C6FA574EA23DEEA /* H264Encoder.swift */; };
-		8A2120B81121927487763121 /* MirrorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA09C6F27B0C06974C22200 /* MirrorClient.swift */; };
-		9EF05F575DC122A0C6D40BF7 /* InAppMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B46114B2BBF05F530D7FA2 /* InAppMirror.swift */; };
-		A1573605C228BE009FC14A80 /* H264EncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A9BF73CC39E3BC61E63AC1 /* H264EncoderTests.swift */; };
-		A551ABB10B6C11AC8177FF68 /* MirrorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA09C6F27B0C06974C22200 /* MirrorClient.swift */; };
-		A98C35A0E322AAB2E1BB0752 /* MirrorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A345D4FFE4D694191DC9CA8 /* MirrorConfig.swift */; };
-		B6E356880322B7E4EFAD938B /* MirrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F5A04E6C11FDAC78D2E5C8 /* MirrorState.swift */; };
-		BF0820236DF81A06912CAE52 /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F09FC23C6FA574EA23DEEA /* H264Encoder.swift */; };
-		C426F543FDF396B0C346A451 /* MirrorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A345D4FFE4D694191DC9CA8 /* MirrorConfig.swift */; };
-		C911CD0ECA9154FC8AF13B51 /* MirrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4DFF766E3682304DF3E7A /* MirrorProtocol.swift */; };
-		D9334ECF8DF0C5556F89E77D /* MirrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4DFF766E3682304DF3E7A /* MirrorProtocol.swift */; };
-		DB3D0E49E9864AAD0B157069 /* CarPlayDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07161F76BFA3B96B8B5B399 /* CarPlayDisplayTests.swift */; };
-		DDECC1F7856789D2ECA79F77 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621ABC0B05CC0D0A7FBE598B /* CarPlaySceneDelegate.swift */; };
-		DFDE76DCA570D07B333B88BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9D01F2710AF0EBFB2F6D3 /* ContentView.swift */; };
-		EC4D11E6FA2A60E0A14A8DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C217F8EDCFE7217575FEE2 /* Assets.xcassets */; };
-		FAEDA7C69A5395CB512D18F0 /* SocketPipelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAAB070FF8A6AC5620E73AE /* SocketPipelineTests.swift */; };
+		056D06762C453395DD6B5F78 /* MirrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2539D441A0702036381DDE /* MirrorState.swift */; };
+		0CC1DF68FEAE056431E07639 /* MirrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7E2686CBD5D3968A17588 /* MirrorProtocol.swift */; };
+		0E85E57063B7896FDEFB1019 /* UnixSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB39B60DE82D32A7C78FFB /* UnixSocket.swift */; };
+		183A88A16E9812B1835ECFD9 /* VideoPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A53ED6084ED3EEFD032251D /* VideoPacketTests.swift */; };
+		1FDD91F6841AF9685F36FF10 /* MirrorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8FCDA59E7863D115F6B85 /* MirrorConfig.swift */; };
+		27E9C8E9A04469C6BC1C9D9B /* MirrorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8FCDA59E7863D115F6B85 /* MirrorConfig.swift */; };
+		286D6DBF1ABE67E4C1CEB552 /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914F318D788B5A277684685 /* H264Encoder.swift */; };
+		465C10C1AB6404E92ABCB1CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221C12CA45C8E8C56950108 /* ContentView.swift */; };
+		48FA13BC0482F803A3107AAA /* BroadcastExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E558AC40DD1C9B96D86CAF31 /* BroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		563D98C4B888BBCC5125F4DF /* SpeechListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B8026F9AEE382C9DF0A5B /* SpeechListener.swift */; };
+		58E4944536A1640122D48BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D31F544E59DEB5F1133DB70 /* Assets.xcassets */; };
+		5F4D3184F8411A4DF68B72EB /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A9B71C34FCB6A9672974C /* BrowserView.swift */; };
+		6260A2AE04AFA13715C33635 /* SocketPipelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6976A093E5856A78F3DF273 /* SocketPipelineTests.swift */; };
+		69E07C01DF4AA54C4C09A9C4 /* DisplayLayerSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2BD51E004B9B20AE20596 /* DisplayLayerSink.swift */; };
+		6D1CCBFF7D24E544E8CEAE3B /* UnixSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB39B60DE82D32A7C78FFB /* UnixSocket.swift */; };
+		750AA755C56217B18146B411 /* AssistantSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E39DA9C9F85319EF0E33FE /* AssistantSettingsView.swift */; };
+		764410C06FE7A3B94319ABC9 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DEC4A863647DA264A5C4 /* TestSupport.swift */; };
+		7DEDF29229F2FC23E35A8F19 /* MirrorReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58BDD0AA85642C0D3EDE55 /* MirrorReceiver.swift */; };
+		7EFF93061959F673AE62FE6E /* AssistantSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225EF927BB2621AFCB2F0AE3 /* AssistantSettings.swift */; };
+		841A78711BAED7A1CB5CACEF /* MirrorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3675DDA1ABAA5B85D93072 /* MirrorClient.swift */; };
+		898BFADEB690E9E031DAC1B7 /* ClaudeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9909F4570F4CA4B59D9CF5B /* ClaudeAPI.swift */; };
+		8B1186D4DFAD961303E89D6E /* AssistantEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1A4F3F997D89B5CCAEE1D /* AssistantEngine.swift */; };
+		91EBCEF49A5E7743CD266A1A /* InAppMirrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8543E4F7D53DAFC5C0C127B /* InAppMirrorTests.swift */; };
+		939F8338638560385687D0F1 /* PhoneSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A677BA17D081FE18B56883A /* PhoneSceneDelegate.swift */; };
+		9A6080BC8CBE3603C2E883B3 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8D445C152A4DE2E23602A /* SampleHandler.swift */; };
+		9A6C57FAACE741826C51BDBC /* InAppMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B697DF26DDAC712CB8932 /* InAppMirror.swift */; };
+		9FD87ED922028993D8F4B016 /* MirrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7E2686CBD5D3968A17588 /* MirrorProtocol.swift */; };
+		A9C287D383EBF73FDA3341BC /* SentenceChunker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E2CE76F9F694321B4C4AC /* SentenceChunker.swift */; };
+		AD4E0A842D4F989C70D9686F /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8F11283DB6088BB7AEBF56 /* DemoView.swift */; };
+		B462D3D7634D85C14633EF6A /* H264EncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F91321E0E46B3633A69CFE1 /* H264EncoderTests.swift */; };
+		B994CE11B030F34AB06AC131 /* MirrorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3675DDA1ABAA5B85D93072 /* MirrorClient.swift */; };
+		BD04F18572DCAA1ABE902255 /* MirrorControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCDCEA18ECDF421E177C583 /* MirrorControlView.swift */; };
+		C134A64B5A7D274BB1C6425E /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914F318D788B5A277684685 /* H264Encoder.swift */; };
+		C569EB1572BE2A690A4080C2 /* CarPlayMirrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE439DB95DDCFE6AFAB4B58B /* CarPlayMirrorViewController.swift */; };
+		CA97B2CE56FF54225454503E /* AssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CE98E0D5A30D121E6F2A9 /* AssistantTests.swift */; };
+		D712BD032DF2650939BBFA6D /* CarPlayDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16041EABA2C6DD9B5A24F45D /* CarPlayDisplayTests.swift */; };
+		D8A0525016559331CCB4F34A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11ADEABB05B1945A0D0129 /* AppDelegate.swift */; };
+		D8F86C4C6027E229B2C36939 /* AssistantPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEFAB5C0D97C7FAD8DE543 /* AssistantPersona.swift */; };
+		DF1C0F0F11DE6AAE96E9834A /* AssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE0CABDAC623FF540E378A /* AssistantView.swift */; };
+		E025490C0BA603FB627EBC9F /* NavigationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA2A879DEACBC82872734F6 /* NavigationLauncher.swift */; };
+		E1EBFC92D8729BEF76347ED0 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DE6B74C3043EBB4D18BD9C /* KeychainStore.swift */; };
+		F0494D2F084C0DECF1343950 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE5D9756E6CC9EEE8EFBBC /* CarPlaySceneDelegate.swift */; };
+		F89589D6F00A51E29ACED350 /* VoiceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BFE75C6AC8CD976D94DDD6 /* VoiceOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		03A0B5ADA82E0C629C320EDB /* PBXContainerItemProxy */ = {
+		83BB077F100D3C897823F5DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0D0CED640D35B611C70EC662 /* Project object */;
+			containerPortal = 1EB26A83FC805B8046DC179D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7025F37295CAF113B542B662;
+			remoteGlobalIDString = 73536DE7D5D974C11AFBD62B;
 			remoteInfo = BroadcastExtension;
 		};
-		A5742BD8B3428C7C42487964 /* PBXContainerItemProxy */ = {
+		DBBE1C07343231C4C8BA8EFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0D0CED640D35B611C70EC662 /* Project object */;
+			containerPortal = 1EB26A83FC805B8046DC179D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 32FD2B3F16AB6DE1491BBF08;
+			remoteGlobalIDString = 5630A82A453BC813FCA263FC;
 			remoteInfo = CarMirror;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8BBB2F95D36AC437F8CD106D /* Embed Foundation Extensions */ = {
+		DAD919242F1F4AB9CBE3C3B2 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				33AF352F9F7D0EEC839E55F6 /* BroadcastExtension.appex in Embed Foundation Extensions */,
+				48FA13BC0482F803A3107AAA /* BroadcastExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,58 +84,70 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0AA09C6F27B0C06974C22200 /* MirrorClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorClient.swift; sourceTree = "<group>"; };
-		0BAAB070FF8A6AC5620E73AE /* SocketPipelineTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SocketPipelineTests.swift; sourceTree = "<group>"; };
-		0F7F499230DE22EC5234059A /* CarMirror-NoCarPlay.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = "CarMirror-NoCarPlay.entitlements"; sourceTree = "<group>"; };
-		1B3FA4DCCE1D619A7ABC9E37 /* CarPlayMirrorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarPlayMirrorViewController.swift; sourceTree = "<group>"; };
-		1BAEECBD635E6A053B9F4803 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2225B0F5879DCEDCFE64C795 /* CarMirror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarMirror.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		28C217F8EDCFE7217575FEE2 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		40F5A04E6C11FDAC78D2E5C8 /* MirrorState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorState.swift; sourceTree = "<group>"; };
-		44EB8B437A2E4BC7113C23EB /* TestSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
-		55F09FC23C6FA574EA23DEEA /* H264Encoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = H264Encoder.swift; sourceTree = "<group>"; };
-		621ABC0B05CC0D0A7FBE598B /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
-		62A681AB15BF8A4C4D8C9F5F /* VideoPacketTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VideoPacketTests.swift; sourceTree = "<group>"; };
-		7A345D4FFE4D694191DC9CA8 /* MirrorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorConfig.swift; sourceTree = "<group>"; };
-		83F9FE1793610D966008BB27 /* PhoneSceneDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhoneSceneDelegate.swift; sourceTree = "<group>"; };
-		8414143BD622882DB3EE7ED8 /* CarMirrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarMirrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0DE3227E364939640B7CECA /* MirrorControlView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorControlView.swift; sourceTree = "<group>"; };
-		A11ABB5AAF2387A262DB2FD3 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
-		A23C09A613DAA3F7A445F0E1 /* DisplayLayerSink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DisplayLayerSink.swift; sourceTree = "<group>"; };
-		A306196DB11B9C1A7CC45A42 /* SampleHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
-		A5C9D01F2710AF0EBFB2F6D3 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A694E13BA126E33D76957963 /* DemoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
-		AF9008C94CBB827652BA4EE5 /* MirrorReceiver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorReceiver.swift; sourceTree = "<group>"; };
-		BA94659D778D07CD158CBB23 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		BB6FB3CE247E75A9EE1F0563 /* UnixSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UnixSocket.swift; sourceTree = "<group>"; };
-		BDBC38F499F1762DF4467702 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BDCA1AAF6A8E52A5C5879CD3 /* InAppMirrorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InAppMirrorTests.swift; sourceTree = "<group>"; };
-		C3D6D89215FAF9E274169995 /* CarMirror.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = CarMirror.entitlements; sourceTree = "<group>"; };
-		C47F94AFEF351C422D68B630 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA9E0DEF38747CE29A25B176 /* BrowserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
-		D2B46114B2BBF05F530D7FA2 /* InAppMirror.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InAppMirror.swift; sourceTree = "<group>"; };
-		D8A9BF73CC39E3BC61E63AC1 /* H264EncoderTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = H264EncoderTests.swift; sourceTree = "<group>"; };
-		DEAA26DAA14AA87C88E203BB /* BroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		E07161F76BFA3B96B8B5B399 /* CarPlayDisplayTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarPlayDisplayTests.swift; sourceTree = "<group>"; };
-		E4B4DFF766E3682304DF3E7A /* MirrorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorProtocol.swift; sourceTree = "<group>"; };
+		0A3675DDA1ABAA5B85D93072 /* MirrorClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorClient.swift; sourceTree = "<group>"; };
+		0F91321E0E46B3633A69CFE1 /* H264EncoderTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = H264EncoderTests.swift; sourceTree = "<group>"; };
+		16041EABA2C6DD9B5A24F45D /* CarPlayDisplayTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarPlayDisplayTests.swift; sourceTree = "<group>"; };
+		225EF927BB2621AFCB2F0AE3 /* AssistantSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssistantSettings.swift; sourceTree = "<group>"; };
+		2A677BA17D081FE18B56883A /* PhoneSceneDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhoneSceneDelegate.swift; sourceTree = "<group>"; };
+		3BCDCEA18ECDF421E177C583 /* MirrorControlView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorControlView.swift; sourceTree = "<group>"; };
+		3C2539D441A0702036381DDE /* MirrorState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorState.swift; sourceTree = "<group>"; };
+		3CE8D445C152A4DE2E23602A /* SampleHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		3D31F544E59DEB5F1133DB70 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4914F318D788B5A277684685 /* H264Encoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = H264Encoder.swift; sourceTree = "<group>"; };
+		499BB01EBD1C1E6922A2E0E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E899E41CA2DC496EE8110AA /* CarMirror-NoCarPlay.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = "CarMirror-NoCarPlay.entitlements"; sourceTree = "<group>"; };
+		52EB7C9015FCB8ECB262FE81 /* CarMirror.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = CarMirror.entitlements; sourceTree = "<group>"; };
+		5B9A9B71C34FCB6A9672974C /* BrowserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
+		6CF2BD51E004B9B20AE20596 /* DisplayLayerSink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DisplayLayerSink.swift; sourceTree = "<group>"; };
+		75AB39B60DE82D32A7C78FFB /* UnixSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UnixSocket.swift; sourceTree = "<group>"; };
+		79E39DA9C9F85319EF0E33FE /* AssistantSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssistantSettingsView.swift; sourceTree = "<group>"; };
+		7BC1A4F3F997D89B5CCAEE1D /* AssistantEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssistantEngine.swift; sourceTree = "<group>"; };
+		7FB7E2686CBD5D3968A17588 /* MirrorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorProtocol.swift; sourceTree = "<group>"; };
+		863E2CE76F9F694321B4C4AC /* SentenceChunker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SentenceChunker.swift; sourceTree = "<group>"; };
+		8A53ED6084ED3EEFD032251D /* VideoPacketTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VideoPacketTests.swift; sourceTree = "<group>"; };
+		8AAE5D9756E6CC9EEE8EFBBC /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
+		8AD8FCDA59E7863D115F6B85 /* MirrorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorConfig.swift; sourceTree = "<group>"; };
+		90B31FAD60A68A8787C66740 /* CarMirrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarMirrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		917CE98E0D5A30D121E6F2A9 /* AssistantTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssistantTests.swift; sourceTree = "<group>"; };
+		924B697DF26DDAC712CB8932 /* InAppMirror.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InAppMirror.swift; sourceTree = "<group>"; };
+		A8DEFAB5C0D97C7FAD8DE543 /* AssistantPersona.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssistantPersona.swift; sourceTree = "<group>"; };
+		B38B8026F9AEE382C9DF0A5B /* SpeechListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeechListener.swift; sourceTree = "<group>"; };
+		B9A9E78CC7FBBB5965D1F059 /* CarMirror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarMirror.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE8F11283DB6088BB7AEBF56 /* DemoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
+		C221C12CA45C8E8C56950108 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C68D2BBCA903DD67FBA69A6D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D612FB77FDFB5DE8A9E94732 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D6BFE75C6AC8CD976D94DDD6 /* VoiceOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceOutput.swift; sourceTree = "<group>"; };
+		D6DE6B74C3043EBB4D18BD9C /* KeychainStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		DBA2A879DEACBC82872734F6 /* NavigationLauncher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NavigationLauncher.swift; sourceTree = "<group>"; };
+		DCB4DEC4A863647DA264A5C4 /* TestSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
+		E558AC40DD1C9B96D86CAF31 /* BroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8543E4F7D53DAFC5C0C127B /* InAppMirrorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InAppMirrorTests.swift; sourceTree = "<group>"; };
+		ECB1050B8C45C3A929A9A325 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
+		F6976A093E5856A78F3DF273 /* SocketPipelineTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SocketPipelineTests.swift; sourceTree = "<group>"; };
+		F8BE0CABDAC623FF540E378A /* AssistantView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssistantView.swift; sourceTree = "<group>"; };
+		F9909F4570F4CA4B59D9CF5B /* ClaudeAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClaudeAPI.swift; sourceTree = "<group>"; };
+		FA58BDD0AA85642C0D3EDE55 /* MirrorReceiver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MirrorReceiver.swift; sourceTree = "<group>"; };
+		FC11ADEABB05B1945A0D0129 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE439DB95DDCFE6AFAB4B58B /* CarPlayMirrorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarPlayMirrorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		41BE80E5C081A404FA870362 /* Frameworks */ = {
+		1A403592D932A928453C1CA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80F9B2AB71C1AD198BB05CBB /* Frameworks */ = {
+		5C57A6EF902412694AE5535F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA8C2D46EC2B738890AE4019 /* Frameworks */ = {
+		8CBEF75D81DBA2B05E997411 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -133,146 +157,149 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		009ACFCAA4BD93A72915D2C7 /* Shared */ = {
+		29AEB721BBBED56BF2085285 /* CarMirrorTests */ = {
 			isa = PBXGroup;
 			children = (
-				55F09FC23C6FA574EA23DEEA /* H264Encoder.swift */,
-				0AA09C6F27B0C06974C22200 /* MirrorClient.swift */,
-				7A345D4FFE4D694191DC9CA8 /* MirrorConfig.swift */,
-				E4B4DFF766E3682304DF3E7A /* MirrorProtocol.swift */,
-				BB6FB3CE247E75A9EE1F0563 /* UnixSocket.swift */,
-			);
-			name = Shared;
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		1DAE755BA8C84CC5C8F75647 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				78FE89E276ACBFB1606EF75D /* CarMirrorTests */,
-			);
-			name = Tests;
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		38282C1BB868A077E3083AA1 = {
-			isa = PBXGroup;
-			children = (
-				E0C936CD66BC0214BFBF509E /* Products */,
-				CAF6910FAFC5DFC7BA33EC03 /* App */,
-				AFC0D09EE9833E80713B91C9 /* BroadcastExtension */,
-				009ACFCAA4BD93A72915D2C7 /* Shared */,
-				1DAE755BA8C84CC5C8F75647 /* Tests */,
-				BA94659D778D07CD158CBB23 /* README.md */,
-			);
-			sourceTree = "<group>";
-		};
-		78FE89E276ACBFB1606EF75D /* CarMirrorTests */ = {
-			isa = PBXGroup;
-			children = (
-				E07161F76BFA3B96B8B5B399 /* CarPlayDisplayTests.swift */,
-				D8A9BF73CC39E3BC61E63AC1 /* H264EncoderTests.swift */,
-				BDCA1AAF6A8E52A5C5879CD3 /* InAppMirrorTests.swift */,
-				0BAAB070FF8A6AC5620E73AE /* SocketPipelineTests.swift */,
-				44EB8B437A2E4BC7113C23EB /* TestSupport.swift */,
-				62A681AB15BF8A4C4D8C9F5F /* VideoPacketTests.swift */,
+				917CE98E0D5A30D121E6F2A9 /* AssistantTests.swift */,
+				16041EABA2C6DD9B5A24F45D /* CarPlayDisplayTests.swift */,
+				0F91321E0E46B3633A69CFE1 /* H264EncoderTests.swift */,
+				E8543E4F7D53DAFC5C0C127B /* InAppMirrorTests.swift */,
+				F6976A093E5856A78F3DF273 /* SocketPipelineTests.swift */,
+				DCB4DEC4A863647DA264A5C4 /* TestSupport.swift */,
+				8A53ED6084ED3EEFD032251D /* VideoPacketTests.swift */,
 			);
 			name = CarMirrorTests;
 			path = CarMirrorTests;
 			sourceTree = "<group>";
 		};
-		AFC0D09EE9833E80713B91C9 /* BroadcastExtension */ = {
+		38E4245228FA9845E41B2BD1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A11ABB5AAF2387A262DB2FD3 /* BroadcastExtension.entitlements */,
-				BDBC38F499F1762DF4467702 /* Info.plist */,
-				A306196DB11B9C1A7CC45A42 /* SampleHandler.swift */,
+				29AEB721BBBED56BF2085285 /* CarMirrorTests */,
 			);
-			name = BroadcastExtension;
-			path = BroadcastExtension;
+			name = Tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		CAF6910FAFC5DFC7BA33EC03 /* App */ = {
+		4E880EEC34640E0F6EE7A015 = {
 			isa = PBXGroup;
 			children = (
-				1BAEECBD635E6A053B9F4803 /* AppDelegate.swift */,
-				28C217F8EDCFE7217575FEE2 /* Assets.xcassets */,
-				CA9E0DEF38747CE29A25B176 /* BrowserView.swift */,
-				0F7F499230DE22EC5234059A /* CarMirror-NoCarPlay.entitlements */,
-				C3D6D89215FAF9E274169995 /* CarMirror.entitlements */,
-				1B3FA4DCCE1D619A7ABC9E37 /* CarPlayMirrorViewController.swift */,
-				621ABC0B05CC0D0A7FBE598B /* CarPlaySceneDelegate.swift */,
-				A5C9D01F2710AF0EBFB2F6D3 /* ContentView.swift */,
-				A694E13BA126E33D76957963 /* DemoView.swift */,
-				A23C09A613DAA3F7A445F0E1 /* DisplayLayerSink.swift */,
-				D2B46114B2BBF05F530D7FA2 /* InAppMirror.swift */,
-				C47F94AFEF351C422D68B630 /* Info.plist */,
-				A0DE3227E364939640B7CECA /* MirrorControlView.swift */,
-				AF9008C94CBB827652BA4EE5 /* MirrorReceiver.swift */,
-				40F5A04E6C11FDAC78D2E5C8 /* MirrorState.swift */,
-				83F9FE1793610D966008BB27 /* PhoneSceneDelegate.swift */,
+				5269854793AAE8FE2106CA57 /* Products */,
+				7495440ED176D47F26870C58 /* App */,
+				ADA44952D486AF2BCEE088BC /* BroadcastExtension */,
+				ED2BDBA6BDFB11536E4E6EF4 /* Shared */,
+				38E4245228FA9845E41B2BD1 /* Tests */,
+				D612FB77FDFB5DE8A9E94732 /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		5269854793AAE8FE2106CA57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9A9E78CC7FBBB5965D1F059 /* CarMirror.app */,
+				E558AC40DD1C9B96D86CAF31 /* BroadcastExtension.appex */,
+				90B31FAD60A68A8787C66740 /* CarMirrorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68D1A5EB8803644419CD0210 /* Assistant */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1A4F3F997D89B5CCAEE1D /* AssistantEngine.swift */,
+				A8DEFAB5C0D97C7FAD8DE543 /* AssistantPersona.swift */,
+				225EF927BB2621AFCB2F0AE3 /* AssistantSettings.swift */,
+				79E39DA9C9F85319EF0E33FE /* AssistantSettingsView.swift */,
+				F8BE0CABDAC623FF540E378A /* AssistantView.swift */,
+				F9909F4570F4CA4B59D9CF5B /* ClaudeAPI.swift */,
+				D6DE6B74C3043EBB4D18BD9C /* KeychainStore.swift */,
+				DBA2A879DEACBC82872734F6 /* NavigationLauncher.swift */,
+				863E2CE76F9F694321B4C4AC /* SentenceChunker.swift */,
+				B38B8026F9AEE382C9DF0A5B /* SpeechListener.swift */,
+				D6BFE75C6AC8CD976D94DDD6 /* VoiceOutput.swift */,
+			);
+			name = Assistant;
+			path = Assistant;
+			sourceTree = "<group>";
+		};
+		7495440ED176D47F26870C58 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FC11ADEABB05B1945A0D0129 /* AppDelegate.swift */,
+				3D31F544E59DEB5F1133DB70 /* Assets.xcassets */,
+				68D1A5EB8803644419CD0210 /* Assistant */,
+				5B9A9B71C34FCB6A9672974C /* BrowserView.swift */,
+				4E899E41CA2DC496EE8110AA /* CarMirror-NoCarPlay.entitlements */,
+				52EB7C9015FCB8ECB262FE81 /* CarMirror.entitlements */,
+				FE439DB95DDCFE6AFAB4B58B /* CarPlayMirrorViewController.swift */,
+				8AAE5D9756E6CC9EEE8EFBBC /* CarPlaySceneDelegate.swift */,
+				C221C12CA45C8E8C56950108 /* ContentView.swift */,
+				BE8F11283DB6088BB7AEBF56 /* DemoView.swift */,
+				6CF2BD51E004B9B20AE20596 /* DisplayLayerSink.swift */,
+				924B697DF26DDAC712CB8932 /* InAppMirror.swift */,
+				C68D2BBCA903DD67FBA69A6D /* Info.plist */,
+				3BCDCEA18ECDF421E177C583 /* MirrorControlView.swift */,
+				FA58BDD0AA85642C0D3EDE55 /* MirrorReceiver.swift */,
+				3C2539D441A0702036381DDE /* MirrorState.swift */,
+				2A677BA17D081FE18B56883A /* PhoneSceneDelegate.swift */,
 			);
 			name = App;
 			path = App;
 			sourceTree = "<group>";
 		};
-		E0C936CD66BC0214BFBF509E /* Products */ = {
+		ADA44952D486AF2BCEE088BC /* BroadcastExtension */ = {
 			isa = PBXGroup;
 			children = (
-				2225B0F5879DCEDCFE64C795 /* CarMirror.app */,
-				DEAA26DAA14AA87C88E203BB /* BroadcastExtension.appex */,
-				8414143BD622882DB3EE7ED8 /* CarMirrorTests.xctest */,
+				ECB1050B8C45C3A929A9A325 /* BroadcastExtension.entitlements */,
+				499BB01EBD1C1E6922A2E0E0 /* Info.plist */,
+				3CE8D445C152A4DE2E23602A /* SampleHandler.swift */,
 			);
-			name = Products;
+			name = BroadcastExtension;
+			path = BroadcastExtension;
+			sourceTree = "<group>";
+		};
+		ED2BDBA6BDFB11536E4E6EF4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4914F318D788B5A277684685 /* H264Encoder.swift */,
+				0A3675DDA1ABAA5B85D93072 /* MirrorClient.swift */,
+				8AD8FCDA59E7863D115F6B85 /* MirrorConfig.swift */,
+				7FB7E2686CBD5D3968A17588 /* MirrorProtocol.swift */,
+				75AB39B60DE82D32A7C78FFB /* UnixSocket.swift */,
+			);
+			name = Shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1DF27D0DCA36BF6FA3622E82 /* CarMirrorTests */ = {
+		5630A82A453BC813FCA263FC /* CarMirror */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DDB95CB4C9845CC5262E891 /* Build configuration list for PBXNativeTarget "CarMirrorTests" */;
+			buildConfigurationList = 8C39BC912E755E90CB8FD410 /* Build configuration list for PBXNativeTarget "CarMirror" */;
 			buildPhases = (
-				2D46B23283771D0D6666E39B /* Sources */,
-				41BE80E5C081A404FA870362 /* Frameworks */,
-				D33C837ACB980312A77122EB /* Resources */,
+				1A5F8980C755590C7C1DDC42 /* Sources */,
+				8CBEF75D81DBA2B05E997411 /* Frameworks */,
+				8829699B9B9817B7B925065A /* Resources */,
+				DAD919242F1F4AB9CBE3C3B2 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0E31E4011583BC79268D0CF4 /* PBXTargetDependency */,
-			);
-			name = CarMirrorTests;
-			productName = CarMirrorTests;
-			productReference = 8414143BD622882DB3EE7ED8 /* CarMirrorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		32FD2B3F16AB6DE1491BBF08 /* CarMirror */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ECB7D351B49E62F50A5CC921 /* Build configuration list for PBXNativeTarget "CarMirror" */;
-			buildPhases = (
-				2ADCCB63D509B8E24E96B6C0 /* Sources */,
-				80F9B2AB71C1AD198BB05CBB /* Frameworks */,
-				EA7C550CED2299E1ABAEFF31 /* Resources */,
-				8BBB2F95D36AC437F8CD106D /* Embed Foundation Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				985B1160C9F4C77DAD7F3830 /* PBXTargetDependency */,
+				27755EC9BBB302DD93CBFD5B /* PBXTargetDependency */,
 			);
 			name = CarMirror;
 			productName = CarMirror;
-			productReference = 2225B0F5879DCEDCFE64C795 /* CarMirror.app */;
+			productReference = B9A9E78CC7FBBB5965D1F059 /* CarMirror.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7025F37295CAF113B542B662 /* BroadcastExtension */ = {
+		73536DE7D5D974C11AFBD62B /* BroadcastExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7BD321C323010C9CBD85A4D8 /* Build configuration list for PBXNativeTarget "BroadcastExtension" */;
+			buildConfigurationList = 2EECC3C1A914E9B0A6B11C47 /* Build configuration list for PBXNativeTarget "BroadcastExtension" */;
 			buildPhases = (
-				D56D2D666F24DCB8993B497B /* Sources */,
-				CA8C2D46EC2B738890AE4019 /* Frameworks */,
-				13C076A0B36389FD14225E84 /* Resources */,
+				1BA28B64F2301E54A928B4EC /* Sources */,
+				5C57A6EF902412694AE5535F /* Frameworks */,
+				F992A6E48B45D4934ABE218D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -280,19 +307,37 @@
 			);
 			name = BroadcastExtension;
 			productName = BroadcastExtension;
-			productReference = DEAA26DAA14AA87C88E203BB /* BroadcastExtension.appex */;
+			productReference = E558AC40DD1C9B96D86CAF31 /* BroadcastExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		C0460EEB3C0B0902F8880DD3 /* CarMirrorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBDDDA5DA20DD10AC12004F0 /* Build configuration list for PBXNativeTarget "CarMirrorTests" */;
+			buildPhases = (
+				448DC9A694DD627C27D2B6FE /* Sources */,
+				1A403592D932A928453C1CA1 /* Frameworks */,
+				89B30BED8C5F1575146ACBE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FCCF0C10D6D3B0D476B25A8 /* PBXTargetDependency */,
+			);
+			name = CarMirrorTests;
+			productName = CarMirrorTests;
+			productReference = 90B31FAD60A68A8787C66740 /* CarMirrorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0D0CED640D35B611C70EC662 /* Project object */ = {
+		1EB26A83FC805B8046DC179D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 			};
-			buildConfigurationList = 99C3A9489784119C0D859E58 /* Build configuration list for PBXProject "CarMirror" */;
+			buildConfigurationList = 6F8B68AB9A9EBD08995C5185 /* Build configuration list for PBXProject "CarMirror" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = tr;
 			hasScannedForEncodings = 0;
@@ -300,136 +345,126 @@
 				tr,
 				Base,
 			);
-			mainGroup = 38282C1BB868A077E3083AA1;
+			mainGroup = 4E880EEC34640E0F6EE7A015;
 			minimizedProjectReferenceProxies = 0;
-			productRefGroup = E0C936CD66BC0214BFBF509E /* Products */;
+			productRefGroup = 5269854793AAE8FE2106CA57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32FD2B3F16AB6DE1491BBF08 /* CarMirror */,
-				7025F37295CAF113B542B662 /* BroadcastExtension */,
-				1DF27D0DCA36BF6FA3622E82 /* CarMirrorTests */,
+				5630A82A453BC813FCA263FC /* CarMirror */,
+				73536DE7D5D974C11AFBD62B /* BroadcastExtension */,
+				C0460EEB3C0B0902F8880DD3 /* CarMirrorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		13C076A0B36389FD14225E84 /* Resources */ = {
+		8829699B9B9817B7B925065A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58E4944536A1640122D48BA8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89B30BED8C5F1575146ACBE7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D33C837ACB980312A77122EB /* Resources */ = {
+		F992A6E48B45D4934ABE218D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA7C550CED2299E1ABAEFF31 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC4D11E6FA2A60E0A14A8DA8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2ADCCB63D509B8E24E96B6C0 /* Sources */ = {
+		1A5F8980C755590C7C1DDC42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44E0AEEC849D106634C84BDF /* AppDelegate.swift in Sources */,
-				20F9038497A8BD39192A487B /* BrowserView.swift in Sources */,
-				2A3B50BC1C56D2954B3F2BE5 /* CarPlayMirrorViewController.swift in Sources */,
-				DDECC1F7856789D2ECA79F77 /* CarPlaySceneDelegate.swift in Sources */,
-				DFDE76DCA570D07B333B88BB /* ContentView.swift in Sources */,
-				66E5241BBC871595255041D0 /* DemoView.swift in Sources */,
-				4D771AB08CEF6D23A7F781AF /* DisplayLayerSink.swift in Sources */,
-				9EF05F575DC122A0C6D40BF7 /* InAppMirror.swift in Sources */,
-				2E5ECC2FE3E69184548CDDAA /* MirrorControlView.swift in Sources */,
-				17AA67503E9EA51078AE7A05 /* MirrorReceiver.swift in Sources */,
-				B6E356880322B7E4EFAD938B /* MirrorState.swift in Sources */,
-				0A0E9774FC41C90B756DB731 /* PhoneSceneDelegate.swift in Sources */,
-				7ED746AD80EDBF675316C698 /* H264Encoder.swift in Sources */,
-				A551ABB10B6C11AC8177FF68 /* MirrorClient.swift in Sources */,
-				C426F543FDF396B0C346A451 /* MirrorConfig.swift in Sources */,
-				D9334ECF8DF0C5556F89E77D /* MirrorProtocol.swift in Sources */,
-				4792AB836981B2714EB3F12F /* UnixSocket.swift in Sources */,
+				D8A0525016559331CCB4F34A /* AppDelegate.swift in Sources */,
+				8B1186D4DFAD961303E89D6E /* AssistantEngine.swift in Sources */,
+				D8F86C4C6027E229B2C36939 /* AssistantPersona.swift in Sources */,
+				7EFF93061959F673AE62FE6E /* AssistantSettings.swift in Sources */,
+				750AA755C56217B18146B411 /* AssistantSettingsView.swift in Sources */,
+				DF1C0F0F11DE6AAE96E9834A /* AssistantView.swift in Sources */,
+				898BFADEB690E9E031DAC1B7 /* ClaudeAPI.swift in Sources */,
+				E1EBFC92D8729BEF76347ED0 /* KeychainStore.swift in Sources */,
+				E025490C0BA603FB627EBC9F /* NavigationLauncher.swift in Sources */,
+				A9C287D383EBF73FDA3341BC /* SentenceChunker.swift in Sources */,
+				563D98C4B888BBCC5125F4DF /* SpeechListener.swift in Sources */,
+				F89589D6F00A51E29ACED350 /* VoiceOutput.swift in Sources */,
+				5F4D3184F8411A4DF68B72EB /* BrowserView.swift in Sources */,
+				C569EB1572BE2A690A4080C2 /* CarPlayMirrorViewController.swift in Sources */,
+				F0494D2F084C0DECF1343950 /* CarPlaySceneDelegate.swift in Sources */,
+				465C10C1AB6404E92ABCB1CE /* ContentView.swift in Sources */,
+				AD4E0A842D4F989C70D9686F /* DemoView.swift in Sources */,
+				69E07C01DF4AA54C4C09A9C4 /* DisplayLayerSink.swift in Sources */,
+				9A6C57FAACE741826C51BDBC /* InAppMirror.swift in Sources */,
+				BD04F18572DCAA1ABE902255 /* MirrorControlView.swift in Sources */,
+				7DEDF29229F2FC23E35A8F19 /* MirrorReceiver.swift in Sources */,
+				056D06762C453395DD6B5F78 /* MirrorState.swift in Sources */,
+				939F8338638560385687D0F1 /* PhoneSceneDelegate.swift in Sources */,
+				286D6DBF1ABE67E4C1CEB552 /* H264Encoder.swift in Sources */,
+				841A78711BAED7A1CB5CACEF /* MirrorClient.swift in Sources */,
+				1FDD91F6841AF9685F36FF10 /* MirrorConfig.swift in Sources */,
+				0CC1DF68FEAE056431E07639 /* MirrorProtocol.swift in Sources */,
+				6D1CCBFF7D24E544E8CEAE3B /* UnixSocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D46B23283771D0D6666E39B /* Sources */ = {
+		1BA28B64F2301E54A928B4EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3D0E49E9864AAD0B157069 /* CarPlayDisplayTests.swift in Sources */,
-				A1573605C228BE009FC14A80 /* H264EncoderTests.swift in Sources */,
-				1EFB43AF3DB0F29060EA2701 /* InAppMirrorTests.swift in Sources */,
-				FAEDA7C69A5395CB512D18F0 /* SocketPipelineTests.swift in Sources */,
-				510F11B038059D44CF5D8391 /* TestSupport.swift in Sources */,
-				3AD29C7B0D4A83D4901D4150 /* VideoPacketTests.swift in Sources */,
+				9A6080BC8CBE3603C2E883B3 /* SampleHandler.swift in Sources */,
+				C134A64B5A7D274BB1C6425E /* H264Encoder.swift in Sources */,
+				B994CE11B030F34AB06AC131 /* MirrorClient.swift in Sources */,
+				27E9C8E9A04469C6BC1C9D9B /* MirrorConfig.swift in Sources */,
+				9FD87ED922028993D8F4B016 /* MirrorProtocol.swift in Sources */,
+				0E85E57063B7896FDEFB1019 /* UnixSocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D56D2D666F24DCB8993B497B /* Sources */ = {
+		448DC9A694DD627C27D2B6FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A4EAABA7FA15542AA9312F7 /* SampleHandler.swift in Sources */,
-				BF0820236DF81A06912CAE52 /* H264Encoder.swift in Sources */,
-				8A2120B81121927487763121 /* MirrorClient.swift in Sources */,
-				A98C35A0E322AAB2E1BB0752 /* MirrorConfig.swift in Sources */,
-				C911CD0ECA9154FC8AF13B51 /* MirrorProtocol.swift in Sources */,
-				1354436A9F1AD913263716F4 /* UnixSocket.swift in Sources */,
+				CA97B2CE56FF54225454503E /* AssistantTests.swift in Sources */,
+				D712BD032DF2650939BBFA6D /* CarPlayDisplayTests.swift in Sources */,
+				B462D3D7634D85C14633EF6A /* H264EncoderTests.swift in Sources */,
+				91EBCEF49A5E7743CD266A1A /* InAppMirrorTests.swift in Sources */,
+				6260A2AE04AFA13715C33635 /* SocketPipelineTests.swift in Sources */,
+				764410C06FE7A3B94319ABC9 /* TestSupport.swift in Sources */,
+				183A88A16E9812B1835ECFD9 /* VideoPacketTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0E31E4011583BC79268D0CF4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CarMirror;
-			target = 32FD2B3F16AB6DE1491BBF08 /* CarMirror */;
-			targetProxy = A5742BD8B3428C7C42487964 /* PBXContainerItemProxy */;
-		};
-		985B1160C9F4C77DAD7F3830 /* PBXTargetDependency */ = {
+		27755EC9BBB302DD93CBFD5B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BroadcastExtension;
-			target = 7025F37295CAF113B542B662 /* BroadcastExtension */;
-			targetProxy = 03A0B5ADA82E0C629C320EDB /* PBXContainerItemProxy */;
+			target = 73536DE7D5D974C11AFBD62B /* BroadcastExtension */;
+			targetProxy = 83BB077F100D3C897823F5DC /* PBXContainerItemProxy */;
+		};
+		6FCCF0C10D6D3B0D476B25A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CarMirror;
+			target = 5630A82A453BC813FCA263FC /* CarMirror */;
+			targetProxy = DBBE1C07343231C4C8BA8EFE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		30EF337D7F1C1E65703AE821 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_ENTITLEMENTS = BroadcastExtension/BroadcastExtension.entitlements;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = BroadcastExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).carmirror.BroadcastExtension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3AC5D14CE36D4620F09B6E42 /* Debug */ = {
+		27412848599A8AE4C6244712 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -502,7 +537,7 @@
 			};
 			name = Debug;
 		};
-		545CB043470DF6DAC2C9AF78 /* Debug */ = {
+		2965BF73EA38E488F6D06F3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -523,7 +558,7 @@
 			};
 			name = Debug;
 		};
-		5B22669DCC13F181D133F2A1 /* Release */ = {
+		34C7381FAAA66D092506A25C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -589,7 +624,89 @@
 			};
 			name = Release;
 		};
-		75043B96BD8947F7331E58AF /* Release */ = {
+		3B92C45202546F85DA7E0AC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = BroadcastExtension/BroadcastExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BroadcastExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).carmirror.BroadcastExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4AC97300D475957702653F47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = BroadcastExtension/BroadcastExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BroadcastExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).carmirror.BroadcastExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EEE88BFC1B85F6911C4CE87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).carmirror.tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarMirror.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarMirror";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC01AB1EB99C6C4F13AA15D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).carmirror.tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarMirror.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarMirror";
+			};
+			name = Debug;
+		};
+		D0BCDBEFA36B5D7C6FACE657 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -611,106 +728,46 @@
 			};
 			name = Release;
 		};
-		A7F368794D3426B453C8853F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).carmirror.tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarMirror.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarMirror";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B71C5B686EDBAF262BCDEA78 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).carmirror.tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarMirror.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarMirror";
-			};
-			name = Debug;
-		};
-		F08E861CBE29ED353DA6D35E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_ENTITLEMENTS = BroadcastExtension/BroadcastExtension.entitlements;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = BroadcastExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).carmirror.BroadcastExtension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7BD321C323010C9CBD85A4D8 /* Build configuration list for PBXNativeTarget "BroadcastExtension" */ = {
+		2EECC3C1A914E9B0A6B11C47 /* Build configuration list for PBXNativeTarget "BroadcastExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				30EF337D7F1C1E65703AE821 /* Release */,
-				F08E861CBE29ED353DA6D35E /* Debug */,
+				4AC97300D475957702653F47 /* Release */,
+				3B92C45202546F85DA7E0AC8 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DDB95CB4C9845CC5262E891 /* Build configuration list for PBXNativeTarget "CarMirrorTests" */ = {
+		6F8B68AB9A9EBD08995C5185 /* Build configuration list for PBXProject "CarMirror" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A7F368794D3426B453C8853F /* Release */,
-				B71C5B686EDBAF262BCDEA78 /* Debug */,
+				27412848599A8AE4C6244712 /* Debug */,
+				34C7381FAAA66D092506A25C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99C3A9489784119C0D859E58 /* Build configuration list for PBXProject "CarMirror" */ = {
+		8C39BC912E755E90CB8FD410 /* Build configuration list for PBXNativeTarget "CarMirror" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AC5D14CE36D4620F09B6E42 /* Debug */,
-				5B22669DCC13F181D133F2A1 /* Release */,
+				D0BCDBEFA36B5D7C6FACE657 /* Release */,
+				2965BF73EA38E488F6D06F3C /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ECB7D351B49E62F50A5CC921 /* Build configuration list for PBXNativeTarget "CarMirror" */ = {
+		EBDDDA5DA20DD10AC12004F0 /* Build configuration list for PBXNativeTarget "CarMirrorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75043B96BD8947F7331E58AF /* Release */,
-				545CB043470DF6DAC2C9AF78 /* Debug */,
+				5EEE88BFC1B85F6911C4CE87 /* Release */,
+				BC01AB1EB99C6C4F13AA15D6 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0D0CED640D35B611C70EC662 /* Project object */;
+	rootObject = 1EB26A83FC805B8046DC179D /* Project object */;
 }

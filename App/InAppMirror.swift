@@ -45,9 +45,23 @@ final class InAppMirror: NSObject {
         return scene.windows.first(where: { $0.isKeyWindow }) ?? scene.windows.first
     }
 
-    func startOnPhoneWindow() {
+    /// `automatic`: CarPlay bağlanınca kendiliğinden başlatma. Asistan sekmesi
+    /// CarPlay'de zaten kendi görünümüyle gösterildiği için yansıtılmaz.
+    func startOnPhoneWindow(automatic: Bool = false) {
+        if automatic && AppTabState.shared.current == .assistant { return }
         guard let window = Self.phoneWindow else { return }
         start(window: window)
+    }
+
+    /// Telefonda sekme değişti: otomatik modda asistan sekmesinde yansıtma
+    /// durur, diğer sekmelerde başlar.
+    func tabDidChange(_ tab: AppTab) {
+        guard autoStartWhenPossible else { return }
+        if tab == .assistant {
+            stop()
+        } else {
+            startOnPhoneWindow(automatic: true)
+        }
     }
 
     func start(window: UIWindow) {

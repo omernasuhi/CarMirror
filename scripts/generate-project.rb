@@ -52,15 +52,23 @@ end
 project.frameworks_group.recursive_children.select { |c| c.isa == 'PBXFileReference' }.each(&:remove_from_project)
 project.frameworks_group.remove_from_project
 
+def add_tree(group, dir, &block)
+  Dir.children(dir).sort.each do |name|
+    next if name.start_with?('.')
+    full = File.join(dir, name)
+    if File.directory?(full) && !name.end_with?('.xcassets')
+      add_tree(group.new_group(name, name), full, &block)
+    else
+      block.call(group.new_reference(name), File.extname(name))
+    end
+  end
+end
+
 def add_folder(project, path, &block)
   group = project.main_group.find_subpath(path, true)
   group.set_source_tree('<group>')
   group.set_path(File.basename(path))
-  Dir.children(File.join(ROOT, path)).sort.each do |name|
-    next if name.start_with?('.')
-    ref = group.new_reference(name)
-    block.call(ref, File.extname(name))
-  end
+  add_tree(group, File.join(ROOT, path), &block)
 end
 
 add_folder(project, 'App') do |ref, ext_name|

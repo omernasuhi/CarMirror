@@ -134,6 +134,31 @@ if [ "$mirrored" != true ]; then
   exit 1
 fi
 
+log "Asistan ekranı CarPlay'de deneniyor"
+xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
+sleep 2
+xcrun simctl launch "$UDID" "$BUNDLE_ID" -CarMirrorTab assistant -CarMirrorAssistantDemo YES
+sleep 6
+"$TOOLS/click" "$CX" "$CY" || true
+sleep 10
+carplay_shot "$OUT/6-carplay-assistant.png"
+xcrun simctl io "$UDID" screenshot "$OUT/6-iphone-assistant.png" > /dev/null
+ASSISTANT_NAME=$(python3 -c "print('ALFRED')")
+if "$TOOLS/find-text" "$OUT/6-carplay-assistant.png" "$ASSISTANT_NAME" > /dev/null 2> "$OUT/ocr-assistant.log"; then
+  log "Asistan CarPlay ekranında görünüyor"
+else
+  log "UYARI: asistan adı CarPlay ekran görüntüsünde okunamadı (OCR); görüntülere bakın"
+  head -20 "$OUT/ocr-assistant.log" || true
+fi
+
+log "Demo ekranına dönülüyor"
+xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
+sleep 2
+xcrun simctl launch "$UDID" "$BUNDLE_ID" -CarMirrorTab demo
+sleep 6
+"$TOOLS/click" "$CX" "$CY" || true
+sleep 8
+
 log "CarPlay ekranı kaydediliyor"
 xcrun simctl io "$UDID" recordVideo --display=external --codec=h264 --force "$OUT/carplay.mov" > /dev/null 2>&1 &
 RECORDER=$!
