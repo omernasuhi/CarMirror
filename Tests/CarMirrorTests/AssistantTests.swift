@@ -345,11 +345,13 @@ final class AssistantEngineTests: XCTestCase {
         searched = []
     }
 
-    private func makeEngine(brain: AssistantBrain?) -> AssistantEngine {
+    private func makeEngine(brain: AssistantBrain?, navigation: NavigationEngine? = nil) -> AssistantEngine {
         let voice = self.voice!
+        let navigation = navigation ?? NavigationEngine(location: FakeLocationSource(authorized: false), router: FakeRouter())
         let engine = AssistantEngine(
             settings: settings,
             listener: listener,
+            navigation: navigation,
             brainFactory: { _ in brain },
             voiceFactory: { _ in voice }
         )
@@ -411,6 +413,62 @@ final class AssistantEngineTests: XCTestCase {
         XCTAssertEqual(engine.conversation.count, 4)
     }
 
+    func testNavigationToolStartsInAppRouteWhenLocationIsAvailable() {
+        let toolCall = ClaudeToolCall(id: "toolu_2", name: AssistantTools.startNavigation, inputJSON: #"{"destination": "Test Hedefi"}"#)
+        let firstRound: [ClaudeStreamEvent] = [
+            .toolCall(toolCall),
+            .done(ClaudeTurn(
+                blocks: [["type": "tool_use", "id": "toolu_2", "name": AssistantTools.startNavigation, "input": ["destination": "Test Hedefi"]]],
+                stopReason: "tool_use",
+                text: ""
+            )),
+        ]
+        let brain = ScriptedBrain(rounds: [firstRound, ScriptedBrain.textRound(["Rota hazır efendim."])])
+        let router = FakeRouter()
+        router.places = [TestRoute.place]
+        router.plan = TestRoute.plan()
+        let navigation = NavigationEngine(location: FakeLocationSource(authorized: true, latest: TestRoute.origin), router: router)
+        let engine = makeEngine(brain: brain, navigation: navigation)
+
+        engine.submit(text: "Test hedefine yol tarifi al")
+        waitUntil(timeout: 5, message: "tur bitmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
+
+        XCTAssertTrue(navigated.isEmpty, "Konum varken Apple Haritalar'a düşülmemeli")
+        XCTAssertEqual(navigation.state, .navigating)
+        let toolResult = brain.requests[1][2].content.first?["content"] as? String
+        XCTAssertTrue(toolResult?.contains("Navigasyon başladı") == true, toolResult ?? "")
+        XCTAssertTrue(toolResult?.contains("800 metre") == true, toolResult ?? "")
+        // İlk manevra duyurusu asistanın cevabından önce okunur.
+        XCTAssertTrue(voice.spoken.contains("Şimdi: Turn right onto Test Street"), "\(voice.spoken)")
+        XCTAssertEqual(voice.spoken.last, "Rota hazır efendim.")
+    }
+
+    func testTripStatusAndStopTools() {
+        let statusCall = ClaudeToolCall(id: "toolu_3", name: AssistantTools.tripStatus, inputJSON: "{}")
+        let stopCall = ClaudeToolCall(id: "toolu_4", name: AssistantTools.stopNavigation, inputJSON: "{}")
+        let round: [ClaudeStreamEvent] = [
+            .toolCall(statusCall),
+            .toolCall(stopCall),
+            .done(ClaudeTurn(
+                blocks: [
+                    ["type": "tool_use", "id": "toolu_3", "name": AssistantTools.tripStatus, "input": [String: Any]()],
+                    ["type": "tool_use", "id": "toolu_4", "name": AssistantTools.stopNavigation, "input": [String: Any]()],
+                ],
+                stopReason: "tool_use",
+                text: ""
+            )),
+        ]
+        let brain = ScriptedBrain(rounds: [round, ScriptedBrain.textRound(["Aktif rota yok efendim."])])
+        let engine = makeEngine(brain: brain)
+        engine.submit(text: "Ne zaman varırız?")
+        waitUntil(timeout: 5, message: "tur bitmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
+
+        let results = brain.requests[1][2].content
+        XCTAssertEqual(results.count, 2, "İki araç sonucu tek kullanıcı mesajında dönmeli")
+        XCTAssertEqual(results[0]["content"] as? String, "Aktif navigasyon yok.")
+        XCTAssertEqual(results[1]["content"] as? String, "Zaten aktif navigasyon yoktu.")
+    }
+
     func testMissingAPIKeyIsExplained() {
         settings.anthropicAPIKey = ""
         let engine = makeEngine(brain: nil)
@@ -439,7 +497,7 @@ final class AssistantEngineTests: XCTestCase {
             self.voice.spoken.count == 2 && engine.state == .idle
         }
 
-        XCTAssertTrue(voice.spoken[0].contains("efendim"), "Karşılama hitap içermeli: \(voice.spoken[0])")
+        XCTAssertTrue(voice.spoken[0].lowercased().contains("efendim"), "Karşılama hitap içermeli: \(voice.spoken[0])")
         XCTAssertEqual(voice.spoken[1], "Gayet iyiyim efendim, teşekkür ederim.")
         XCTAssertEqual(engine.entries.map(\.role), [.assistant, .user, .assistant])
         XCTAssertEqual(engine.entries[1].text, "Nasılsın?")

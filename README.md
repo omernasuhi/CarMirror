@@ -129,11 +129,28 @@ Anahtarları asla depoya yazmayın.
   (CarPlay bağlıyken araç ekranında).
 - Ayarlardan asistanın adı, hitabı ("efendim", "patron"…) ve adınız değiştirilebilir.
 
+### Navigasyon (araç ekranında harita ve rota)
+
+"Kadıköy'e yol tarifi al" deyince Alfred hedefi bulur (MapKit), rotayı hesaplar ve araç ekranında
+haritayı gösterir: rota çizgisi, aracın konumu ve CarPlay'in kendi manevra kartı ile varış paneli.
+Dönüşler yaklaşırken Alfred sesli söyler ("300 metre sonra: Sağa dönün"), rotadan çıkılınca
+yeniden hesaplar, varınca haber verir. "Ne zaman varırız" kalan süreyi, "navigasyonu durdur"
+rotayı iptal eder. "Yakında benzinlik var mı" en yakın üç yeri mesafeleriyle okur; "ikinciye git"
+deyince rota başlar.
+
+- İlk kullanımda iOS konum izni ister (yalnızca uygulama açıkken).
+- Konum izni yoksa Alfred bunun yerine Apple Haritalar'ı açar.
+- Simülatörde konum için Simulator menüsünden **Features → Location → City Run** (ya da
+  **Custom Location**) seçin; rota talimatlarının dili simülatörün diline göre gelir
+  (Türkçe için Settings → General → Language & Region).
+- Telefon ekranında da aynı rota küçük bir harita kartında görünür.
+
 ### Nasıl çalışır?
 
 ```
 Mikrofon → SFSpeechRecognizer (cihaz içi, Türkçe) → metin
-       → Claude Messages API (akışlı, araç çağrıları: start_navigation, search_places)
+       → Claude Messages API (akışlı; araçlar: start_navigation, search_places, trip_status, stop_navigation)
+       → NavigationEngine (MapKit rota, Core Location ile ilerleme, CarPlay manevra kartları)
        → cümle cümle → Apple TTS veya ElevenLabs → araç hoparlörü
 ```
 
@@ -186,6 +203,8 @@ Xcode'da **Product → Test** (⌘U) ile çalıştırılır. Testler şunları d
 - Uygulama içi yansıtmanın ekranı yakalayıp iletmesi ve ekran yayını başlayınca durması
 - Asistan: cümle bölme, Claude akış ayrıştırma (thinking imzası, araç çağrısı), istek biçimi
   (sahte sunucuyla), motorun karşılama → dinleme → cevap → navigasyon akışı (sahte beyin ve sesle)
+- Navigasyon: manevra duyuruları ve eşikleri, kalan mesafe/süre, varış, rotadan sapınca yeniden
+  hesaplama, konum izni yokken Apple Haritalar'a düşme (sahte konum ve rota sağlayıcısıyla)
 
 GitHub Actions her gönderimde testleri Xcode 26.6 ve Xcode 27 ile çalıştırır ve uygulamayı
 gerçek iPhone için de derler. Ayrıca iPhone simülatöründe CarPlay ekranını açıp CarMirror'a

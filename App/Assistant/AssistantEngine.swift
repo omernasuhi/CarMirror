@@ -1,4 +1,5 @@
 import Combine
+import CoreLocation
 import Foundation
 
 /// Asistanın beyni ile sesi arasındaki akışı yönetir:
@@ -35,6 +36,7 @@ final class AssistantEngine: ObservableObject {
     static let shared = AssistantEngine(
         settings: .shared,
         listener: SpeechListener(),
+        navigation: .shared,
         brainFactory: AssistantEngine.makeBrain,
         voiceFactory: AssistantEngine.makeVoice
     )
@@ -52,8 +54,11 @@ final class AssistantEngine: ObservableObject {
     @Published private(set) var isAuthorized: Bool?
 
     let settings: AssistantSettings
+    let navigation: NavigationEngine
     /// Demo: karşılama yapılır ama mikrofon açılmaz (CI ekran görüntüleri için).
     var isDemoMode: Bool
+    /// Demo: açılışta bu hedefe navigasyon başlatılır (`-CarMirrorDemoDestination`).
+    var demoDestination: String?
     /// Sessiz: hiç ses çalınmaz (birim testleri).
     var isSilent = false
     var activatesAudioSession = true
@@ -80,11 +85,13 @@ final class AssistantEngine: ObservableObject {
     init(
         settings: AssistantSettings,
         listener: SpeechInput,
+        navigation: NavigationEngine,
         brainFactory: @escaping (AssistantSettings) -> AssistantBrain?,
         voiceFactory: @escaping (AssistantSettings) -> VoiceOutput
     ) {
         self.settings = settings
         self.listener = listener
+        self.navigation = navigation
         self.brainFactory = brainFactory
         self.voiceFactory = voiceFactory
         let voice = voiceFactory(settings)
@@ -92,7 +99,11 @@ final class AssistantEngine: ObservableObject {
         let underTests = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
         isDemoMode = UserDefaults.standard.bool(forKey: "CarMirrorAssistantDemo") || underTests
         isSilent = underTests
+        if !underTests, let destination = UserDefaults.standard.string(forKey: "CarMirrorDemoDestination"), !destination.isEmpty {
+            demoDestination = destination
+        }
         voice.onLevel = { [weak self] value in self?.updateLevel(value) }
+        navigation.onAnnouncement = { [weak self] text in self?.announce(text) }
     }
 
     static func makeBrain(settings: AssistantSettings) -> AssistantBrain? {
@@ -137,8 +148,13 @@ final class AssistantEngine: ObservableObject {
     func greet() {
         let text = persona.greeting(at: now())
         lastGreeting = now()
+        let demoDestination = self.demoDestination
+        self.demoDestination = nil
         runSession {
             try await self.speak(text)
+            if let demoDestination {
+                try await self.startDemoNavigation(to: demoDestination)
+            }
             try await self.listenLoopIfWanted()
         }
         state = .greeting
@@ -205,6 +221,32 @@ final class AssistantEngine: ObservableObject {
             try await self.speakStatement(text)
         }
         state = .speaking
+    }
+
+    /// Navigasyon duyurusu ("300 metre sonra sağa dönün"): konuşmanın önüne geçer.
+    func announce(_ text: String) {
+        switch state {
+        case .speaking, .greeting, .thinking:
+            // Sıradaki cümle olarak okunur; süren cevap akışı bozulmaz.
+            prepareVoice()
+            speechQueue.enqueue(text)
+        case .listening, .idle:
+            runSession {
+                try await self.speak(text)
+            }
+            state = .speaking
+            reply = text
+        }
+    }
+
+    @MainActor
+    private func startDemoNavigation(to destination: String) async throws {
+        do {
+            let plan = try await navigation.start(to: destination, announceSummary: false)
+            try await speakStatement("Rota hazır \(persona.honorific). \(plan.destinationName): \(NavigationFormat.distance(plan.distance)), yaklaşık \(NavigationFormat.duration(plan.expectedTravelTime)).")
+        } catch {
+            statusMessage = error.localizedDescription
+        }
     }
 
     // MARK: - Oturum
@@ -317,7 +359,7 @@ final class AssistantEngine: ObservableObject {
                         speechQueue.enqueue(sentence)
                     }
                 case let .toolCall(call):
-                    toolResults.append((toolUseID: call.id, content: handle(call)))
+                    toolResults.append((toolUseID: call.id, content: await handle(call)))
                 case let .done(finished):
                     turn = finished
                 case let .failure(message):
@@ -381,19 +423,46 @@ final class AssistantEngine: ObservableObject {
         try await speak(text)
     }
 
-    private func handle(_ call: ClaudeToolCall) -> String {
+    @MainActor
+    private func handle(_ call: ClaudeToolCall) async -> String {
         let input = call.input
         switch call.name {
         case AssistantTools.startNavigation:
             let destination = (input["destination"] as? String ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             guard !destination.isEmpty else { return "Hata: hedef belirtilmedi." }
-            navigationHandler(destination)
-            return "Apple Haritalar'da \(destination) için araç rotası başlatıldı."
+            do {
+                let plan = try await navigation.start(to: destination, announceSummary: false)
+                return "Navigasyon başladı. Hedef: \(plan.destinationName). Mesafe \(NavigationFormat.distance(plan.distance)), tahmini süre \(NavigationFormat.duration(plan.expectedTravelTime)), varış \(NavigationFormat.clock(now().addingTimeInterval(plan.expectedTravelTime))). Harita ve dönüş kartları araç ekranında; manevraları sistem sesli okuyacak."
+            } catch NavigationError.noLocation {
+                navigationHandler(destination)
+                return "Konum izni ya da konum bilgisi olmadığı için uygulama içi navigasyon başlatılamadı; bunun yerine Apple Haritalar \(destination) rotasıyla açıldı. Kullanıcıya kısaca konum izni verirse rotayı araç ekranında gösterebileceğini söyle."
+            } catch {
+                return "Rota oluşturulamadı: \(error.localizedDescription)"
+            }
         case AssistantTools.searchPlaces:
             let query = (input["query"] as? String ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             guard !query.isEmpty else { return "Hata: arama metni belirtilmedi." }
-            placesHandler(query)
-            return "Apple Haritalar'da \"\(query)\" araması açıldı; sonuçlar araç ekranında."
+            do {
+                let results = try await navigation.searchPlaces(query)
+                guard !results.isEmpty else { return "\"\(query)\" için yakında sonuç bulunamadı." }
+                let lines = results.enumerated().map { index, place -> String in
+                    let distance = place.distance.map { NavigationFormat.distance($0) } ?? "mesafe bilinmiyor"
+                    let address = place.address.isEmpty ? "" : " (\(place.address))"
+                    return "\(index + 1)) \(place.name) – \(distance)\(address)"
+                }
+                return lines.joined(separator: "\n") + "\nKullanıcı birini seçerse start_navigation'ı o yerin adıyla çağır."
+            } catch NavigationError.noLocation {
+                placesHandler(query)
+                return "Konum bilgisi olmadığı için arama yapılamadı; Apple Haritalar'da \"\(query)\" araması açıldı."
+            } catch {
+                return "Arama başarısız: \(error.localizedDescription)"
+            }
+        case AssistantTools.stopNavigation:
+            let wasActive = navigation.isActive
+            navigation.stop()
+            return wasActive ? "Navigasyon durduruldu." : "Zaten aktif navigasyon yoktu."
+        case AssistantTools.tripStatus:
+            return navigation.statusDescription()
         default:
             return "Hata: bilinmeyen araç \(call.name)."
         }

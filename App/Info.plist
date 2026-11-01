@@ -24,6 +24,8 @@
 	<string>$(APP_GROUP_ID)</string>
 	<key>CarMirrorBroadcastExtension</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER).BroadcastExtension</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Rota hesaplamak ve dönüşleri zamanında söylemek için konumunuz kullanılır.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Asistanla sesli konuşmak için mikrofon gerekir.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>

@@ -151,6 +151,31 @@ else
   head -20 "$OUT/ocr-assistant.log" || true
 fi
 
+log "Navigasyon CarPlay'de deneniyor"
+xcrun simctl privacy "$UDID" grant location "$BUNDLE_ID" 2> /dev/null || true
+xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
+xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
+sleep 2
+xcrun simctl launch "$UDID" "$BUNDLE_ID" -CarMirrorTab assistant -CarMirrorAssistantDemo YES -CarMirrorDemoDestination "Kadıköy İskelesi"
+sleep 6
+"$TOOLS/click" "$CX" "$CY" || true
+sleep 22
+carplay_shot "$OUT/7-carplay-navigation.png"
+xcrun simctl io "$UDID" screenshot "$OUT/7-iphone-navigation.png" > /dev/null
+navigation_seen=false
+for needle in kilometre dakika km min; do
+  if "$TOOLS/find-text" "$OUT/7-carplay-navigation.png" "$needle" > /dev/null 2> "$OUT/ocr-navigation.log"; then
+    navigation_seen=true
+    break
+  fi
+done
+if [ "$navigation_seen" = true ]; then
+  log "Navigasyon CarPlay ekranında görünüyor"
+else
+  log "UYARI: navigasyon metni CarPlay ekran görüntüsünde okunamadı (OCR); görüntülere bakın"
+  head -20 "$OUT/ocr-navigation.log" || true
+fi
+
 log "Demo ekranına dönülüyor"
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2

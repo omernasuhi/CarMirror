@@ -7,6 +7,7 @@ struct AssistantView: View {
 
     @ObservedObject private var engine: AssistantEngine
     @ObservedObject private var settings: AssistantSettings
+    @ObservedObject private var navigation: NavigationEngine
     @State private var showsSettings = false
     @State private var showsComposer = false
     @State private var draft = ""
@@ -16,6 +17,7 @@ struct AssistantView: View {
         self.surface = surface
         self.engine = engine
         self.settings = settings
+        navigation = engine.navigation
     }
 
     private var isCar: Bool { surface == .car }
@@ -25,11 +27,15 @@ struct AssistantView: View {
             let size = geometry.size
             let landscape = size.width > size.height * 1.15
             ZStack {
-                AssistantBackdrop(tint: tint)
-                if landscape {
-                    landscapeLayout(size: size)
+                if navigation.isActive && landscape {
+                    navigationLayout(size: size)
                 } else {
-                    portraitLayout(size: size)
+                    AssistantBackdrop(tint: tint)
+                    if landscape {
+                        landscapeLayout(size: size)
+                    } else {
+                        portraitLayout(size: size)
+                    }
                 }
             }
             .frame(width: size.width, height: size.height)
@@ -63,14 +69,55 @@ struct AssistantView: View {
         }
     }
 
+    /// Navigasyon sırasında araç ekranı: harita tam ekran, asistan sağ altta küçük.
+    /// CarPlay'in manevra kartı sol üstte, varış paneli sol altta görünür.
+    private func navigationLayout(size: CGSize) -> some View {
+        let unit = size.height / 240
+        return ZStack(alignment: .bottomTrailing) {
+            NavigationMapView(navigation: navigation)
+                .ignoresSafeArea()
+            VStack(alignment: .trailing, spacing: 6 * unit) {
+                core(diameter: size.height * 0.34)
+                    .background(Circle().fill(Color.black.opacity(0.45)).padding(-6 * unit))
+                NavigationStatusLine(navigation: navigation, unit: unit)
+                if !assistantLine.isEmpty {
+                    Text(assistantLine)
+                        .font(.system(size: 10.5 * unit, weight: .medium, design: .rounded))
+                        .foregroundStyle(.white)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.trailing)
+                        .padding(.horizontal, 10 * unit)
+                        .padding(.vertical, 6 * unit)
+                        .background(Color.black.opacity(0.55), in: RoundedRectangle(cornerRadius: 10 * unit))
+                        .frame(maxWidth: size.width * 0.5, alignment: .trailing)
+                }
+            }
+            .padding(12 * unit)
+        }
+    }
+
     private func portraitLayout(size: CGSize) -> some View {
         let unit = min(size.width, 430) / 390
+        let orbDiameter = navigation.isActive
+            ? min(size.width * 0.42, size.height * 0.2)
+            : min(size.width * 0.72, size.height * 0.38)
         return VStack(spacing: 0) {
             header(unit: unit * 1.5)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.top, 18 * unit)
+            if navigation.isActive {
+                NavigationMapView(navigation: navigation)
+                    .frame(height: size.height * 0.32)
+                    .clipShape(RoundedRectangle(cornerRadius: 18))
+                    .overlay(alignment: .bottomLeading) {
+                        NavigationStatusLine(navigation: navigation, unit: unit * 1.2)
+                            .padding(10)
+                    }
+                    .padding(.horizontal, 16 * unit)
+                    .padding(.top, 12 * unit)
+            }
             Spacer(minLength: 8)
-            core(diameter: min(size.width * 0.72, size.height * 0.38))
+            core(diameter: orbDiameter)
             Text(hint)
                 .font(.system(size: 13 * unit, weight: .medium, design: .rounded))
                 .foregroundStyle(.white.opacity(0.5))

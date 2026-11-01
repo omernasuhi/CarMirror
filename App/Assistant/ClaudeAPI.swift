@@ -261,11 +261,13 @@ final class ClaudeClient: AssistantBrain {
 enum AssistantTools {
     static let startNavigation = "start_navigation"
     static let searchPlaces = "search_places"
+    static let stopNavigation = "stop_navigation"
+    static let tripStatus = "trip_status"
 
     static let definitions: [[String: Any]] = [
         [
             "name": startNavigation,
-            "description": "Apple Haritalar'da verilen hedefe araçla rota başlatır. Kullanıcı bir yere gitmek istediğinde kullan.",
+            "description": "Verilen hedefe araçla navigasyon başlatır: rota araç (CarPlay) ekranında haritada gösterilir, dönüşler sesli okunur. Kullanıcı bir yere gitmek istediğinde ya da aramadaki bir yeri seçtiğinde kullan. Sonuç mesafe ve süreyi içerir; onay cümlende bunları söyle.",
             "input_schema": [
                 "type": "object",
                 "properties": [
@@ -281,7 +283,7 @@ enum AssistantTools {
         ],
         [
             "name": searchPlaces,
-            "description": "Apple Haritalar'da yakındaki yerleri arar (benzin istasyonu, kahveci, eczane, otopark gibi).",
+            "description": "Yakındaki yerleri arar (benzin istasyonu, kahveci, eczane, otopark gibi) ve en yakın birkaçını mesafeleriyle döndürür. Sonuçları kısaca numaralı oku; kullanıcı birini seçerse start_navigation'ı o yerin adıyla çağır.",
             "input_schema": [
                 "type": "object",
                 "properties": [
@@ -291,6 +293,26 @@ enum AssistantTools {
                     ],
                 ],
                 "required": ["query"],
+                "additionalProperties": false,
+            ],
+            "strict": true,
+        ],
+        [
+            "name": stopNavigation,
+            "description": "Aktif navigasyonu durdurur. Kullanıcı rotayı iptal etmek istediğinde kullan.",
+            "input_schema": [
+                "type": "object",
+                "properties": [String: Any](),
+                "additionalProperties": false,
+            ],
+            "strict": true,
+        ],
+        [
+            "name": tripStatus,
+            "description": "Aktif navigasyonun durumunu verir: kalan mesafe, kalan süre, varış saati ve sıradaki manevra. \"Ne zaman varırız\", \"ne kadar kaldı\" gibi sorularda kullan.",
+            "input_schema": [
+                "type": "object",
+                "properties": [String: Any](),
                 "additionalProperties": false,
             ],
             "strict": true,
