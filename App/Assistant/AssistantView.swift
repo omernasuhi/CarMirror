@@ -160,15 +160,16 @@ struct AssistantView: View {
                     .shadow(color: tint, radius: 3 * unit)
                 Text(statusLabel)
                     .font(.system(size: 9.5 * unit, weight: .semibold, design: .rounded))
-                    .tracking(2 * unit)
+                    .tracking(1.5 * unit)
                     .foregroundStyle(tint)
-                Text("·")
-                    .foregroundStyle(.white.opacity(0.3))
-                TimelineView(.periodic(from: .now, by: 30)) { context in
-                    Text(context.date, format: .dateTime.hour().minute())
-                        .font(.system(size: 9.5 * unit, weight: .medium, design: .monospaced))
-                        .foregroundStyle(.white.opacity(0.55))
-                }
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.6)
+            }
+            TimelineView(.periodic(from: .now, by: 30)) { context in
+                Text(context.date, format: .dateTime.hour(.twoDigits(amPM: .omitted)).minute())
+                    .font(.system(size: 9.5 * unit, weight: .medium, design: .monospaced))
+                    .foregroundStyle(.white.opacity(0.55))
+                    .lineLimit(1)
             }
         }
     }
@@ -271,7 +272,7 @@ struct AssistantView: View {
 
     private var statusLabel: String {
         switch engine.state {
-        case .idle: return settings.isAIConfigured ? "HAZIR" : "ANAHTAR GEREKLİ"
+        case .idle: return settings.isAIConfigured ? "HAZIR" : "ANAHTAR YOK"
         case .greeting, .speaking: return "KONUŞUYOR"
         case .listening: return "DİNLİYORUM"
         case .thinking: return "DÜŞÜNÜYORUM"
