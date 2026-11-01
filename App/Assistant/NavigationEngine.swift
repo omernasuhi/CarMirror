@@ -150,19 +150,23 @@ final class NavigationEngine: ObservableObject {
         let fix = try await ensureLocation()
         let results = try await router.search(query, near: fix.coordinate)
         guard let place = results.first else { throw NavigationError.notFound(query) }
-        return try await start(to: place, announceSummary: announceSummary)
+        return try await route(to: place, from: fix, announceSummary: announceSummary)
     }
 
     @discardableResult
     func start(to place: PlaceResult, announceSummary: Bool) async throws -> RoutePlan {
         let fix = try await ensureLocation()
+        return try await route(to: place, from: fix, announceSummary: announceSummary)
+    }
+
+    private func route(to place: PlaceResult, from fix: CLLocation, announceSummary: Bool) async throws -> RoutePlan {
         state = .routing
         do {
             let newPlan = try await router.route(from: fix.coordinate, to: place)
-            begin(newPlan, destination: place, origin: fix.coordinate)
             if announceSummary {
                 announce("Rota hazır \(NavigationFormat.honorific). \(newPlan.destinationName): \(NavigationFormat.distance(newPlan.distance)), yaklaşık \(NavigationFormat.duration(newPlan.expectedTravelTime)). Yola çıkıyoruz.")
             }
+            begin(newPlan, destination: place, origin: fix.coordinate)
             return newPlan
         } catch {
             state = plan == nil ? .idle : .navigating

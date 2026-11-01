@@ -225,7 +225,7 @@ final class ClaudeClientTests: XCTestCase {
         XCTAssertNil(body["thinking"], "Opus 5.5'te thinking parametresi gönderilmez (uyarlanabilir varsayılan)")
         XCTAssertNil(body["temperature"])
         let tools = try XCTUnwrap(body["tools"] as? [[String: Any]])
-        XCTAssertEqual(tools.map { $0["name"] as? String }, [AssistantTools.startNavigation, AssistantTools.searchPlaces])
+        XCTAssertEqual(tools.map { $0["name"] as? String }, [AssistantTools.startNavigation, AssistantTools.searchPlaces, AssistantTools.stopNavigation, AssistantTools.tripStatus])
         XCTAssertEqual(tools.first?["strict"] as? Bool, true)
         let messages = try XCTUnwrap(body["messages"] as? [[String: Any]])
         XCTAssertEqual(messages.first?["role"] as? String, "user")
