@@ -30,7 +30,10 @@ struct AssistantView: View {
                 if navigation.isActive && landscape {
                     navigationLayout(size: size)
                 } else {
+                    // Zemin kenar çubuğu ve çentik altına uzanır; içerik güvenli alanda kalır
+                    // (CarPlay'de kenar çubuğu ve gerçek araçta sistemin manevra kartları).
                     AssistantBackdrop(tint: tint)
+                        .ignoresSafeArea()
                     if landscape {
                         landscapeLayout(size: size)
                     } else {
@@ -40,8 +43,7 @@ struct AssistantView: View {
             }
             .frame(width: size.width, height: size.height)
         }
-        .ignoresSafeArea(isCar ? .all : [])
-        .background(Color.black)
+        .background(Color.black.ignoresSafeArea())
         .preferredColorScheme(.dark)
         .onAppear { engine.surfaceDidAppear(surface) }
         .onDisappear { engine.surfaceDidDisappear(surface) }

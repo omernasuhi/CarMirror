@@ -132,7 +132,8 @@ Anahtarları asla depoya yazmayın.
 ### Navigasyon (araç ekranında harita ve rota)
 
 "Kadıköy'e yol tarifi al" deyince Alfred hedefi bulur (MapKit), rotayı hesaplar ve araç ekranında
-haritayı gösterir: rota çizgisi, aracın konumu ve CarPlay'in kendi manevra kartı ile varış paneli.
+haritayı gösterir: rota çizgisi, aracın konumu, manevra kartı ve varış paneli (gerçek araçta
+CarPlay'in kendi kartları kullanılır; simülatörde bunları uygulama kendisi çizer).
 Dönüşler yaklaşırken Alfred sesli söyler ("300 metre sonra: Sağa dönün"), rotadan çıkılınca
 yeniden hesaplar, varınca haber verir. "Ne zaman varırız" kalan süreyi, "navigasyonu durdur"
 rotayı iptal eder. "Yakında benzinlik var mı" en yakın üç yeri mesafeleriyle okur; "ikinciye git"
@@ -225,6 +226,12 @@ dalındadır.
   çalışır. Tüm ekran için gerçek cihazda ekran yayınını kullanın.
 - **CarPlay'de başka uygulamaya geçilirse** CarMirror askıya alınabilir ve görüntü durur;
   CarMirror'a dönülünce devam eder.
+- **Simülatörde araç ekranı:** Simülatörün CarPlay ekranında SwiftUI görünümleri ilk çizimden
+  sonra kendiliğinden yenilenmez; CarMirror araç ekranını kendi zamanlayıcısıyla tazeler. Gerçek
+  cihazda buna gerek yoktur.
+- **Yavaş Mac'lerde CarPlay bağlanırken** iOS'un 30 saniyelik açılış bekçisi CarMirror'ı ya da
+  CarPlay'in şablon sunucusunu kapatabilir. CarPlay ana ekranında simgeye yeniden dokunun; olmazsa
+  CarPlay ekranını kapatıp yeniden açın.
 
 ## Proje dosyasını yeniden üretme
 
