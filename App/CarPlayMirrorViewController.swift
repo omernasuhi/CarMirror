@@ -49,8 +49,11 @@ final class CarPlayMirrorViewController: UIViewController {
         displayView.displayLayer.videoGravity = fillsScreen ? .resizeAspectFill : .resizeAspect
         view.addSubview(displayView)
 
-        displayView.isHidden = true
-        attachAssistant()
+        // Görünüm yüklenmeden yayın başlamış olabilir; mevcut duruma göre kur.
+        displayView.isHidden = !isShowingStream
+        if !isShowingStream {
+            attachAssistant()
+        }
 
         NotificationCenter.default.addObserver(
             self,
