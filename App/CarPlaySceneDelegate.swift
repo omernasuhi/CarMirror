@@ -94,7 +94,7 @@ final class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegat
 
 extension CarPlaySceneDelegate: NavigationPresenter {
     func navigationDidStart(_ plan: RoutePlan, from origin: CLLocationCoordinate2D) {
-        guard let mapTemplate else { return }
+        guard let mapTemplate, !NavigationEngine.drawsOwnManeuverCards else { return }
         NSLog("CarMirror: CarPlay navigasyon oturumu başlıyor: \(plan.destinationName), \(plan.steps.count) adım")
         endSession(arrived: false)
 

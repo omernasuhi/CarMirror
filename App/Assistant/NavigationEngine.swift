@@ -142,6 +142,23 @@ final class NavigationEngine: ObservableObject {
     var currentLocation: CLLocation? { location.latest }
     var isActive: Bool { state == .navigating || state == .routing }
 
+    /// Simülatörün CarPlay'i manevra oturumunu doğru çizemiyor; orada kartları
+    /// uygulama kendisi çizer. Gerçek cihazda CarPlay'in kendi kartları kullanılır.
+    #if targetEnvironment(simulator)
+    static let drawsOwnManeuverCards = true
+    #else
+    static let drawsOwnManeuverCards = false
+    #endif
+
+    /// Sıradaki manevra: talimat ve kalan mesafe.
+    var upcomingManeuver: (instruction: String, distance: CLLocationDistance)? {
+        guard let plan, let progress else { return nil }
+        if let instruction = upcomingInstruction(for: progress.stepIndex) {
+            return (instruction, progress.distanceToManeuver)
+        }
+        return ("Hedef: \(plan.destinationName)", progress.remainingDistance)
+    }
+
     // MARK: Komutlar
 
     /// Hedefi bulup rotayı başlatır.

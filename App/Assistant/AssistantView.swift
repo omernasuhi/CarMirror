@@ -40,6 +40,7 @@ struct AssistantView: View {
             }
             .frame(width: size.width, height: size.height)
         }
+        .ignoresSafeArea(isCar ? .all : [])
         .background(Color.black)
         .preferredColorScheme(.dark)
         .onAppear { engine.surfaceDidAppear(surface) }
@@ -76,6 +77,9 @@ struct AssistantView: View {
         return ZStack(alignment: .bottomTrailing) {
             NavigationMapView(navigation: navigation)
                 .ignoresSafeArea()
+            if NavigationEngine.drawsOwnManeuverCards {
+                ManeuverCards(navigation: navigation, unit: unit)
+            }
             VStack(alignment: .trailing, spacing: 6 * unit) {
                 core(diameter: size.height * 0.34)
                     .background(Circle().fill(Color.black.opacity(0.45)).padding(-6 * unit))
@@ -443,5 +447,67 @@ struct AssistantCoreView: View {
 
     private static func rect(_ center: CGPoint, _ radius: CGFloat) -> CGRect {
         CGRect(x: center.x - radius, y: center.y - radius, width: radius * 2, height: radius * 2)
+    }
+}
+
+/// Simülatörde CarPlay'in kendi manevra kartı yerine çizilen kart ve varış paneli.
+struct ManeuverCards: View {
+    @ObservedObject var navigation: NavigationEngine
+    var unit: CGFloat
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8 * unit) {
+            if let maneuver = navigation.upcomingManeuver {
+                HStack(spacing: 8 * unit) {
+                    Image(systemName: ManeuverCards.symbol(for: maneuver.instruction))
+                        .font(.system(size: 22 * unit, weight: .bold))
+                    VStack(alignment: .leading, spacing: 2 * unit) {
+                        Text(NavigationFormat.distance(maneuver.distance))
+                            .font(.system(size: 16 * unit, weight: .bold, design: .rounded))
+                        Text(maneuver.instruction)
+                            .font(.system(size: 11 * unit, weight: .semibold, design: .rounded))
+                            .lineLimit(2)
+                    }
+                }
+                .foregroundStyle(.white)
+                .padding(.horizontal, 12 * unit)
+                .padding(.vertical, 8 * unit)
+                .background(Color(red: 0.1, green: 0.45, blue: 0.95), in: RoundedRectangle(cornerRadius: 14 * unit))
+                .frame(maxWidth: 190 * unit, alignment: .leading)
+            }
+            Spacer()
+            if let progress = navigation.progress {
+                HStack(spacing: 14 * unit) {
+                    estimate(NavigationFormat.clock(progress.eta), "varış")
+                    estimate(NavigationFormat.duration(progress.remainingTime), "kalan")
+                    estimate(NavigationFormat.distance(progress.remainingDistance), "mesafe")
+                }
+                .padding(.horizontal, 12 * unit)
+                .padding(.vertical, 8 * unit)
+                .background(Color.black.opacity(0.65), in: RoundedRectangle(cornerRadius: 14 * unit))
+            }
+        }
+        .padding(12 * unit)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+    }
+
+    private func estimate(_ value: String, _ label: String) -> some View {
+        VStack(spacing: 1 * unit) {
+            Text(value)
+                .font(.system(size: 12 * unit, weight: .bold, design: .rounded))
+                .foregroundStyle(.white)
+            Text(label)
+                .font(.system(size: 8 * unit, weight: .medium, design: .rounded))
+                .foregroundStyle(.white.opacity(0.6))
+        }
+    }
+
+    static func symbol(for instructions: String) -> String {
+        let text = instructions.lowercased()
+        if text.contains("u-turn") || text.contains("u dönüşü") { return "arrow.uturn.left" }
+        if text.contains("right") || text.contains("sağ") { return "arrow.turn.up.right" }
+        if text.contains("left") || text.contains("sol") { return "arrow.turn.up.left" }
+        if text.contains("hedef") || text.contains("arrive") || text.contains("destination") { return "flag.checkered" }
+        return "arrow.up"
     }
 }
