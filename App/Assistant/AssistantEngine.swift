@@ -96,10 +96,16 @@ final class AssistantEngine: ObservableObject {
         self.voiceFactory = voiceFactory
         let voice = voiceFactory(settings)
         speechQueue = SpeechQueue(voice: voice)
-        let underTests = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
-        isDemoMode = UserDefaults.standard.bool(forKey: "CarMirrorAssistantDemo") || underTests
+        // Demo ayarları başlatma argümanıyla (-CarMirrorAssistantDemo YES) ya da
+        // ortam değişkeniyle (CARMIRROR_ASSISTANT_DEMO=1) verilebilir.
+        let environment = ProcessInfo.processInfo.environment
+        let underTests = environment["XCTestConfigurationFilePath"] != nil
+        let demoFlag = UserDefaults.standard.bool(forKey: "CarMirrorAssistantDemo")
+            || ["1", "YES", "true"].contains(environment["CARMIRROR_ASSISTANT_DEMO"] ?? "")
+        isDemoMode = demoFlag || underTests
         isSilent = underTests
-        if !underTests, let destination = UserDefaults.standard.string(forKey: "CarMirrorDemoDestination"), !destination.isEmpty {
+        let destination = UserDefaults.standard.string(forKey: "CarMirrorDemoDestination") ?? environment["CARMIRROR_DEMO_DESTINATION"] ?? ""
+        if !underTests, !destination.isEmpty {
             demoDestination = destination
         }
         voice.onLevel = { [weak self] value in self?.updateLevel(value) }

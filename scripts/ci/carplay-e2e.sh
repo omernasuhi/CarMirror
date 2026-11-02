@@ -168,7 +168,7 @@ fi
 log "Asistan ekranı CarPlay'de deneniyor"
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2
-launch_app assistant -CarMirrorTab assistant -CarMirrorAssistantDemo YES
+SIMCTL_CHILD_CARMIRROR_ASSISTANT_DEMO=1 launch_app assistant -CarMirrorTab assistant -CarMirrorAssistantDemo YES
 sleep 8
 open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (asistan adımı)"
 sleep 4
@@ -187,7 +187,10 @@ xcrun simctl privacy "$UDID" grant location "$BUNDLE_ID" 2> /dev/null || true
 xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2
-launch_app navigation -CarMirrorTab assistant -CarMirrorAssistantDemo YES -CarMirrorDemoDestination "Kadıköy İskelesi"
+# Başlatma argümanlarında ASCII dışı karakter simctl'de sorun çıkarabiliyor; hedef ASCII.
+SIMCTL_CHILD_CARMIRROR_ASSISTANT_DEMO=1 SIMCTL_CHILD_CARMIRROR_DEMO_DESTINATION="Kadikoy" \
+  launch_app navigation -CarMirrorTab assistant -CarMirrorAssistantDemo YES
+xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
 sleep 8
 open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (navigasyon adımı)"
 sleep 16
