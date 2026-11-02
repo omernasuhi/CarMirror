@@ -20,6 +20,37 @@ carplay_shot() {
   xcrun simctl io "$UDID" screenshot --display=external "$1" > /dev/null
 }
 
+# Uygulamayı verilen etiketle başlatır; stdout/stderr (NSLog) dosyaya yazılır.
+launch_app() {
+  local label="$1"
+  shift
+  xcrun simctl launch --stdout="$PWD/$OUT/app-$label.stdout.log" --stderr="$PWD/$OUT/app-$label.stderr.log" "$UDID" "$BUNDLE_ID" "$@"
+}
+
+# CarPlay ana ekranında mı? ("Messages" etiketi görünüyorsa)
+carplay_shows_home() {
+  carplay_shot "$OUT/tmp-home-check.png"
+  "$TOOLS/find-text" "$OUT/tmp-home-check.png" "Messages" > /dev/null 2>&1
+}
+
+# Daha önce bulunan simge konumuna dokunarak CarMirror'ı CarPlay'de açar.
+open_on_carplay() {
+  local attempt
+  for attempt in 1 2 3; do
+    if [ "$attempt" = 2 ]; then
+      "$TOOLS/click" "$CX" "$CY" || true
+    else
+      osascript "$SCRIPTS/click-at.applescript" "$CX" "$CY" || true
+    fi
+    sleep 8
+    if ! carplay_shows_home; then
+      return 0
+    fi
+    log "CarPlay hâlâ ana ekranda; yeniden dokunuluyor ($attempt)"
+  done
+  return 1
+}
+
 collect_logs() {
   xcrun simctl spawn "$UDID" log show --last 15m --style compact \
     --predicate 'process == "CarMirror" OR eventMessage CONTAINS "CarMirror"' > "$OUT/app.log" 2>&1 || true
@@ -69,7 +100,7 @@ open -a "$(xcode-select -p)/Applications/Simulator.app" --args -CurrentDeviceUDI
 sleep 10
 
 xcrun simctl install "$UDID" "$APP"
-xcrun simctl launch "$UDID" "$BUNDLE_ID" -CarMirrorTab demo
+launch_app demo1 -CarMirrorTab demo
 sleep 6
 xcrun simctl io "$UDID" screenshot "$OUT/1-iphone.png" > /dev/null
 
@@ -137,10 +168,10 @@ fi
 log "Asistan ekranı CarPlay'de deneniyor"
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2
-xcrun simctl launch "$UDID" "$BUNDLE_ID" -CarMirrorTab assistant -CarMirrorAssistantDemo YES
-sleep 6
-"$TOOLS/click" "$CX" "$CY" || true
-sleep 10
+launch_app assistant -CarMirrorTab assistant -CarMirrorAssistantDemo YES
+sleep 8
+open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (asistan adımı)"
+sleep 4
 carplay_shot "$OUT/6-carplay-assistant.png"
 xcrun simctl io "$UDID" screenshot "$OUT/6-iphone-assistant.png" > /dev/null
 ASSISTANT_NAME=$(python3 -c "print('ALFRED')")
@@ -156,10 +187,10 @@ xcrun simctl privacy "$UDID" grant location "$BUNDLE_ID" 2> /dev/null || true
 xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2
-xcrun simctl launch "$UDID" "$BUNDLE_ID" -CarMirrorTab assistant -CarMirrorAssistantDemo YES -CarMirrorDemoDestination "Kadıköy İskelesi"
-sleep 6
-"$TOOLS/click" "$CX" "$CY" || true
-sleep 22
+launch_app navigation -CarMirrorTab assistant -CarMirrorAssistantDemo YES -CarMirrorDemoDestination "Kadıköy İskelesi"
+sleep 8
+open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (navigasyon adımı)"
+sleep 16
 carplay_shot "$OUT/7-carplay-navigation.png"
 xcrun simctl io "$UDID" screenshot "$OUT/7-iphone-navigation.png" > /dev/null
 navigation_seen=false
@@ -179,16 +210,25 @@ fi
 log "Demo ekranına dönülüyor"
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2
-xcrun simctl launch "$UDID" "$BUNDLE_ID" -CarMirrorTab demo
-sleep 6
-"$TOOLS/click" "$CX" "$CY" || true
+launch_app demo2 -CarMirrorTab demo
 sleep 8
+open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (demo adımı)"
 
 log "CarPlay ekranı kaydediliyor"
 xcrun simctl io "$UDID" recordVideo --display=external --codec=h264 --force "$OUT/carplay.mov" > /dev/null 2>&1 &
 RECORDER=$!
 sleep 8
-kill -INT "$RECORDER" 2> /dev/null || true
+# xcrun, simctl'i ayrı bir süreç olarak çalıştırabilir; kayıt sürecine doğrudan sinyal gönder.
+pkill -INT -f "simctl io .* recordVideo" 2> /dev/null || kill -INT "$RECORDER" 2> /dev/null || true
+for _ in $(seq 1 20); do
+  kill -0 "$RECORDER" 2> /dev/null || break
+  sleep 1
+done
+if kill -0 "$RECORDER" 2> /dev/null; then
+  log "Kayıt kapanmadı; zorla durduruluyor"
+  pkill -KILL -f "simctl io .* recordVideo" 2> /dev/null || true
+  kill -KILL "$RECORDER" 2> /dev/null || true
+fi
 wait "$RECORDER" 2> /dev/null || true
 carplay_shot "$OUT/5-carplay-mirroring-later.png"
 

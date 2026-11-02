@@ -104,6 +104,7 @@ final class AssistantEngine: ObservableObject {
         }
         voice.onLevel = { [weak self] value in self?.updateLevel(value) }
         navigation.onAnnouncement = { [weak self] text in self?.announce(text) }
+        NSLog("CarMirror: asistan hazır (demo: \(isDemoMode), sessiz: \(isSilent), demo hedef: \(demoDestination ?? "-"))")
     }
 
     static func makeBrain(settings: AssistantSettings) -> AssistantBrain? {
@@ -129,6 +130,7 @@ final class AssistantEngine: ObservableObject {
     // MARK: - Görünürlük
 
     func surfaceDidAppear(_ surface: Surface) {
+        NSLog("CarMirror: asistan yüzeyi göründü: \(surface), durum: \(state)")
         visibleSurfaces.insert(surface)
         let due = lastGreeting.map { now().timeIntervalSince($0) >= greetingInterval } ?? true
         if due, state == .idle {
@@ -137,6 +139,7 @@ final class AssistantEngine: ObservableObject {
     }
 
     func surfaceDidDisappear(_ surface: Surface) {
+        NSLog("CarMirror: asistan yüzeyi gizlendi: \(surface)")
         visibleSurfaces.remove(surface)
         if visibleSurfaces.isEmpty, state == .listening {
             interrupt()
@@ -241,8 +244,10 @@ final class AssistantEngine: ObservableObject {
 
     @MainActor
     private func startDemoNavigation(to destination: String) async throws {
+        NSLog("CarMirror: demo navigasyon başlıyor: \(destination)")
         do {
             let plan = try await navigation.start(to: destination, announceSummary: false)
+            NSLog("CarMirror: demo rota hazır: \(plan.destinationName), \(Int(plan.distance)) m")
             try await speakStatement("Rota hazır \(persona.honorific). \(plan.destinationName): \(NavigationFormat.distance(plan.distance)), yaklaşık \(NavigationFormat.duration(plan.expectedTravelTime)).")
         } catch {
             statusMessage = error.localizedDescription
@@ -295,6 +300,7 @@ final class AssistantEngine: ObservableObject {
     private func listenOnce() async throws -> String {
         try Task.checkCancellation()
         if isAuthorized != true {
+            NSLog("CarMirror: mikrofon ve konuşma tanıma izni isteniyor (demo: \(isDemoMode))")
             let granted = await listener.requestAuthorization()
             try Task.checkCancellation()
             isAuthorized = granted

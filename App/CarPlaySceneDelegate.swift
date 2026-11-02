@@ -34,12 +34,11 @@ final class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegat
         let mapTemplate = CPMapTemplate()
         mapTemplate.automaticallyHidesNavigationBar = true
         mapTemplate.hidesButtonsWithNavigationBar = true
-        mapTemplate.guidanceBackgroundColor = UIColor(red: 0.05, green: 0.11, blue: 0.2, alpha: 1)
-        mapTemplate.tripEstimateStyle = .dark
         mapTemplate.trailingNavigationBarButtons = [makeFillButton(for: viewController)]
         interfaceController.setRootTemplate(mapTemplate, animated: false, completion: nil)
         self.mapTemplate = mapTemplate
 
+        NSLog("CarMirror: CarPlay bağlandı")
         MirrorReceiver.shared.restartListener()
         MirrorReceiver.shared.setSink(viewController.sink)
         MirrorState.shared.update(carPlayConnected: true)
@@ -58,6 +57,7 @@ final class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegat
         didDisconnect interfaceController: CPInterfaceController,
         from window: CPWindow
     ) {
+        NSLog("CarMirror: CarPlay ayrıldı")
         MirrorReceiver.shared.setSink(nil)
         MirrorState.shared.update(carPlayConnected: false)
         if NavigationEngine.shared.presenter === self {
@@ -95,6 +95,7 @@ final class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegat
 extension CarPlaySceneDelegate: NavigationPresenter {
     func navigationDidStart(_ plan: RoutePlan, from origin: CLLocationCoordinate2D) {
         guard let mapTemplate else { return }
+        NSLog("CarMirror: CarPlay navigasyon oturumu başlıyor: \(plan.destinationName), \(plan.steps.count) adım")
         endSession(arrived: false)
 
         let originItem = MKMapItem(placemark: MKPlacemark(coordinate: origin))
