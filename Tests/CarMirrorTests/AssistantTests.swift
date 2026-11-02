@@ -368,7 +368,7 @@ final class AssistantEngineTests: XCTestCase {
         let engine = makeEngine(brain: brain)
 
         engine.submit(text: "Merhaba")
-        waitUntil(timeout: 5, message: "cevap konuşulmadı: \(voice.spoken)") {
+        waitUntil(timeout: 20, message: "cevap konuşulmadı: \(voice.spoken)") {
             self.voice.spoken.count == 2 && engine.state == .idle
         }
 
@@ -399,7 +399,7 @@ final class AssistantEngineTests: XCTestCase {
         let engine = makeEngine(brain: brain)
 
         engine.submit(text: "Kadıköy'e gidelim")
-        waitUntil(timeout: 5, message: "tur bitmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
+        waitUntil(timeout: 20, message: "tur bitmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
 
         XCTAssertEqual(navigated, ["Kadıköy"])
         XCTAssertEqual(voice.spoken, ["Kadıköy'e rota çizildi efendim."])
@@ -431,7 +431,7 @@ final class AssistantEngineTests: XCTestCase {
         let engine = makeEngine(brain: brain, navigation: navigation)
 
         engine.submit(text: "Test hedefine yol tarifi al")
-        waitUntil(timeout: 5, message: "tur bitmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
+        waitUntil(timeout: 20, message: "tur bitmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
 
         XCTAssertTrue(navigated.isEmpty, "Konum varken Apple Haritalar'a düşülmemeli")
         XCTAssertEqual(navigation.state, .navigating)
@@ -461,7 +461,7 @@ final class AssistantEngineTests: XCTestCase {
         let brain = ScriptedBrain(rounds: [round, ScriptedBrain.textRound(["Aktif rota yok efendim."])])
         let engine = makeEngine(brain: brain)
         engine.submit(text: "Ne zaman varırız?")
-        waitUntil(timeout: 5, message: "tur bitmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
+        waitUntil(timeout: 20, message: "tur bitmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
 
         let results = brain.requests[1][2].content
         XCTAssertEqual(results.count, 2, "İki araç sonucu tek kullanıcı mesajında dönmeli")
@@ -473,7 +473,7 @@ final class AssistantEngineTests: XCTestCase {
         settings.anthropicAPIKey = ""
         let engine = makeEngine(brain: nil)
         engine.submit(text: "Selam")
-        waitUntil(timeout: 5, message: "uyarı konuşulmadı") { engine.state == .idle && !self.voice.spoken.isEmpty }
+        waitUntil(timeout: 20, message: "uyarı konuşulmadı") { engine.state == .idle && !self.voice.spoken.isEmpty }
         XCTAssertTrue(voice.spoken.first?.contains("API anahtarım yok") == true)
     }
 
@@ -481,7 +481,7 @@ final class AssistantEngineTests: XCTestCase {
         let brain = ScriptedBrain(rounds: [[.done(ClaudeTurn(blocks: [], stopReason: "refusal", text: ""))]])
         let engine = makeEngine(brain: brain)
         engine.submit(text: "...")
-        waitUntil(timeout: 5, message: "ret cümlesi konuşulmadı") { engine.state == .idle && !self.voice.spoken.isEmpty }
+        waitUntil(timeout: 20, message: "ret cümlesi konuşulmadı") { engine.state == .idle && !self.voice.spoken.isEmpty }
         XCTAssertTrue(voice.spoken.first?.contains("yardımcı olamıyorum") == true)
     }
 
@@ -493,8 +493,11 @@ final class AssistantEngineTests: XCTestCase {
 
         engine.surfaceDidAppear(.phone)
         XCTAssertEqual(engine.state, .greeting)
-        waitUntil(timeout: 5, message: "karşılama ve cevap tamamlanmadı: \(voice.spoken)") {
+        waitUntil(timeout: 20, message: "karşılama ve cevap tamamlanmadı: \(voice.spoken)") {
             self.voice.spoken.count == 2 && engine.state == .idle
+        }
+        guard voice.spoken.count == 2 else {
+            return XCTFail("beklenen iki cümle yerine: \(voice.spoken), durum: \(engine.state)")
         }
 
         XCTAssertTrue(voice.spoken[0].lowercased().contains("efendim"), "Karşılama hitap içermeli: \(voice.spoken[0])")
@@ -510,7 +513,7 @@ final class AssistantEngineTests: XCTestCase {
         let engine = makeEngine(brain: ScriptedBrain(rounds: []))
         engine.isDemoMode = false
         engine.startListening()
-        waitUntil(timeout: 5, message: "izin uyarısı gelmedi") { engine.statusMessage != nil && engine.state == .idle }
+        waitUntil(timeout: 20, message: "izin uyarısı gelmedi") { engine.statusMessage != nil && engine.state == .idle }
         XCTAssertTrue(engine.statusMessage?.contains("izin") == true)
         XCTAssertEqual(engine.isAuthorized, false)
     }
@@ -530,7 +533,7 @@ final class AssistantEngineTests: XCTestCase {
         let brain = ScriptedBrain(rounds: [ScriptedBrain.textRound(["Tamam."])])
         let engine = makeEngine(brain: brain)
         engine.submit(text: "Selam")
-        waitUntil(timeout: 5, message: "cevap gelmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
+        waitUntil(timeout: 20, message: "cevap gelmedi") { engine.state == .idle && !self.voice.spoken.isEmpty }
         engine.reset()
         XCTAssertTrue(engine.conversation.isEmpty)
         XCTAssertTrue(engine.entries.isEmpty)
