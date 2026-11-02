@@ -41,7 +41,8 @@ final class CarPlayDisplayTests: XCTestCase {
         let window = try makeCarWindow(rootViewController: controller)
         defer { window.isHidden = true }
         XCTAssertFalse(controller.isShowingStream)
-        XCTAssertFalse(controller.assistantHost.view.isHidden, "Yayın yokken asistan görünmeli")
+        XCTAssertTrue(controller.isAssistantAttached, "Yayın yokken asistan görünmeli")
+        XCTAssertNotNil(controller.assistantHost.view.window, "Asistan görünümü pencerede olmalı")
 
         let packets = try TestMedia.encode(frameCount: 15, width: 1170, height: 2532, color: .testRed)
         let receiver = MirrorReceiver(socketPath: nil)
@@ -58,11 +59,12 @@ final class CarPlayDisplayTests: XCTestCase {
         XCTAssertNotEqual(renderer.status, .failed, "Gösterici hatası: \(String(describing: renderer.error))")
         XCTAssertEqual(renderer.status, .rendering)
         XCTAssertTrue(controller.isShowingStream, "Görüntü gelince yayın gösterilmeli")
-        XCTAssertTrue(controller.assistantHost.view.isHidden, "Görüntü gelince asistan gizlenmeli")
+        XCTAssertFalse(controller.isAssistantAttached, "Görüntü gelince asistan pencereden çıkarılmalı")
+        XCTAssertNil(controller.assistantHost.view.window)
 
         receiver.endLocalStream()
         waitUntil(timeout: 3, message: "yayın bitince asistan geri gelmedi") {
-            !controller.isShowingStream && !controller.assistantHost.view.isHidden
+            !controller.isShowingStream && controller.isAssistantAttached && controller.assistantHost.view.window != nil
         }
     }
 

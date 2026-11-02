@@ -20,6 +20,30 @@ carplay_shot() {
   xcrun simctl io "$UDID" screenshot --display=external "$1" > /dev/null
 }
 
+# CarPlay ekranının video kaydı (asistan ve navigasyon bölümü için).
+RECORDER=""
+start_recording() {
+  xcrun simctl io "$UDID" recordVideo --display=external --codec=h264 --force "$1" > /dev/null 2>&1 &
+  RECORDER=$!
+}
+
+stop_recording() {
+  [ -n "$RECORDER" ] || return 0
+  # xcrun, simctl'i ayrı bir süreç olarak çalıştırabilir; kayıt sürecine doğrudan sinyal gönder.
+  pkill -INT -f "simctl io .* recordVideo" 2> /dev/null || kill -INT "$RECORDER" 2> /dev/null || true
+  for _ in $(seq 1 20); do
+    kill -0 "$RECORDER" 2> /dev/null || break
+    sleep 1
+  done
+  if kill -0 "$RECORDER" 2> /dev/null; then
+    log "Kayıt kapanmadı; zorla durduruluyor"
+    pkill -KILL -f "simctl io .* recordVideo" 2> /dev/null || true
+    kill -KILL "$RECORDER" 2> /dev/null || true
+  fi
+  wait "$RECORDER" 2> /dev/null || true
+  RECORDER=""
+}
+
 # Uygulamayı verilen etiketle başlatır; stdout/stderr (NSLog) dosyaya yazılır.
 launch_app() {
   local label="$1"
@@ -69,7 +93,11 @@ collect_logs() {
     python3 "$SCRIPTS/summarize-crashes.py" "$OUT"/crashes/*.ips | tee "$OUT/crashes/summary.txt" || true
   fi
 }
-trap collect_logs EXIT
+on_exit() {
+  stop_recording
+  collect_logs
+}
+trap on_exit EXIT
 
 log "Yardımcı araçlar derleniyor"
 TOOLS=build/tools
@@ -186,7 +214,8 @@ demo_command() {
   printf '%s\n' "$1" > /tmp/carmirror-demo-command
 }
 
-log "Asistan ekranı CarPlay'de deneniyor"
+log "Asistan ekranı CarPlay'de deneniyor (ekran kaydı başlıyor)"
+start_recording "$OUT/carplay.mov"
 demo_command "tab assistant"
 sleep 12
 carplay_shot "$OUT/6-carplay-assistant.png"
@@ -221,25 +250,9 @@ fi
 log "Demo ekranına dönülüyor"
 demo_command "stop"
 sleep 3
+stop_recording
 demo_command "tab demo"
 sleep 12
-
-log "CarPlay ekranı kaydediliyor"
-xcrun simctl io "$UDID" recordVideo --display=external --codec=h264 --force "$OUT/carplay.mov" > /dev/null 2>&1 &
-RECORDER=$!
-sleep 8
-# xcrun, simctl'i ayrı bir süreç olarak çalıştırabilir; kayıt sürecine doğrudan sinyal gönder.
-pkill -INT -f "simctl io .* recordVideo" 2> /dev/null || kill -INT "$RECORDER" 2> /dev/null || true
-for _ in $(seq 1 20); do
-  kill -0 "$RECORDER" 2> /dev/null || break
-  sleep 1
-done
-if kill -0 "$RECORDER" 2> /dev/null; then
-  log "Kayıt kapanmadı; zorla durduruluyor"
-  pkill -KILL -f "simctl io .* recordVideo" 2> /dev/null || true
-  kill -KILL "$RECORDER" 2> /dev/null || true
-fi
-wait "$RECORDER" 2> /dev/null || true
 carplay_shot "$OUT/5-carplay-mirroring-later.png"
 
 log "BAŞARILI: iPhone ekranı CarPlay ekranında görünüyor"

@@ -50,13 +50,7 @@ final class CarPlayMirrorViewController: UIViewController {
         view.addSubview(displayView)
 
         displayView.isHidden = true
-
-        addChild(assistantHost)
-        assistantHost.view.frame = view.bounds
-        assistantHost.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        assistantHost.view.backgroundColor = .black
-        view.addSubview(assistantHost.view)
-        assistantHost.didMove(toParent: self)
+        attachAssistant()
 
         NotificationCenter.default.addObserver(
             self,
@@ -83,15 +77,40 @@ final class CarPlayMirrorViewController: UIViewController {
         )
     }
 
+    /// Yayın gelince asistan görünümü gizlenmez, hiyerarşiden çıkarılır: SwiftUI,
+    /// `isHidden` ile gizlenen bir barındırma görünümünü güncellemeyi bırakır ve
+    /// yeniden gösterildiğinde her zaman sürdürmez (CarPlay ekranı donuk kalıyordu).
+    /// Pencereye geri eklenen görünüm ise güncel durumla yeniden çizilir.
     private func setStreamVisible(_ visible: Bool) {
         isShowingStream = visible
         displayView.isHidden = !visible
-        assistantHost.view.isHidden = visible
         if visible {
+            detachAssistant()
             AssistantEngine.shared.surfaceDidDisappear(.car)
         } else {
+            attachAssistant()
             AssistantEngine.shared.surfaceDidAppear(.car)
         }
+    }
+
+    /// Asistan görünümü pencere hiyerarşisinde mi?
+    var isAssistantAttached: Bool { assistantHost.parent != nil }
+
+    private func attachAssistant() {
+        guard assistantHost.parent == nil else { return }
+        addChild(assistantHost)
+        assistantHost.view.frame = view.bounds
+        assistantHost.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        assistantHost.view.backgroundColor = .black
+        view.addSubview(assistantHost.view)
+        assistantHost.didMove(toParent: self)
+    }
+
+    private func detachAssistant() {
+        guard assistantHost.parent != nil else { return }
+        assistantHost.willMove(toParent: nil)
+        assistantHost.view.removeFromSuperview()
+        assistantHost.removeFromParent()
     }
 
     func apply(orientation: CGImagePropertyOrientation) {

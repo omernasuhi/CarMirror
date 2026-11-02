@@ -98,6 +98,7 @@ struct AssistantView: View {
             }
             .padding(12 * unit)
         }
+        .onAppear { NSLog("CarMirror: navigasyon yerleşimi göründü: \(surface), \(Int(size.width))x\(Int(size.height))") }
     }
 
     private func portraitLayout(size: CGSize) -> some View {
