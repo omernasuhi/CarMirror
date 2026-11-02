@@ -1,0 +1,22 @@
+2026-11-02 04:18:54.335 CarMirror[5931:24312] CarMirror: başlatma argümanları: -CarMirrorTab demo
+2026-11-02 04:18:54.335 CarMirror[5931:24312] CarMirror: asistan hazır (demo: true, sessiz: false, demo hedef: -)
+2026-11-02 04:21:33.238 CarMirror[5931:24312] CarMirror: CarPlay bağlandı
+2026-11-02 04:21:33.524 CarMirror[5931:24312] CarMirror: asistan yüzeyi göründü: car, durum: idle
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-11-02 04:21:36.608 CarMirror[5931:24312] CarMirror: asistan yüzeyi gizlendi: car
+2026-11-02 04:21:36.617 CarMirror[5931:24312] CarMirror: asistan yüzeyi gizlendi: car
+objc[5931]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x11e3d4310) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x11d77c398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+2026-11-02 04:24:57.552 CarMirror[5931:24312] CarMirror: demo komutu: tab assistant
+2026-11-02 04:24:58.560 CarMirror[5931:24312] CarMirror: asistan yüzeyi göründü: phone, durum: idle
+2026-11-02 04:24:59.192 CarMirror[5931:24312] CarMirror: asistan yüzeyi göründü: car, durum: greeting
+2026-11-02 04:24:59.204 CarMirror[5931:24312] CarMirror: asistan yüzeyi göründü: car, durum: greeting
+2026-11-02 04:25:55.679 CarMirror[5931:24312] CarMirror: konum hatası: İşlem tamamlanamadı. (kCLErrorDomain hatası 0.)
+2026-11-02 04:25:57.421 CarMirror[5931:24312] CarMirror: demo komutu: navigate Kadikoy
+2026-11-02 04:25:57.508 CarMirror[5931:24312] CarMirror: demo navigasyon başlıyor: Kadikoy
+2026-11-02 04:26:02.852 CarMirror[5931:24312] CarMirror: navigasyon yerleşimi göründü: car, 351x240
+2026-11-02 04:26:05.659 CarMirror[5931:24312] CarMirror: demo rota hazır: Kadikoy, 16238 m
+2026-11-02 04:28:00.421 CarMirror[5931:24312] CarMirror: demo komutu: stop
+2026-11-02 04:28:07.919 CarMirror[5931:24312] CarMirror: demo komutu: tab demo
+2026-11-02 04:28:08.933 CarMirror[5931:24312] CarMirror: asistan yüzeyi gizlendi: phone
+2026-11-02 04:28:09.695 CarMirror[5931:24312] CarMirror: asistan yüzeyi gizlendi: car
+2026-11-02 04:28:09.704 CarMirror[5931:24312] CarMirror: asistan yüzeyi gizlendi: car
