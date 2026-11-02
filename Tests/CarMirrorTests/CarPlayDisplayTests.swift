@@ -43,7 +43,9 @@ final class CarPlayDisplayTests: XCTestCase {
         XCTAssertFalse(controller.isShowingStream)
         XCTAssertTrue(controller.isAssistantAttached, "Yayın yokken asistan görünmeli")
         XCTAssertNotNil(controller.assistantHost.view.window, "Asistan görünümü pencerede olmalı")
-        waitUntil(timeout: 3, message: "araç ekranı yenileme bağlantısı çalışmadı") { controller.refreshTickCount > 2 }
+        waitUntil(timeout: CarPlayMirrorViewController.animationRefreshDelay + 6, message: "araç ekranı yenileme bağlantısı çalışmadı") {
+            controller.refreshTickCount > 2
+        }
 
         let packets = try TestMedia.encode(frameCount: 15, width: 1170, height: 2532, color: .testRed)
         let receiver = MirrorReceiver(socketPath: nil)

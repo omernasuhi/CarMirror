@@ -1,4 +1,5 @@
 import AVFoundation
+import Combine
 import ImageIO
 import SwiftUI
 import UIKit
@@ -12,7 +13,12 @@ final class CarPlayMirrorViewController: UIViewController {
     private(set) var isShowingStream = false
     private(set) var orientation: CGImagePropertyOrientation = .up
     private var refreshLink: CADisplayLink?
+    private var refreshStart: DispatchWorkItem?
+    private var refreshSubscriptions: [AnyCancellable] = []
+    private var refreshScheduled = false
     private(set) var refreshTickCount = 0
+    /// Simülatörde animasyon yenilemesi, CarPlay sahne kurulumunu yormamak için bu kadar gecikir.
+    static let animationRefreshDelay: TimeInterval = 3
 
     var fillsScreen: Bool {
         didSet {
@@ -43,6 +49,7 @@ final class CarPlayMirrorViewController: UIViewController {
     }
 
     deinit {
+        refreshStart?.cancel()
         refreshLink?.invalidate()
     }
 
@@ -130,19 +137,58 @@ final class CarPlayMirrorViewController: UIViewController {
     /// yenilenmiyor: SwiftUI çizimlerini pencerenin ekranına bağlı görüntü
     /// bağlantısıyla (display link) zamanlar ve simülatörün dış ekranında bu
     /// bağlantı tetiklenmiyor (gövde yeniden değerlendirilse bile ekran eski
-    /// karede kalıyordu). Asistan görünürken ana ekranın görüntü bağlantısıyla
-    /// her karede yerleşim istenir; SwiftUI bekleyen güncellemeleri o anda çizer.
+    /// karede kalıyordu). Bu yüzden asistanın verisi değişince bir sonraki
+    /// döngüde yerleşim istenir; SwiftUI bekleyen güncellemeyi o anda çizer.
+    /// Simülatörde animasyonlar (orb, saat) için ayrıca düşük hızlı bir görüntü
+    /// bağlantısı kullanılır; ana iş parçacığını yormamak için gecikmeli başlar.
     private func startRefreshing() {
-        guard refreshLink == nil else { return }
-        let link = CADisplayLink(target: RefreshTarget(controller: self), selector: #selector(RefreshTarget.tick))
-        link.preferredFrameRateRange = CAFrameRateRange(minimum: 30, maximum: 60, preferred: 60)
-        link.add(to: .main, forMode: .common)
-        refreshLink = link
+        if refreshSubscriptions.isEmpty {
+            let engine = AssistantEngine.shared
+            let publishers: [AnyPublisher<Void, Never>] = [
+                engine.objectWillChange.map { _ in () }.eraseToAnyPublisher(),
+                engine.navigation.objectWillChange.map { _ in () }.eraseToAnyPublisher(),
+                AssistantSettings.shared.objectWillChange.map { _ in () }.eraseToAnyPublisher(),
+            ]
+            for publisher in publishers {
+                publisher
+                    .sink { [weak self] in self?.scheduleRefresh() }
+                    .store(in: &refreshSubscriptions)
+            }
+        }
+        #if targetEnvironment(simulator)
+        guard refreshLink == nil, refreshStart == nil else { return }
+        let work = DispatchWorkItem { [weak self] in
+            guard let self, self.refreshStart != nil else { return }
+            self.refreshStart = nil
+            let link = CADisplayLink(target: RefreshTarget(controller: self), selector: #selector(RefreshTarget.tick))
+            link.preferredFrameRateRange = CAFrameRateRange(minimum: 10, maximum: 20, preferred: 15)
+            link.add(to: .main, forMode: .common)
+            self.refreshLink = link
+        }
+        refreshStart = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + Self.animationRefreshDelay, execute: work)
+        #endif
     }
 
     func stopRefreshing() {
+        refreshStart?.cancel()
+        refreshStart = nil
         refreshLink?.invalidate()
         refreshLink = nil
+        refreshSubscriptions.removeAll()
+    }
+
+    /// Bir döngüdeki veri değişikliklerini tek bir yerleşim geçişinde toplar;
+    /// değişiklik işlendikten sonra çizer (objectWillChange değişimden önce gelir).
+    private func scheduleRefresh() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self, !self.refreshScheduled else { return }
+            self.refreshScheduled = true
+            DispatchQueue.main.async {
+                self.refreshScheduled = false
+                self.refreshAssistant()
+            }
+        }
     }
 
     fileprivate func refreshAssistant() {

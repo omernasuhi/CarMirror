@@ -5,7 +5,8 @@ struct DemoView: View {
     private static let barColors: [Color] = [.red, .orange, .yellow, .green, .blue, .purple]
 
     var body: some View {
-        TimelineView(.animation) { context in
+        // 20 kare/sn yeterince akıcı; 60'ta simülatörde ana iş parçacığını yoruyordu.
+        TimelineView(.animation(minimumInterval: 1.0 / 20)) { context in
             let seconds = context.date.timeIntervalSinceReferenceDate
             VStack(spacing: 28) {
                 Text("CARMIRROR DEMO")

@@ -18,9 +18,19 @@ final class InAppMirror: NSObject {
 
     private(set) var isRunning = false
 
+    #if targetEnvironment(simulator)
+    // Simülatörde yakalama ve yazılımla kodlama ana işlemciyi yorar; CarPlay sahne
+    // kurulumunu geciktirmemek için daha düşük hız ve çözünürlük.
+    private let framesPerSecond: Double = 15
+    #else
     private let framesPerSecond: Double = 24
+    #endif
     /// Yakalanan görüntünün uzun kenarı (piksel).
+    #if targetEnvironment(simulator)
+    private let maxLongSide: CGFloat = 960
+    #else
     private let maxLongSide: CGFloat = 1280
+    #endif
 
     private weak var window: UIWindow?
     private var displayLink: CADisplayLink?

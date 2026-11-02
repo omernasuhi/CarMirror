@@ -93,6 +93,60 @@ collect_logs() {
     python3 "$SCRIPTS/summarize-crashes.py" "$OUT"/crashes/*.ips | tee "$OUT/crashes/summary.txt" || true
   fi
 }
+# Sürecin kaç saniyedir çalıştığı (ps etime: [[gg-]ss:]dd:ss).
+proc_age() {
+  ps -o etime= -p "$1" 2> /dev/null | awk '{
+    n = split($1, a, ":"); s = 0
+    if (n == 3) { m = split(a[1], d, "-"); if (m == 2) s = d[1] * 86400 + d[2] * 3600; else s = a[1] * 3600; s += a[2] * 60 + a[3] }
+    else if (n == 2) s = a[1] * 60 + a[2]
+    print s }'
+}
+
+# CarPlay'in şablon sunucusu (CarPlayTemplateUIHost) yavaş çalıştırıcılarda 30 s'lik
+# açılış bekçisine takılıp öldürülüyor ve yeniden başlıyor; o sırada simgeye dokunmak
+# uygulamanın araç sahnesini yarım bırakıyordu (sahne bağlanıyor ama ana ekran
+# değişmiyor). Sunucu en az 40 s ayakta kalana kadar dokunma.
+wait_for_template_host() {
+  local start=$SECONDS deadline=$((SECONDS + 240)) pid age last_pid="" seen=false
+  while [ "$SECONDS" -lt "$deadline" ]; do
+    pid=$(pgrep -x CarPlayTemplateUIHost 2> /dev/null | head -1 || true)
+    if [ -z "$pid" ]; then
+      if [ "$seen" = false ] && [ $((SECONDS - start)) -ge 60 ]; then
+        log "CarPlay şablon sunucusu henüz başlamadı; dokunmayla başlayacak"
+        return 0
+      fi
+      if [ -n "$last_pid" ]; then
+        log "CarPlay şablon sunucusu kapandı (pid $last_pid); yeniden başlaması bekleniyor"
+      fi
+      last_pid=""
+      sleep 5
+      continue
+    fi
+    seen=true
+    age=$(proc_age "$pid")
+    if [ "${age:-0}" -ge 40 ]; then
+      log "CarPlay şablon sunucusu kararlı (pid $pid, ${age} s)"
+      return 0
+    fi
+    if [ "$pid" != "$last_pid" ]; then
+      log "CarPlay şablon sunucusu başlıyor (pid $pid, ${age:-?} s); bekleniyor"
+    fi
+    last_pid=$pid
+    sleep 5
+  done
+  log "UYARI: CarPlay şablon sunucusu kararlı hâle gelmedi; yine de deneniyor"
+}
+
+# Uygulama, CarPlay'in açılış bekçisine takılıp kapanmış olabilir; yeniden başlat.
+ensure_app_running() {
+  if pgrep -x CarMirror > /dev/null 2>&1; then
+    return 0
+  fi
+  log "UYARI: uygulama çalışmıyor (CarPlay açılış bekçisi kapatmış olabilir); yeniden başlatılıyor"
+  launch_app demo2 -CarMirrorTab demo
+  sleep 8
+}
+
 on_exit() {
   stop_recording
   collect_logs
@@ -145,6 +199,9 @@ cp /tmp/carmirror-carplay-shim.log "$OUT/carplay-shim.log" 2> /dev/null || true
 log "CarPlay ekranı bağlanıyor"
 osascript "$SCRIPTS/enable-carplay.applescript" 2>&1 | tee "$OUT/enable-carplay.log"
 sleep 12
+# Şablon sunucusu yerleşmeden pencere taraması ve OCR gibi yük bindiren işler yapılmaz.
+wait_for_template_host
+ensure_app_running
 
 osascript "$SCRIPTS/carplay-window.applescript" > "$OUT/carplay-window.txt" 2> "$OUT/carplay-window.log"
 cat "$OUT/carplay-window.log"
@@ -178,50 +235,7 @@ screen_point() {
   python3 "$SCRIPTS/screen-point.py" "$OUT/carplay-window.txt" "$OUT/2-carplay-home.png" "$1" "$2"
 }
 
-# Sürecin kaç saniyedir çalıştığı (ps etime: [[gg-]ss:]dd:ss).
-proc_age() {
-  ps -o etime= -p "$1" 2> /dev/null | awk '{
-    n = split($1, a, ":"); s = 0
-    if (n == 3) { m = split(a[1], d, "-"); if (m == 2) s = d[1] * 86400 + d[2] * 3600; else s = a[1] * 3600; s += a[2] * 60 + a[3] }
-    else if (n == 2) s = a[1] * 60 + a[2]
-    print s }'
-}
-
-# CarPlay'in şablon sunucusu (CarPlayTemplateUIHost) yavaş çalıştırıcılarda 30 s'lik
-# açılış bekçisine takılıp öldürülüyor ve yeniden başlıyor; o sırada simgeye dokunmak
-# uygulamanın araç sahnesini yarım bırakıyordu (sahne bağlanıyor ama ana ekran
-# değişmiyor). Sunucu en az 40 s ayakta kalana kadar dokunma.
-wait_for_template_host() {
-  local start=$SECONDS deadline=$((SECONDS + 240)) pid age last_pid="" seen=false
-  while [ "$SECONDS" -lt "$deadline" ]; do
-    pid=$(pgrep -x CarPlayTemplateUIHost 2> /dev/null | head -1 || true)
-    if [ -z "$pid" ]; then
-      if [ "$seen" = false ] && [ $((SECONDS - start)) -ge 60 ]; then
-        log "CarPlay şablon sunucusu henüz başlamadı; dokunmayla başlayacak"
-        return 0
-      fi
-      if [ -n "$last_pid" ]; then
-        log "CarPlay şablon sunucusu kapandı (pid $last_pid); yeniden başlaması bekleniyor"
-      fi
-      last_pid=""
-      sleep 5
-      continue
-    fi
-    seen=true
-    age=$(proc_age "$pid")
-    if [ "${age:-0}" -ge 40 ]; then
-      log "CarPlay şablon sunucusu kararlı (pid $pid, ${age} s)"
-      return 0
-    fi
-    if [ "$pid" != "$last_pid" ]; then
-      log "CarPlay şablon sunucusu başlıyor (pid $pid, ${age:-?} s); bekleniyor"
-    fi
-    last_pid=$pid
-    sleep 5
-  done
-  log "UYARI: CarPlay şablon sunucusu kararlı hâle gelmedi; yine de deneniyor"
-}
-wait_for_template_host
+ensure_app_running
 
 mirrored=false
 attempt=0
