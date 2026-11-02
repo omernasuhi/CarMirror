@@ -121,7 +121,18 @@ sleep 2
 carplay_shot "$OUT/2-carplay-home.png"
 xcrun simctl io "$UDID" screenshot "$OUT/2-iphone-after-carplay.png" > /dev/null
 
-if ! LABEL=$("$TOOLS/find-text" "$OUT/2-carplay-home.png" "CarMirror" 2> "$OUT/ocr-home.log"); then
+# Yavaş çalıştırıcılarda CarPlay ana ekranı geç gelir; simge görünene kadar yeniden dene.
+LABEL=""
+for attempt in 1 2 3 4 5 6 7 8; do
+  if LABEL=$("$TOOLS/find-text" "$OUT/2-carplay-home.png" "CarMirror" 2> "$OUT/ocr-home.log"); then
+    break
+  fi
+  LABEL=""
+  log "CarPlay ana ekranında CarMirror simgesi henüz yok (deneme $attempt); bekleniyor"
+  sleep 10
+  carplay_shot "$OUT/2-carplay-home.png"
+done
+if [ -z "$LABEL" ]; then
   cat "$OUT/ocr-home.log"
   log "HATA: CarPlay ana ekranında CarMirror simgesi bulunamadı"
   exit 1
