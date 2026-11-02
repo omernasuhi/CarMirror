@@ -100,6 +100,7 @@ open -a "$(xcode-select -p)/Applications/Simulator.app" --args -CurrentDeviceUDI
 sleep 10
 
 xcrun simctl install "$UDID" "$APP"
+rm -f /tmp/carmirror-demo.env
 launch_app demo1 -CarMirrorTab demo
 sleep 6
 xcrun simctl io "$UDID" screenshot "$OUT/1-iphone.png" > /dev/null
@@ -168,7 +169,11 @@ fi
 log "Asistan ekranı CarPlay'de deneniyor"
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2
-SIMCTL_CHILD_CARMIRROR_ASSISTANT_DEMO=1 launch_app assistant -CarMirrorTab assistant -CarMirrorAssistantDemo YES
+# Simülatördeki uygulama Mac'in dosya sistemini görür; demo ayarları bu dosyadan da okunur.
+printf 'CARMIRROR_ASSISTANT_DEMO=1\n' > /tmp/carmirror-demo.env
+set -x
+launch_app assistant -CarMirrorTab assistant -CarMirrorAssistantDemo YES
+set +x
 sleep 8
 open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (asistan adımı)"
 sleep 4
@@ -187,11 +192,13 @@ xcrun simctl privacy "$UDID" grant location "$BUNDLE_ID" 2> /dev/null || true
 xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2
-# Başlatma argümanlarında ASCII dışı karakter simctl'de sorun çıkarabiliyor; hedef ASCII.
-SIMCTL_CHILD_CARMIRROR_ASSISTANT_DEMO=1 SIMCTL_CHILD_CARMIRROR_DEMO_DESTINATION="Kadikoy" \
-  launch_app navigation -CarMirrorTab assistant -CarMirrorAssistantDemo YES
+printf 'CARMIRROR_ASSISTANT_DEMO=1\nCARMIRROR_DEMO_DESTINATION=Kadikoy\n' > /tmp/carmirror-demo.env
+set -x
+launch_app navigation -CarMirrorTab assistant -CarMirrorAssistantDemo YES -CarMirrorDemoDestination Kadikoy
+set +x
 xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
 sleep 8
+ls -la "$OUT" | grep app- || true
 open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (navigasyon adımı)"
 sleep 16
 carplay_shot "$OUT/7-carplay-navigation.png"
@@ -213,6 +220,7 @@ fi
 log "Demo ekranına dönülüyor"
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
 sleep 2
+rm -f /tmp/carmirror-demo.env
 launch_app demo2 -CarMirrorTab demo
 sleep 8
 open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (demo adımı)"

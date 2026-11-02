@@ -96,9 +96,10 @@ final class AssistantEngine: ObservableObject {
         self.voiceFactory = voiceFactory
         let voice = voiceFactory(settings)
         speechQueue = SpeechQueue(voice: voice)
-        // Demo ayarları başlatma argümanıyla (-CarMirrorAssistantDemo YES) ya da
-        // ortam değişkeniyle (CARMIRROR_ASSISTANT_DEMO=1) verilebilir.
-        let environment = ProcessInfo.processInfo.environment
+        // Demo ayarları başlatma argümanıyla (-CarMirrorAssistantDemo YES), ortam
+        // değişkeniyle (CARMIRROR_ASSISTANT_DEMO=1) ya da simülatörde
+        // /tmp/carmirror-demo.env dosyasıyla verilebilir (CI).
+        let environment = DemoConfiguration.environment()
         let underTests = environment["XCTestConfigurationFilePath"] != nil
         let demoFlag = UserDefaults.standard.bool(forKey: "CarMirrorAssistantDemo")
             || ["1", "YES", "true"].contains(environment["CARMIRROR_ASSISTANT_DEMO"] ?? "")
@@ -107,6 +108,9 @@ final class AssistantEngine: ObservableObject {
         let destination = UserDefaults.standard.string(forKey: "CarMirrorDemoDestination") ?? environment["CARMIRROR_DEMO_DESTINATION"] ?? ""
         if !underTests, !destination.isEmpty {
             demoDestination = destination
+        }
+        if !underTests {
+            NSLog("CarMirror: başlatma argümanları: \(ProcessInfo.processInfo.arguments.dropFirst().joined(separator: " "))")
         }
         voice.onLevel = { [weak self] value in self?.updateLevel(value) }
         navigation.onAnnouncement = { [weak self] text in self?.announce(text) }
@@ -525,4 +529,22 @@ final class SilentVoice: VoiceOutput {
     }
 
     func stop() {}
+}
+
+/// Demo/CI ayarları: süreç ortamı; simülatörde ek olarak /tmp/carmirror-demo.env
+/// dosyasındaki `ANAHTAR=değer` satırları (simctl bazı argümanları düşürebiliyor).
+enum DemoConfiguration {
+    static func environment() -> [String: String] {
+        var values = ProcessInfo.processInfo.environment
+        #if targetEnvironment(simulator)
+        if let contents = try? String(contentsOfFile: "/tmp/carmirror-demo.env", encoding: .utf8) {
+            for line in contents.split(separator: "\n") {
+                let parts = line.split(separator: "=", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
+                guard parts.count == 2, !parts[0].isEmpty else { continue }
+                values[parts[0]] = parts[1]
+            }
+        }
+        #endif
+        return values
+    }
 }
