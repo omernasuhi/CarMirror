@@ -11,6 +11,8 @@ final class CarPlayMirrorViewController: UIViewController {
     let assistantHost: UIHostingController<AssistantView>
     private(set) var isShowingStream = false
     private(set) var orientation: CGImagePropertyOrientation = .up
+    private var refreshLink: CADisplayLink?
+    private(set) var refreshTickCount = 0
 
     var fillsScreen: Bool {
         didSet {
@@ -38,6 +40,10 @@ final class CarPlayMirrorViewController: UIViewController {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) kullanılmıyor")
+    }
+
+    deinit {
+        refreshLink?.invalidate()
     }
 
     override func viewDidLoad() {
@@ -107,13 +113,56 @@ final class CarPlayMirrorViewController: UIViewController {
         assistantHost.view.backgroundColor = .black
         view.addSubview(assistantHost.view)
         assistantHost.didMove(toParent: self)
+        startRefreshing()
     }
 
     private func detachAssistant() {
         guard assistantHost.parent != nil else { return }
+        stopRefreshing()
         assistantHost.willMove(toParent: nil)
         assistantHost.view.removeFromSuperview()
         assistantHost.removeFromParent()
+    }
+
+    // MARK: - Araç ekranında SwiftUI'yi yenileme
+
+    /// CarPlay penceresindeki SwiftUI görünümü ilk çizimden sonra kendiliğinden
+    /// yenilenmiyor: SwiftUI çizimlerini pencerenin ekranına bağlı görüntü
+    /// bağlantısıyla (display link) zamanlar ve simülatörün dış ekranında bu
+    /// bağlantı tetiklenmiyor (gövde yeniden değerlendirilse bile ekran eski
+    /// karede kalıyordu). Asistan görünürken ana ekranın görüntü bağlantısıyla
+    /// her karede yerleşim istenir; SwiftUI bekleyen güncellemeleri o anda çizer.
+    private func startRefreshing() {
+        guard refreshLink == nil else { return }
+        let link = CADisplayLink(target: RefreshTarget(controller: self), selector: #selector(RefreshTarget.tick))
+        link.preferredFrameRateRange = CAFrameRateRange(minimum: 30, maximum: 60, preferred: 60)
+        link.add(to: .main, forMode: .common)
+        refreshLink = link
+    }
+
+    func stopRefreshing() {
+        refreshLink?.invalidate()
+        refreshLink = nil
+    }
+
+    fileprivate func refreshAssistant() {
+        guard assistantHost.parent != nil, assistantHost.view.window != nil else { return }
+        refreshTickCount += 1
+        assistantHost.view.setNeedsLayout()
+        assistantHost.view.layoutIfNeeded()
+    }
+
+    /// CADisplayLink hedefini güçlü tutar; denetleyiciye zayıf başvuruyla döngü önlenir.
+    private final class RefreshTarget: NSObject {
+        weak var controller: CarPlayMirrorViewController?
+
+        init(controller: CarPlayMirrorViewController) {
+            self.controller = controller
+        }
+
+        @objc func tick() {
+            controller?.refreshAssistant()
+        }
     }
 
     func apply(orientation: CGImagePropertyOrientation) {

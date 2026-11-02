@@ -43,6 +43,7 @@ final class CarPlayDisplayTests: XCTestCase {
         XCTAssertFalse(controller.isShowingStream)
         XCTAssertTrue(controller.isAssistantAttached, "Yayın yokken asistan görünmeli")
         XCTAssertNotNil(controller.assistantHost.view.window, "Asistan görünümü pencerede olmalı")
+        waitUntil(timeout: 3, message: "araç ekranı yenileme bağlantısı çalışmadı") { controller.refreshTickCount > 2 }
 
         let packets = try TestMedia.encode(frameCount: 15, width: 1170, height: 2532, color: .testRed)
         let receiver = MirrorReceiver(socketPath: nil)
@@ -61,6 +62,9 @@ final class CarPlayDisplayTests: XCTestCase {
         XCTAssertTrue(controller.isShowingStream, "Görüntü gelince yayın gösterilmeli")
         XCTAssertFalse(controller.isAssistantAttached, "Görüntü gelince asistan pencereden çıkarılmalı")
         XCTAssertNil(controller.assistantHost.view.window)
+        let ticksWhileStreaming = controller.refreshTickCount
+        spinRunLoop(for: 0.3)
+        XCTAssertEqual(controller.refreshTickCount, ticksWhileStreaming, "Yayın sırasında yenileme durmalı")
 
         receiver.endLocalStream()
         waitUntil(timeout: 3, message: "yayın bitince asistan geri gelmedi") {

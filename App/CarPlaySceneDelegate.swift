@@ -66,6 +66,7 @@ final class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegat
         navigationSession = nil
         trip = nil
         maneuvers = []
+        mirrorViewController?.stopRefreshing()
         mirrorViewController = nil
         mapTemplate = nil
         carWindow = nil
