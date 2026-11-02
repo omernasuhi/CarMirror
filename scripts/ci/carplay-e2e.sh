@@ -100,7 +100,12 @@ open -a "$(xcode-select -p)/Applications/Simulator.app" --args -CurrentDeviceUDI
 sleep 10
 
 xcrun simctl install "$UDID" "$APP"
-rm -f /tmp/carmirror-demo.env
+xcrun simctl privacy "$UDID" grant location "$BUNDLE_ID" 2> /dev/null || true
+xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
+# Simülatördeki uygulama Mac'in dosya sistemini görür: demo ayarları ve komutları
+# bu dosyalardan okunur (simctl launch argümanları her zaman ulaşmıyor).
+rm -f /tmp/carmirror-demo-command
+printf 'CARMIRROR_ASSISTANT_DEMO=1\nCARMIRROR_TAB=demo\n' > /tmp/carmirror-demo.env
 launch_app demo1 -CarMirrorTab demo
 sleep 6
 xcrun simctl io "$UDID" screenshot "$OUT/1-iphone.png" > /dev/null
@@ -177,21 +182,16 @@ if [ "$mirrored" != true ]; then
   exit 1
 fi
 
+demo_command() {
+  printf '%s\n' "$1" > /tmp/carmirror-demo-command
+}
+
 log "Asistan ekranı CarPlay'de deneniyor"
-xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
-sleep 2
-# Simülatördeki uygulama Mac'in dosya sistemini görür; demo ayarları bu dosyadan da okunur.
-printf 'CARMIRROR_ASSISTANT_DEMO=1\n' > /tmp/carmirror-demo.env
-set -x
-launch_app assistant -CarMirrorTab assistant -CarMirrorAssistantDemo YES
-set +x
-sleep 8
-open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (asistan adımı)"
-sleep 4
+demo_command "tab assistant"
+sleep 12
 carplay_shot "$OUT/6-carplay-assistant.png"
 xcrun simctl io "$UDID" screenshot "$OUT/6-iphone-assistant.png" > /dev/null
-ASSISTANT_NAME=$(python3 -c "print('ALFRED')")
-if "$TOOLS/find-text" "$OUT/6-carplay-assistant.png" "$ASSISTANT_NAME" > /dev/null 2> "$OUT/ocr-assistant.log"; then
+if "$TOOLS/find-text" "$OUT/6-carplay-assistant.png" "ALFRED" > /dev/null 2> "$OUT/ocr-assistant.log"; then
   log "Asistan CarPlay ekranında görünüyor"
 else
   log "UYARI: asistan adı CarPlay ekran görüntüsünde okunamadı (OCR); görüntülere bakın"
@@ -199,23 +199,13 @@ else
 fi
 
 log "Navigasyon CarPlay'de deneniyor"
-xcrun simctl privacy "$UDID" grant location "$BUNDLE_ID" 2> /dev/null || true
 xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
-xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
-sleep 2
-printf 'CARMIRROR_ASSISTANT_DEMO=1\nCARMIRROR_DEMO_DESTINATION=Kadikoy\n' > /tmp/carmirror-demo.env
-set -x
-launch_app navigation -CarMirrorTab assistant -CarMirrorAssistantDemo YES -CarMirrorDemoDestination Kadikoy
-set +x
-xcrun simctl location "$UDID" set 41.0369,28.9850 2> /dev/null || true
-sleep 8
-ls -la "$OUT" | grep app- || true
-open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (navigasyon adımı)"
-sleep 16
+demo_command "navigate Kadikoy"
+sleep 25
 carplay_shot "$OUT/7-carplay-navigation.png"
 xcrun simctl io "$UDID" screenshot "$OUT/7-iphone-navigation.png" > /dev/null
 navigation_seen=false
-for needle in kilometre dakika km min; do
+for needle in arrival min kilometre dakika km; do
   if "$TOOLS/find-text" "$OUT/7-carplay-navigation.png" "$needle" > /dev/null 2> "$OUT/ocr-navigation.log"; then
     navigation_seen=true
     break
@@ -229,12 +219,10 @@ else
 fi
 
 log "Demo ekranına dönülüyor"
-xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2> /dev/null || true
-sleep 2
-rm -f /tmp/carmirror-demo.env
-launch_app demo2 -CarMirrorTab demo
-sleep 8
-open_on_carplay || log "UYARI: CarMirror CarPlay'de açılamadı (demo adımı)"
+demo_command "stop"
+sleep 3
+demo_command "tab demo"
+sleep 12
 
 log "CarPlay ekranı kaydediliyor"
 xcrun simctl io "$UDID" recordVideo --display=external --codec=h264 --force "$OUT/carplay.mov" > /dev/null 2>&1 &

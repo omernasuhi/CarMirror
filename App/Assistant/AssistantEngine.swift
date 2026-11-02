@@ -115,7 +115,56 @@ final class AssistantEngine: ObservableObject {
         voice.onLevel = { [weak self] value in self?.updateLevel(value) }
         navigation.onAnnouncement = { [weak self] text in self?.announce(text) }
         NSLog("CarMirror: asistan hazır (demo: \(isDemoMode), sessiz: \(isSilent), demo hedef: \(demoDestination ?? "-"))")
+        startDemoCommandWatcher()
     }
+
+    #if targetEnvironment(simulator)
+    private var demoCommandTimer: Timer?
+
+    /// Simülatörde, demo modunda /tmp/carmirror-demo-command dosyasındaki komutu
+    /// çalıştırır (CI denemeleri): `tab <sekme>`, `navigate <hedef>`, `stop`, `say <metin>`.
+    private func startDemoCommandWatcher() {
+        guard isDemoMode, !isSilent else { return }
+        demoCommandTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] _ in
+            self?.pollDemoCommand()
+        }
+    }
+
+    private func pollDemoCommand() {
+        let path = "/tmp/carmirror-demo-command"
+        guard let raw = try? String(contentsOfFile: path, encoding: .utf8) else { return }
+        try? FileManager.default.removeItem(atPath: path)
+        let command = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !command.isEmpty else { return }
+        NSLog("CarMirror: demo komutu: \(command)")
+        let parts = command.split(separator: " ", maxSplits: 1).map(String.init)
+        let argument = parts.count > 1 ? parts[1] : ""
+        switch parts[0] {
+        case "tab":
+            if let tab = AppTab(rawValue: argument) {
+                NotificationCenter.default.post(name: .carMirrorSelectTab, object: tab)
+            }
+        case "navigate":
+            guard !argument.isEmpty else { return }
+            runSession {
+                try await self.startDemoNavigation(to: argument)
+            }
+            state = .thinking
+        case "stop":
+            navigation.stop()
+        case "say":
+            guard !argument.isEmpty else { return }
+            runSession {
+                try await self.speakStatement(argument)
+            }
+            state = .speaking
+        default:
+            break
+        }
+    }
+    #else
+    private func startDemoCommandWatcher() {}
+    #endif
 
     static func makeBrain(settings: AssistantSettings) -> AssistantBrain? {
         let key = settings.effectiveAnthropicAPIKey

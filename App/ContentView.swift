@@ -7,10 +7,17 @@ enum AppTab: String {
     case demo
 }
 
+extension Notification.Name {
+    /// Telefondaki sekmeyi değiştirir (`object`: AppTab). Demo komutları kullanır.
+    static let carMirrorSelectTab = Notification.Name("CarMirrorSelectTab")
+}
+
 enum LaunchOptions {
-    /// Açılış sekmesi `-CarMirrorTab demo` gibi bir başlatma argümanıyla seçilebilir.
+    /// Açılış sekmesi `-CarMirrorTab demo` başlatma argümanıyla ya da
+    /// CARMIRROR_TAB ortam değişkeniyle seçilebilir.
     static var requestedTab: AppTab? {
-        AppTab(rawValue: UserDefaults.standard.string(forKey: "CarMirrorTab") ?? "")
+        let value = UserDefaults.standard.string(forKey: "CarMirrorTab") ?? DemoConfiguration.environment()["CARMIRROR_TAB"] ?? ""
+        return AppTab(rawValue: value)
     }
 
     static var initialTab: AppTab {
@@ -46,6 +53,11 @@ struct ContentView: View {
         .onChange(of: selectedTab) { _, tab in
             AppTabState.shared.current = tab
             InAppMirror.shared.tabDidChange(tab)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .carMirrorSelectTab)) { notification in
+            if let tab = notification.object as? AppTab {
+                selectedTab = tab
+            }
         }
     }
 }
