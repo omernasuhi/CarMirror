@@ -85,7 +85,10 @@ struct AssistantView: View {
             VStack(alignment: .trailing, spacing: 6 * unit) {
                 core(diameter: size.height * 0.34)
                     .background(Circle().fill(Color.black.opacity(0.45)).padding(-6 * unit))
-                NavigationStatusLine(navigation: navigation, unit: unit)
+                // Uygulama kendi varış panelini çiziyorsa durum satırı onunla aynı bilgiyi verir.
+                if !NavigationEngine.drawsOwnManeuverCards {
+                    NavigationStatusLine(navigation: navigation, unit: unit)
+                }
                 if !assistantLine.isEmpty {
                     Text(assistantLine)
                         .font(.system(size: 10.5 * unit, weight: .medium, design: .rounded))
@@ -95,7 +98,8 @@ struct AssistantView: View {
                         .padding(.horizontal, 10 * unit)
                         .padding(.vertical, 6 * unit)
                         .background(Color.black.opacity(0.55), in: RoundedRectangle(cornerRadius: 10 * unit))
-                        .frame(maxWidth: size.width * 0.5, alignment: .trailing)
+                        // Sol alttaki varış paneliyle çakışmasın.
+                        .frame(maxWidth: size.width * 0.42, alignment: .trailing)
                 }
             }
             .padding(12 * unit)
@@ -173,7 +177,7 @@ struct AssistantView: View {
                     .minimumScaleFactor(0.6)
             }
             TimelineView(.periodic(from: .now, by: 30)) { context in
-                Text(context.date, format: .dateTime.hour(.twoDigits(amPM: .omitted)).minute())
+                Text(context.date, format: .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits))
                     .font(.system(size: 9.5 * unit, weight: .medium, design: .monospaced))
                     .foregroundStyle(.white.opacity(0.55))
                     .lineLimit(1)
@@ -480,7 +484,7 @@ struct ManeuverCards: View {
             }
             Spacer()
             if let progress = navigation.progress {
-                HStack(spacing: 14 * unit) {
+                HStack(spacing: 10 * unit) {
                     estimate(NavigationFormat.clock(progress.eta), "varış")
                     estimate(NavigationFormat.duration(progress.remainingTime), "kalan")
                     estimate(NavigationFormat.distance(progress.remainingDistance), "mesafe")
